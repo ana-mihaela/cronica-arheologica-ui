@@ -1,0 +1,89 @@
+
+button {
+  outline: 0 !important;
+  cursor: pointer;
+}
+
+.btn {
+
+  border-radius: 0;
+  outline: 0 !important;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include button-size(0.52rem, 1.5rem, 0.72rem);
+  @include transition(none);
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+.btn-circle {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.btn-icon {
+  height: 27px;
+  width: 27px;
+  padding: 2px 5px 4px 6px;
+
+  > i {
+    font-size: 14px;
+  }
+}
+
+// Button size
+
+.btn-lg {
+  @include button-size(0.68rem, 1.5rem, 1rem);
+}
+.btn-sm {
+  @include button-size(0rem, 0.5rem, 0.64rem);
+}
+
+// Buttons
+.btn-default {
+  @include button-default(#464652, #fafafa, #c2cad8);
+}
+.btn-primary {
+  @include button-variant(#fff, #ff8162);
+}
+.btn-secondary {
+  @include button-variant(#fff, #212529);
+}
+.btn-info {
+  @include button-variant(#fff, #0faced);
+}
+.btn-success {
+  @include button-variant(#fff, #15b50c);
+}
+.btn-warning {
+  @include button-variant(#fff, #ff921e);
+}
+.btn-danger {
+  @include button-variant(#fff, #ff4943);
+}
+
+// Buttons outline
+.btn-outline-primary {
+  @include button-outline-variant(#ff8162, #ff8162);
+}
+.btn-outline-secondary {
+  @include button-outline-variant(#212529, #212529);
+}
+.btn-outline-info {
+  @include button-outline-variant(#0faced, #0faced);
+}
+.btn-outline-success {
+  @include button-outline-variant(#15b50c, #15b50c);
+}
+.btn-outline-warning {
+  @include button-outline-variant(#ff921e, #ff921e);
+}
+.btn-outline-danger {
+  @include button-outline-variant(#ff4943, #ff4943);
+}

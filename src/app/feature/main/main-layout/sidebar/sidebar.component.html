@@ -1,0 +1,48 @@
+<div>
+  <div class="overlay" [class.active]="sidebarOpen" (click)="sidebarToggle()">
+  </div>
+  <div class="sliding-sidebar" [class.active]="sidebarOpen">
+
+    <!-- SIDEBAR HEADER -->
+
+    <app-sidebar-close (click)="sidebarToggle()"></app-sidebar-close>
+    <div class="sidebar-logo">
+      <a href="/">
+        <img src="../../../../../assets/images/logo_medium.png" alt="ePatrimoniu" title="ePatrimoniu">
+      </a>
+    </div>
+
+    <app-translate></app-translate>
+    <app-social></app-social>
+
+    <!-- SIDEBAR MENU -->
+
+    <ul class="sidebar-menu">
+      <li><a href="/"><i class="fa fa-home"></i><p>{{ 'HOME' | translate }}</p></a></li>
+      <li><a href="/"><i class="fa fa-newspaper-o"></i><p>{{ 'NEWS' | translate }}</p></a></li>
+      <li class="has-children">
+        <div (click)="heritageMenuOpen = !heritageMenuOpen" [attr.aria-expanded]="heritageMenuOpen" aria-controls="heritageMenu">
+          <i class="fa fa-angle-down arrow-down" [class.rotated]="heritageMenuOpen"></i>
+          <a href="javascript:void(0)">
+            <i class="fa fa-music"></i>
+            <p>{{ 'HERITAGE' | translate }}</p>
+          </a>
+        </div>
+        <div id="heritageMenu" [ngbCollapse]="!heritageMenuOpen">
+          <ul class="sub-menu">
+            <li><a href="#">{{ 'ARCHEOLOGY' | translate }}</a></li>
+            <li><a href="#">{{ 'ART_ARCHITECTURE' | translate }}</a></li>
+            <li><a href="#">{{ 'FIXED_HERITAGE' | translate }}</a></li>
+            <li><a href="#">{{ 'UNFIXED_HERITAGE' | translate }}</a></li>
+            <li><a href="#">{{ 'ETHNOGRAPHY' | translate }}</a></li>
+            <li><a href="#">{{ 'HISTORY' | translate }}</a></li>
+            <li><a href="#">{{ 'MUSIC' | translate }}</a></li>
+            <li><a href="#">{{ 'NUMISMATICS' | translate }}</a></li>
+            <li><a href="#">{{ 'ACTING' | translate }}</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="/"><i class="fa fa-envelope-o"></i><p>{{ 'CONTACT' | translate }}</p></a></li>
+    </ul>
+  </div>
+</div>

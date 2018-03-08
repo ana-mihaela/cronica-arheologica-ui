@@ -1,0 +1,44 @@
+
+<div class="main-navigation">
+  <a href="/">
+    <img class="navigation-logo" src="../../../../../assets/images/logo_small.png" alt="ePatrimoniu">
+  </a>
+  <div class="container">
+    <ul class="primary-menu">
+      <li><a href="#">{{ 'HOME' | translate }}</a></li>
+      <li><a href="#">{{ 'NEWS' | translate }}</a></li>
+      <li class="has-children">
+        <a href="javascript:void(0)" (click)="heritageMenuOpen = !heritageMenuOpen" [attr.aria-expanded]="heritageMenuOpen" aria-controls="heritageMenu" (document:click)="closeTopMenus()" (click)="$event.stopPropagation()">
+          {{ 'HERITAGE' | translate }} <i class="fa fa-angle-down arrow-down"></i>
+        </a>
+        <div id="heritageMenu" [ngbCollapse]="!heritageMenuOpen">
+          <ul class="sub-menu">
+            <li><a href="#">{{ 'ARCHEOLOGY' | translate }}</a></li>
+            <li><a href="#">{{ 'ART_ARCHITECTURE' | translate }}</a></li>
+            <li><a href="#">{{ 'FIXED_HERITAGE' | translate }}</a></li>
+            <li><a href="#">{{ 'UNFIXED_HERITAGE' | translate }}</a></li>
+            <li><a href="#">{{ 'ETHNOGRAPHY' | translate }}</a></li>
+            <li><a href="#">{{ 'HISTORY' | translate }}</a></li>
+            <li><a href="#">{{ 'MUSIC' | translate }}</a></li>
+            <li><a href="#">{{ 'NUMISMATICS' | translate }}</a></li>
+            <li><a href="#">{{ 'ACTING' | translate }}</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <app-sidebar-open (click)="sidebarToggle()"></app-sidebar-open>
+</div>
+
+<div class="main-logo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="logo">
+          <a href="#"><img src="../../../../../assets/images/logo_large.png" width="728" height="134" alt="ePatrimoniu" title="ePatrimoniu"></a>
+          <div class="logo-description">{{ 'LOGO_TITLE' | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

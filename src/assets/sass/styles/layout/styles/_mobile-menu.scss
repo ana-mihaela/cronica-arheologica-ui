@@ -1,0 +1,87 @@
+
+// Mobile Menu
+
+.mobile-menu {
+  position: absolute;
+  z-index: 1001;
+  right: 20px;
+  top: 20px;
+  padding: 2px;
+  cursor: pointer;
+  user-select: none;
+  @include transition(opacity .35s);
+}
+
+.mobile-menu-content {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 20px;
+}
+
+.mobile-menu-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
+
+.mobile-menu-line-1 {
+  top: 0;
+}
+
+.mobile-menu-line-2 {
+  top: 8px;
+}
+
+.mobile-menu-line-3 {
+  top: 16px;
+}
+
+// Close Arrow
+
+.close-sidebar {
+  cursor: pointer;
+  display: inline-block;
+  top: 10px;
+  position: absolute;
+}
+
+.close-sidebar-content {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 22px;
+}
+
+.close-sidebar-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  background: #000;
+  transform: translateY(0) translateZ(0);
+}
+
+.close-sidebar-line-1 {
+  top: 0;
+  transform: translateY(12px) translateX(25px) rotate(-45deg);
+  width: 20%;
+}
+
+.close-sidebar-line-2 {
+  top: 10px;
+  width: 100%;
+}
+
+.close-sidebar-line-3 {
+  transform: translateY(8px) translateX(25px) rotate(45deg);
+  width: 20%;
+}
+
+
+
+
+

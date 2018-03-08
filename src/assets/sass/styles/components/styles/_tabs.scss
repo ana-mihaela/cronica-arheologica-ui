@@ -1,0 +1,32 @@
+
+.nav-tabs {
+  border-bottom: 1px solid #ebf0f5;
+
+  .nav-item {
+    margin-bottom: -1px;
+  }
+
+  .nav-link {
+    color: #585858;
+    padding: 10px 25px;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+
+    &:focus,
+    &:hover {
+      border-bottom: 2px solid #ffb036;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-bottom: 2px solid #ffb036;
+  }
+}
+
+.tab-content {
+  background: #fff;
+  border: 1px solid #ebf0f5;
+  border-top: none;
+  padding: 25px;
+}

@@ -1,0 +1,58 @@
+@mixin form-control-validation($text-color, $border-color, $background-color) {
+
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label  {
+    color: $text-color;
+  }
+
+  .form-control {
+    color: $text-color;
+    border-color: $border-color;
+    background-color: $background-color;
+    padding-right: 32px;
+    @include box-shadow(none);
+
+    &:focus {
+      border-color: darken($border-color, 10%);
+      @include box-shadow(none);
+    }
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  .input-group-addon {
+    color: $text-color;
+    border-color: $border-color;
+    background-color: darken($background-color, 10%);
+  }
+}
+
+@mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height) {
+  #{$parent} {
+    height: $input-height;
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: 0;
+  }
+
+  select#{$parent} {
+    height: $input-height;
+    line-height: $input-height;
+  }
+
+  textarea#{$parent},
+  select[multiple]#{$parent} {
+    height: auto;
+  }
+}

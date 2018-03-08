@@ -1,0 +1,49 @@
+.portlet {
+  margin: 20px;
+  padding: 12px 20px 20px 20px;
+  background-color: #fff;
+  border: 1px solid #e7ecf1 !important;
+
+  .portlet-title {
+    padding: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eef1f5;
+    min-height: 48px;
+
+    .caption {
+      float: left;
+      color: #313233;
+      padding: 10px 0;
+      font-size: 16px;
+      text-transform: uppercase;
+
+      .highlight {
+        color: #15b50c;
+      }
+    }
+
+    .actions {
+      float: right;
+      display: inline-block;
+      padding: 6px 0 14px 0;
+
+      .btn,
+      .btn-group > .btn {
+        padding: 4px 10px;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .portlet-title:before,
+  .portlet-title:after {
+    content: " ";
+    display: table;
+  }
+
+  .portlet-body {
+    clear: both;
+    padding-top: 8px;
+  }
+}

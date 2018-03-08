@@ -1,0 +1,48 @@
+
+.card {
+
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  border: 0;
+  border-radius: 0;
+  @include box-shadow(1px 0 0 0 #f3b300 inset, 0 1px 3px rgba(0,0,0,0.12));
+
+  .card-body {
+    padding: 0 1.25rem 1rem 1.25rem;
+  }
+
+  .card-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.25em;
+    font-size: 1.225em;
+    color: #202021;
+    padding: 0.4rem 1.25rem;
+  }
+
+  .card-title a {
+    color: #202021;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    color: #8d8d8d;
+  }
+
+  .card-footer {
+    margin-top: 15px;
+    padding: 0 0 20px;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .card-menu {
+    position: relative;
+    float: right;
+    display: inline-block;
+  }
+}
+

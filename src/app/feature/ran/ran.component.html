@@ -1,0 +1,151 @@
+
+<div class="page-container">
+  <div class="main-navigation">
+    <a href="/">
+      <img class="navigation-logo" src="../../../assets/images/logo_small.png" alt="Mini Logo">
+    </a>
+    <div class="container">
+      <ul class="primary-menu">
+        <li><a href="#">{{ 'HOME' | translate }}</a></li>
+        <li><a href="#">{{ 'DOCUMENTATION' | translate }}</a></li>
+        <li class="highlight has-children">
+          <a href="javascript:void(0)" (click)="accountMenuOpen = !accountMenuOpen" [attr.aria-expanded]="accountMenuOpen" aria-controls="accountMenu" (document:click)="closeTopMenus()" (click)="$event.stopPropagation()">
+            {{ 'MY_ACCOUNT' | translate }} <i class="fa fa-angle-down arrow-down"></i>
+          </a>
+          <div id="accountMenu" [ngbCollapse]="!accountMenuOpen">
+            <ul class="sub-menu">
+              <li><a href="#">{{ 'ENTER_ACCOUNT' | translate }}</a></li>
+              <li><a href="#">{{ 'CREATE_ACCOUNT' | translate }}</a></li>
+              <li><a href="#">{{ 'PROFILE' | translate }}</a></li>
+              <li><a href="#">{{ 'EXIT_ACCOUNT' | translate }}</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="mobile-menu" (click)="toggleSidebar()">
+      <span class="mobile-menu-content">
+        <i class="mobile-menu-line mobile-menu-line-1"></i>
+        <i class="mobile-menu-line mobile-menu-line-2"></i>
+        <i class="mobile-menu-line mobile-menu-line-3"></i>
+      </span>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <div id="content" class="site-content no-visible-sidebar standard-layout">
+    <div class="overlay" [class.active]="sidebarOpen" (click)="toggleSidebar()">
+    </div>
+    <div class="sliding-sidebar" [class.active]="sidebarOpen">
+      <div class="close-sidebar" (click)="toggleSidebar()">
+        <div class="close-sidebar-content">
+          <i class="close-sidebar-line close-sidebar-line-1"></i>
+          <i class="close-sidebar-line close-sidebar-line-2"></i>
+          <i class="close-sidebar-line close-sidebar-line-3"></i>
+        </div>
+      </div>
+      <div class="sidebar-logo">
+        <a href="/">
+          <img src="../../../assets/images/logo_sidebar.png" alt="#GOADMIN" title="GOADMIN">
+        </a>
+      </div>
+      <div class="sidebar-social">
+        <a routerLink="/">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a routerLink="/">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a routerLink="/">
+          <i class="fa fa-envelope"></i>
+        </a>
+        <a routerLink="/">
+          <i class="fa fa-search"></i>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="has-children">
+          <div (click)="associationMenuOpen = !associationMenuOpen" [attr.aria-expanded]="associationMenuOpen" aria-controls="associationMenu">
+            <i class="fa fa-angle-down arrow-down" [class.rotated]="associationMenuOpen"></i>
+            <a href="javascript:void(0)">
+              <i class="fa fa-cube"></i>
+              <p>{{ 'ASSOCIATION' | translate }}</p>
+            </a>
+          </div>
+          <div id="associationMenu" [ngbCollapse]="!associationMenuOpen">
+            <ul class="sub-menu">
+              <li><a href="/">{{ 'ASSOCIATION_INFO' | translate }}</a></li>
+              <li><a href="/">{{ 'APARTMENTS' | translate }}</a></li>
+              <li><a href="/">{{ 'SERVICES' | translate }}</a></li>
+              <li><a href="/">{{ 'PROVIDERS' | translate }}</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-children">
+          <div (click)="tableMenuOpen = !tableMenuOpen" [attr.aria-expanded]="tableMenuOpen" aria-controls="tableMenu">
+            <i class="fa fa-angle-down arrow-down" [class.rotated]="tableMenuOpen"></i>
+            <a href="javascript:void(0)">
+              <i class="fa fa-calendar"></i>
+              <p>{{ 'TABLE' | translate }}</p>
+            </a>
+          </div>
+          <div id="tableMenu" [ngbCollapse]="!tableMenuOpen">
+            <ul class="sub-menu">
+              <li><a href="/">{{ 'MAINTENANCE_TABLE' | translate }}</a></li>
+              <li><a href="/">{{ 'BRANCH_UNBRANCH' | translate }}</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-children">
+          <div (click)="cashDeskMenuOpen = !cashDeskMenuOpen" [attr.aria-expanded]="cashDeskMenuOpen" aria-controls="cashDeskMenu">
+            <i class="fa fa-angle-down arrow-down" [class.rotated]="cashDeskMenuOpen"></i>
+            <a href="javascript:void(0)">
+              <i class="fa fa-money"></i>
+              <p>{{ 'CASH_DESC' | translate }}</p>
+            </a>
+          </div>
+          <div id="cashDeskMenu" [ngbCollapse]="!cashDeskMenuOpen">
+            <ul class="sub-menu">
+              <li><a href="/">{{ 'APARTMENTS_DEBTS' | translate }}</a></li>
+              <li><a href="/">{{ 'EXPENSES' | translate }}</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-children">
+          <div (click)="registersMenuOpen = !registersMenuOpen" [attr.aria-expanded]="registersMenuOpen" aria-controls="registersMenu">
+            <i class="fa fa-angle-down arrow-down" [class.rotated]="registersMenuOpen"></i>
+            <a href="javascript:void(0)">
+              <i class="fa fa-newspaper-o"></i>
+              <p>{{ 'REGISTERS' | translate }}</p>
+            </a>
+          </div>
+          <div id="registersMenu" [ngbCollapse]="!registersMenuOpen">
+            <ul class="sub-menu">
+              <li><a href="/">{{ 'REGISTER_JOURNAL' | translate }}</a></li>
+              <li><a href="/">{{ 'REGISTER_HOUSE_BANK' | translate }}</a></li>
+              <li><a href="/">{{ 'FOUNDS' | translate }}</a></li>
+              <li><a href="/">{{ 'ACTIVE_PASSIVE' | translate }}</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-children">
+          <div (click)="reportsMenuOpen = !reportsMenuOpen" [attr.aria-expanded]="reportsMenuOpen" aria-controls="reportsMenu">
+            <i class="fa fa-angle-down arrow-down" [class.rotated]="reportsMenuOpen"></i>
+            <a href="javascript:void(0)">
+              <i class="fa fa-line-chart"></i>
+              <p>{{ 'REPORTS' | translate }}</p>
+            </a>
+          </div>
+          <div id="reportsMenu" [ngbCollapse]="!reportsMenuOpen">
+            <ul class="sub-menu">
+              <li><a href="/">{{ 'REPORTS' | translate }}</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

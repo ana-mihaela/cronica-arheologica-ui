@@ -1,0 +1,68 @@
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  padding: 0.75rem 0.9rem;
+  font-size: 0.84rem;
+  line-height: 1.25;
+  color: #555;
+  background: none;
+  border: 1px solid #c2cad8;
+  border-radius: 0;
+
+  @include box-shadow(none);
+  @include transition(none);
+
+  &:focus{
+    border-color: #727c8e;
+    outline: none;
+    @include box-shadow(none);
+  }
+
+  &::placeholder {
+    color: #999;
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: #fafafa;
+    opacity: 1;
+  }
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.25rem + 4px);
+}
+
+.has-success {
+  @include form-control-validation(#5BBC6D, #5BBC6D, #e9fff3);
+}
+.has-error {
+  @include form-control-validation(#ff3939, #ff3939, #fff6f6);
+}
+
+.form-control-sm {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.72rem;
+  border-radius: 0;
+}
+
+.form-control-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.92rem;
+  border-radius: 0;
+}
+
+.control-label {
+  font-weight: 700;
+}
+
+.control-label.required:after {
+  color: #ff3939;
+  content: "*";
+  position: absolute;
+  margin-left: 5px;
+  top: 2px;
+}

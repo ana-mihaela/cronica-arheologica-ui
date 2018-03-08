@@ -1,0 +1,108 @@
+
+.main-navigation {
+  height: 70px;
+  line-height: 70px;
+  position: relative;
+  border-bottom: 1px solid #ececec;
+  font-weight: 300;
+}
+
+.navigation-logo {
+  max-height: 40px;
+  left: 30px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+
+.primary-menu {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+  }
+
+  li > a {
+    font-size: 0.8rem;
+    padding: 15px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #000;
+  }
+
+  li.highlight > a {
+    background-color: #333;
+    color: #fff;
+  }
+
+  li a:hover {
+    color: #ccc;
+  }
+
+  .has-children .arrow-down {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+
+  .has-children {
+    position: relative;
+  }
+
+  .has-children .sub-menu {
+    background-color: #fff;
+    border: 1px solid #ececec;
+    border-top-color: #333;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 210px;
+    top: 68px;
+    left: 0;
+    z-index: 9999;
+    line-height: 1.6rem;
+  }
+
+  .has-children .sub-menu li {
+    text-align: left;
+    display: block;
+  }
+
+  .has-children .sub-menu a {
+    display: block;
+    font-size: 0.8rem;
+    padding: 5px 20px;
+  }
+}
+
+.main-logo {
+
+  .container {
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .logo {
+    margin-top: 0;
+    margin-bottom: 1px;
+    text-align: center;
+  }
+
+  .logo img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  .logo .logo-description {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: #ba9343;
+  }
+}
+
+

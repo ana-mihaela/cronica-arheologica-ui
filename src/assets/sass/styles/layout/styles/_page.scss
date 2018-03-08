@@ -45,11 +45,21 @@ img {
   text-transform: uppercase;
 }
 
-.alphaHover {
+.alpha-hover {
   transition: opacity 0.4s;
   opacity: 1;
 }
 
-.alphaHover:hover {
+.alpha-hover:hover {
   opacity: 0.7;
+}
+
+.mobile-hide {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .mobile-only {
+    display: none;
+  }
 }

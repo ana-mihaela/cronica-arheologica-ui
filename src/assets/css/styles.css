@@ -806,7 +806,7 @@ img {
   display: block; }
 
 @media (max-width: 991px) {
-  .mobile-only {
+  .mobile-hide {
     display: none; } }
 .main-navigation {
   height: 70px;
@@ -1032,6 +1032,7 @@ img {
   cursor: pointer;
   display: inline-block;
   top: 10px;
+  left: 185px;
   position: absolute; }
 
 .close-sidebar-content {

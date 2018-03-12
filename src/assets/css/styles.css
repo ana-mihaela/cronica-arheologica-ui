@@ -808,6 +808,9 @@ img {
 @media (max-width: 991px) {
   .mobile-hide {
     display: none; } }
+.container-fluid {
+  padding: 15px 25px; }
+
 .main-navigation {
   height: 70px;
   line-height: 70px;
@@ -817,7 +820,7 @@ img {
 
 .navigation-logo {
   max-height: 40px;
-  left: 30px;
+  left: 15px;
   position: absolute;
   margin: auto;
   top: 0;

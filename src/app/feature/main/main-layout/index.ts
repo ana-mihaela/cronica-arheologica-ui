@@ -1,2 +1,2 @@
-export * from './header/main-header.component';
-export * from './sidebar/main-sidebar.component';
+export { MainHeaderComponent } from './header/main-header.component';
+export { MainSidebarComponent } from './sidebar/main-sidebar.component';

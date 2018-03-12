@@ -1,7 +1,7 @@
-import { SiteComponent } from './site.component';
+import { SiteListComponent } from './site-list/site-list.component';
 
 export const routes = [
   { path: '', children: [
-    { path: '', component: SiteComponent }
+    { path: '', component: SiteListComponent }
   ]},
 ];

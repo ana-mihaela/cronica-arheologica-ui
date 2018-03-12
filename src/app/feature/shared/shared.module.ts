@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '@app/core';
-import { SupportModule } from "@app/support";
+import { SupportModule } from '@app/support';
 
 import {
   SocialComponent,
@@ -13,8 +13,13 @@ import {
   TranslateComponent
 } from './menus';
 
+import {
+  PaginationComponent
+} from './widgets';
+
 @NgModule({
   imports: [
+    CommonModule,
     CoreModule,
     SupportModule
   ],
@@ -22,7 +27,8 @@ import {
     SocialComponent,
     SidebarOpenComponent,
     SidebarCloseComponent,
-    TranslateComponent
+    TranslateComponent,
+    PaginationComponent
   ],
   exports: [
     CommonModule,
@@ -33,7 +39,8 @@ import {
     SocialComponent,
     SidebarOpenComponent,
     SidebarCloseComponent,
-    TranslateComponent
+    TranslateComponent,
+    PaginationComponent
   ],
 })
 export class SharedModule {

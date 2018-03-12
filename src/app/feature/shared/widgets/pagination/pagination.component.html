@@ -1,0 +1,21 @@
+
+<div class="pagination-container">
+  <div class="pagination" *ngIf="count > 0">
+    <div class="description">
+      <span class="page-counts">{{ getMin() }} - {{ getMax() }} of {{ count }}</span>
+      <span class="page-totals">{{ totalPages() }} pages</span>
+    </div>
+    <div class="numbers">
+      <button class="link" (click)="onPrev()" [disabled]="page === 1 || loading" [class.disabled]="page === 1 || loading">&lt; Previous</button>
+
+      <button *ngFor="let pageNum of getPages()"
+              (click)="onPage(pageNum)"
+              [class.active]="pageNum === page"
+              [class.disabled]="loading">
+        {{ pageNum }}
+      </button>
+
+      <button class="link" (click)="onNext(true)" [disabled]="lastPage() || loading" [class.disabled]="lastPage() || loading">Next &gt;</button>
+    </div>
+  </div>
+</div>

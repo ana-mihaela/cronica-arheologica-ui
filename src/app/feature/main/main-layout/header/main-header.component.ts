@@ -1,17 +1,21 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: 'sidebar.component.html'
+  selector: 'app-main-header',
+  templateUrl: 'main-header.component.html'
 })
-export class SidebarComponent {
+export class MainHeaderComponent {
 
   @Output()
   onSidebarToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input()
   sidebarOpen: boolean;
-  heritageMenuOpen = false;
+  heritageMenuOpen: boolean = false;
+
+  public closeTopMenus() {
+    this.heritageMenuOpen = false;
+  }
 
   public sidebarToggle() {
     this.sidebarOpen = !this.sidebarOpen;

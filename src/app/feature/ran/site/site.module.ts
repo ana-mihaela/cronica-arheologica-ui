@@ -3,11 +3,11 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '@app/feature/shared';
 
 import { routes } from './site.routes';
-import { SiteComponent } from './site.component';
+import { SiteListComponent } from './site-list/site-list.component';
 
 @NgModule({
   declarations: [
-    SiteComponent,
+    SiteListComponent
   ],
   imports: [
     SharedModule,

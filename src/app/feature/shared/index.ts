@@ -5,3 +5,8 @@ export {
   SidebarOpenComponent,
   SidebarCloseComponent,
   TranslateComponent } from './menus';
+
+export {
+  PaginationComponent
+} from './widgets';
+

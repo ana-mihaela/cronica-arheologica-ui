@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule, SocialComponent } from '@app/feature/shared';
+import { SharedModule } from '@app/feature/shared';
 
 import { routes } from './main.routes';
-import { HeaderComponent, SidebarComponent } from './main-layout';
+import { MainHeaderComponent, MainSidebarComponent } from './main-layout';
 import { MainComponent } from './main.component';
 import { HomeComponent } from './home';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    SidebarComponent,
+    MainHeaderComponent,
+    MainSidebarComponent,
     MainComponent,
     HomeComponent
   ],

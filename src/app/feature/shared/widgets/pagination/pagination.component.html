@@ -3,8 +3,14 @@
   <div class="row">
     <div class="col-md-4 col-sm-4">
       <div class="description">
-        <span class="page-counts">{{ getMin() }} - {{ getMax() }} {{ 'PAGE_OF' | translate}} {{ count }}</span>
-        <span class="page-totals"><span class="highlight">{{ totalPages() }}</span> {{ 'PAGE_PAGES' | translate}}</span>
+        <span class="page-counts">
+          {{ getMin() }} - {{ getMax() }} {{ 'PAGE_OF' | translate}}
+          <span class="highlight">{{ count }}</span>
+          {{ 'PAGE_RECORDS' | translate}}
+        </span>
+        <span class="page-totals">
+          <span class="highlight">{{ totalPages() }}</span>
+          {{ 'PAGE_PAGES' | translate}}</span>
       </div>
     </div>
     <div class="col-md-8 col-sm-8">

@@ -13,7 +13,7 @@ export class SiteListComponent implements OnInit {
   // total = 0;
   total = 400;
   page = 1;
-  limit = 20;
+  perPage = 20;
 
   /*constructor(private messageService: MessageService) {
   }*/

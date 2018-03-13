@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class PaginationComponent {
 
   @Input() page: number;
-  @Input() count: number;
+  @Input() total: number;
   @Input() perPage: number;
   @Input() pagesToShow: number;
   @Input() loading: boolean;
@@ -24,8 +24,8 @@ export class PaginationComponent {
 
   getMax(): number {
     let max = this.perPage * this.page;
-    if (max > this.count) {
-      max = this.count;
+    if (max > this.total) {
+      max = this.total;
     }
     return max;
   }
@@ -43,29 +43,34 @@ export class PaginationComponent {
   }
 
   totalPages(): number {
-    return Math.ceil(this.count / this.perPage) || 0;
+    return Math.ceil(this.total / this.perPage) || 0;
   }
 
   lastPage(): boolean {
-    return this.perPage * this.page >= this.count;
+    return this.perPage * this.page >= this.total;
   }
 
   getPages(): number[] {
-    const c = Math.ceil(this.count / this.perPage);
-    const p = this.page || 1;
-    const pagesToShow = this.pagesToShow || 9;
+
+    const currentPage = this.page || 1;
+    const pagesToShow = this.pagesToShow || 5;
+    const pageCount = Math.ceil(this.total / this.perPage);
+
     const pages: number[] = [];
-    pages.push(p);
+    pages.push(currentPage);
+
     const times = pagesToShow - 1;
     for (let i = 0; i < times; i++) {
       if (pages.length < pagesToShow) {
-        if (Math.min.apply(null, pages) > 1) {
-          pages.push(Math.min.apply(null, pages) - 1);
+        const minPage = Math.min.apply(null, pages);
+        if (minPage > 1) {
+          pages.push(minPage - 1);
         }
       }
       if (pages.length < pagesToShow) {
-        if (Math.max.apply(null, pages) < c) {
-          pages.push(Math.max.apply(null, pages) + 1);
+        const maxPage = Math.max.apply(null, pages);
+        if (maxPage < pageCount) {
+          pages.push(maxPage + 1);
         }
       }
     }

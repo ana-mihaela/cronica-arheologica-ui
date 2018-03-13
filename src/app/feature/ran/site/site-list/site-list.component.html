@@ -1,18 +1,39 @@
 
 <div class="container-fluid">
 
-  <div *ngFor="let site of sites">
-    <app-site-item [site]="site"></app-site-item>
+  <div class="table-container">
+
+    <table class="table table-bordered data-table">
+      <thead>
+      <tr>
+        <th [style.width]="100">Header1</th>
+        <th [style.width]="150">Header2</th>
+        <th [style.width]="220">
+          <span>Header3</span>
+          <span class="column-sort-icon">
+          <i class="fa fa-sort column-sortable-icon"></i>
+        </span>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr><td>Value1</td><td>Value2</td><td>Value3</td></tr>
+        <tr><td>Value1</td><td>Value2</td><td>Value3</td></tr>
+        <tr><td>Value1</td><td>Value2</td><td>Value3</td></tr>
+      </tbody>
+    </table>
+
+    <app-pagination
+      (goPage)="goToPage($event)"
+      (goNext)="onNext()"
+      (goPrev)="onPrev()"
+      [pagesToShow]="5"
+      [page]="page"
+      [perPage]="perPage"
+      [total]="total"
+      [loading]="loading"></app-pagination>
   </div>
 
-  <app-pagination
-    (goPage)="goToPage($event)"
-    (goNext)="onNext()"
-    (goPrev)="onPrev()"
-    [pagesToShow]="5"
-    [page]="page"
-    [perPage]="perPage"
-    [total]="total"
-    [loading]="loading"></app-pagination>
 </div>
+
 

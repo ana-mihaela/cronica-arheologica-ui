@@ -1,0 +1,20 @@
+
+.data-table {
+  background: #fff;
+
+  tr>td,
+  tr>th {
+    border: 1px solid #ececec;
+    padding: 0.52rem 0.75rem;
+    vertical-align: middle;
+  }
+
+  thead>tr>th,
+  thead>tr>td {
+    border-bottom: 1px solid #c6c6c6;
+  }
+
+  tbody>tr:hover {
+    background-color: #fcfcfc;
+  }
+}

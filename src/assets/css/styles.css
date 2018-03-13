@@ -777,13 +777,26 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   border-radius: 0; }
 .page-item.active .page-link {
   color: #fff;
-  background-color: #53a318;
-  border-color: #53a318; }
+  background-color: #ff8162;
+  border-color: #ff8162; }
 .page-item.disabled .page-link {
   color: #999;
   cursor: auto;
   background-color: transparent;
   border-color: transparent; }
+
+.data-table {
+  background: #fff; }
+  .data-table tr > td,
+  .data-table tr > th {
+    border: 1px solid #ececec;
+    padding: 0.52rem 0.75rem;
+    vertical-align: middle; }
+  .data-table thead > tr > th,
+  .data-table thead > tr > td {
+    border-bottom: 1px solid #c6c6c6; }
+  .data-table tbody > tr:hover {
+    background-color: #fcfcfc; }
 
 body {
   margin: 0;
@@ -842,14 +855,15 @@ img {
   padding: 15px 25px; }
 
 .highlight {
-  color: #15b50c; }
+  color: #ff921e; }
 
 .main-navigation {
   height: 70px;
   line-height: 70px;
+  font-weight: 300;
   position: relative;
   border-bottom: 1px solid #ececec;
-  font-weight: 300; }
+  background: #fff; }
 
 .navigation-logo {
   max-height: 40px;
@@ -1198,7 +1212,9 @@ img {
   margin-bottom: 26px; }
 
 .pagination-container {
-  border: 1px solid #ececec; }
+  border: 1px solid #ececec;
+  background: #fbfbfb;
+  box-shadow: 1px 0 0 0 #ffb036 inset; }
   .pagination-container .description {
     white-space: nowrap;
     margin: 10px 15px;

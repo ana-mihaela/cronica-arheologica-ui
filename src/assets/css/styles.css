@@ -585,20 +585,17 @@ select.form-control:not([size]):not([multiple]) {
     display: inline-block; }
 
 .portlet {
-  margin: 20px;
-  padding: 12px 20px 20px 20px;
-  background-color: #fff;
-  border: 1px solid #e7ecf1 !important; }
+  margin: 15px 20px; }
   .portlet .portlet-title {
     padding: 0;
     margin-bottom: 10px;
-    border-bottom: 1px solid #eef1f5;
+    border-bottom: 1px solid #ececec;
     min-height: 48px; }
     .portlet .portlet-title .caption {
       float: left;
       color: #313233;
       padding: 10px 0;
-      font-size: 16px;
+      font-size: 0.9rem;
       text-transform: uppercase; }
     .portlet .portlet-title .actions {
       float: right;
@@ -767,7 +764,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   .page-link:hover {
     color: #222;
     background-color: transparent;
-    border-color: #53a318; }
+    border-color: #ff8162; }
   .page-link:focus {
     box-shadow: none; }
 
@@ -851,9 +848,6 @@ img {
 @media (max-width: 991px) {
   .mobile-hide {
     display: none; } }
-.container-fluid {
-  padding: 15px 25px; }
-
 .highlight {
   color: #ff921e; }
 

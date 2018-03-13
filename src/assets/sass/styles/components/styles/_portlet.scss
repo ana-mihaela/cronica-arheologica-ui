@@ -1,20 +1,17 @@
 .portlet {
-  margin: 20px;
-  padding: 12px 20px 20px 20px;
-  background-color: #fff;
-  border: 1px solid #e7ecf1 !important;
+  margin: 15px 20px;
 
   .portlet-title {
     padding: 0;
     margin-bottom: 10px;
-    border-bottom: 1px solid #eef1f5;
+    border-bottom: 1px solid #ececec;
     min-height: 48px;
 
     .caption {
       float: left;
       color: #313233;
       padding: 10px 0;
-      font-size: 16px;
+      font-size: 0.9rem;
       text-transform: uppercase;
     }
 

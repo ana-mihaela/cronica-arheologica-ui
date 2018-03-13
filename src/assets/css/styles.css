@@ -806,10 +806,10 @@ body {
   color: #555; }
 
 ::selection {
-  background: rgba(198, 196, 10, 0.54); }
+  background: rgba(255, 196, 178, 0.54); }
 
 ::-moz-selection {
-  background: rgba(198, 196, 10, 0.54); }
+  background: rgba(255, 196, 178, 0.54); }
 
 a {
   background-color: transparent;

@@ -21,10 +21,6 @@
   &:focus {
     box-shadow: none;
   }
-
-  > i {
-    color: #53a318;
-  }
 }
 
 .page-item {
@@ -50,9 +46,5 @@
     cursor: auto;
     background-color: transparent;
     border-color: transparent;
-
-    > i {
-      color: #999;
-    }
   }
 }

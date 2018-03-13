@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { MessageService } from './message.service';
+import { Logger } from '@app/support';
+import { Site } from '@app/core/model';
+
+const log = new Logger('SiteListComponent');
 
 @Component({
   selector: 'app-site-list',
@@ -7,42 +10,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteListComponent implements OnInit {
 
-  // messages: Message[];
+  sites: Site[];
 
-  loading = false;
-  // total = 0;
   total = 400;
   page = 1;
   perPage = 20;
-
-  /*constructor(private messageService: MessageService) {
-  }*/
+  loading = false;
 
   ngOnInit(): void {
-    // this.getMessages();
+    log.debug('init');
+    this.sites = SITES;
   }
 
-  getMessages(): void {
-    this.loading = true;
-    /*this.messageService.getMessages({ page: this.page, limit: this.limit }).subscribe(res => {
-      this.total = res.total;
-      this.messages = res.messages;
-      this.loading = false;
-    });*/
-  }
-
-  goToPage(n: number): void {
-    this.page = n;
-    // this.getMessages();
+  goToPage(page: number): void {
+    this.page = page;
   }
 
   onNext(): void {
     this.page++;
-    // this.getMessages();
   }
 
   onPrev(): void {
     this.page--;
-    // this.getMessages();
   }
 }
+
+const SITES = [{
+    ranCode: '160181.14',
+    name: 'Descoperirea monetară de la Chilia Veche - Gârla Tatanir I. Locul descoperirii se află la Vest de localitate.',
+    class: 'descoperire monrtară',
+    type: 'Descoperire izolată',
+    county: 'Tulcea',
+    city: 'Chilia Veche, com. Chilia Veche',
+    chronology: 'Epoca medievală / sec. XII',
+    lastUpdate: '08.03.2018'
+  },
+  {
+    ranCode: '160181.13',
+    name: 'Aşezarea medievală de la Chilia Veche-la S de sat. Aşezarea se află la Sud de sat.   ',
+    class: 'locuire civilă',
+    type: 'aşezare',
+    county: 'Tulcea',
+    city: 'Chilia Veche, com. Chilia Veche',
+    chronology: 'Epoca medievală',
+    lastUpdate: '08.03.2018'
+  }];

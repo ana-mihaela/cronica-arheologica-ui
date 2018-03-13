@@ -770,8 +770,6 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
     border-color: #53a318; }
   .page-link:focus {
     box-shadow: none; }
-  .page-link > i {
-    color: #53a318; }
 
 .page-item:first-child .page-link {
   border-radius: 0; }
@@ -786,8 +784,6 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   cursor: auto;
   background-color: transparent;
   border-color: transparent; }
-  .page-item.disabled .page-link > i {
-    color: #999; }
 
 body {
   margin: 0;

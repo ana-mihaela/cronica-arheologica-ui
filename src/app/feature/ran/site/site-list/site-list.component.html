@@ -1,5 +1,10 @@
 
 <div class="container-fluid">
+
+  <div *ngFor="let site of sites">
+    <app-site-item [site]="site"></app-site-item>
+  </div>
+
   <app-pagination
     (goPage)="goToPage($event)"
     (goNext)="onNext()"
@@ -7,6 +12,7 @@
     [pagesToShow]="5"
     [page]="page"
     [perPage]="perPage"
-    [total]="total"></app-pagination>
+    [total]="total"
+    [loading]="loading"></app-pagination>
 </div>
 

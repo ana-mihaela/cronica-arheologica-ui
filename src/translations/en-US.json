@@ -16,6 +16,11 @@
   "LOGO_TITLE": "Gate to the Romanian cultural heritage",
   "RAN_TITLE": "National Archeology Repertory",
   "ACERA_TITLE": "System of Administration for Archeology Research",
-  "MAP_TITLE": "Cartographic Server for Archeology"
+  "MAP_TITLE": "Cartographic Server for Archeology",
+
+  "PAGE_PREV": "Previous",
+  "PAGE_NEXT": "Next",
+  "PAGE_OF": "of",
+  "PAGE_PAGES": "pages"
 }
 

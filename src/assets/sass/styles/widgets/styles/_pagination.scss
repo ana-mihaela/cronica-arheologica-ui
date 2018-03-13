@@ -1,49 +1,26 @@
 
 .pagination-container {
-  flex: 0 0 30px;
-  display: flex;
+  border: 1px solid #ececec;
 
-  .pagination {
-    width: 100%;
-    position: relative;
-    flex: 1;
-    background: #abada8;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  .description {
+    white-space: nowrap;
+    margin: 10px 15px;
+    color: #222;
 
-    .description {
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
-      left: 10px;
-
-      .page-counts {
-        margin-right: 10px;
-      }
-    }
-
-    .numbers {
-      display: block;
-      text-align: center;
-      flex: 1;
-
-      button {
-        flex: 0 0 auto;
-        outline: none;
-        border: 0;
-        padding: 0 5px;
-        background: transparent;
-        cursor: pointer;
-
-        &.active {
-          color: #49494e;
-        }
-
-        &.disabled {
-          color: #cfcfcf;
-        }
-      }
+    .page-totals:before {
+      display: inline-block;
+      content: '|';
+      margin-left: 7px;
+      margin-right: 7px;
+      height: -5px;
+      color: #bbb;
     }
   }
+
+  .numbers {
+    float: right;
+    margin: 8px 15px;
+  }
 }
+
+

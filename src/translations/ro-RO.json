@@ -16,5 +16,10 @@
   "LOGO_TITLE": "Poarta către patrimoniul cultural al României",
   "RAN_TITLE": "Repertoriul Arheologic Naţional",
   "ACERA_TITLE": "Sistemul de Administrare a Cercetărilor Arheologice",
-  "MAP_TITLE": "Server cartografic pentru arheologie"
+  "MAP_TITLE": "Server cartografic pentru arheologie",
+
+  "PAGE_PREV": "Precedentă",
+  "PAGE_NEXT": "Următoare",
+  "PAGE_OF": "din",
+  "PAGE_PAGES": "pagini"
 }

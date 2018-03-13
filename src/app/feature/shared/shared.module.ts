@@ -20,6 +20,7 @@ import {
 @NgModule({
   imports: [
     CommonModule,
+    TranslateModule,
     CoreModule,
     SupportModule
   ],

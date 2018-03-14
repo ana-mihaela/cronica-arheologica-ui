@@ -9,12 +9,32 @@
     vertical-align: middle;
   }
 
-  thead>tr>th,
-  thead>tr>td {
+  thead>tr>th {
+    color: #333;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.68rem 0.75rem;
+    text-transform: uppercase;
     border-bottom: 1px solid #c6c6c6;
+
+    &.sortable {
+      cursor: pointer;
+    }
+
+    .column-sort-icon {
+      float: right;
+    }
+
+    .column-sort-icon > i {
+      color: #d3d3d3;
+    }
   }
 
   tbody>tr:hover {
-    background-color: #fcfcfc;
+    background-color: #f5f5f5;
+  }
+
+  .row-odd {
+    background-color: #fbfbfb;
   }
 }

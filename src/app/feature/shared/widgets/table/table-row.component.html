@@ -1,0 +1,10 @@
+
+<tr [class.row-odd]="index % 2 === 0"
+    [class.row-even]="index % 2 === 1"
+    [class.selected]="selected">
+
+  <td *ngFor="let column of columns">
+    <div *ngIf="!column.cellTemplate" [textContent]="item[column.property]"></div>
+    <div *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate" [ngTemplateOutletContext]="{column: column, item: item}"></div>
+  </td>
+</tr>

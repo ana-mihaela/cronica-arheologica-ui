@@ -9,6 +9,7 @@ export class TableComponent {
 
   private _sortBy: string;
   private _sortAsc: boolean = true;
+  private _items: any[] = [];
 
   @Output() doSort = new EventEmitter<SortParams>();
 
@@ -32,6 +33,14 @@ export class TableComponent {
   set sortAsc(value: boolean) {
     this._sortAsc = value;
     this.triggerSort();
+  }
+
+  @Input() get items() {
+    return this._items;
+  }
+
+  set items(items: any[]) {
+    this._items = items;
   }
 
   triggerSort(): void {

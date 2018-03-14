@@ -1,6 +1,9 @@
 
 .data-table {
   background: #fff;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 
   tr>td,
   tr>th {
@@ -34,7 +37,11 @@
     background-color: #f5f5f5;
   }
 
-  .row-odd {
+  tbody+tbody {
+    border-top: none;
+  }
+
+  .row-even {
     background-color: #fbfbfb;
   }
 }

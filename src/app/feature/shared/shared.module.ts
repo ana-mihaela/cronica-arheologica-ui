@@ -17,6 +17,7 @@ import {
 import {
   PaginationComponent,
   TableColumnDirective,
+  TableRowComponent,
   TableComponent
 } from './widgets';
 
@@ -34,6 +35,7 @@ import {
     TranslateComponent,
     PaginationComponent,
     TableColumnDirective,
+    TableRowComponent,
     TableComponent
   ],
   exports: [
@@ -49,6 +51,7 @@ import {
     TranslateComponent,
     PaginationComponent,
     TableColumnDirective,
+    TableRowComponent,
     TableComponent
   ],
 })

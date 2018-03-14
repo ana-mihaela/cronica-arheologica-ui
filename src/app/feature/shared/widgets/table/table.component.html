@@ -1,0 +1,27 @@
+
+<table class="table table-bordered data-table">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns" #th
+          [class.sortable]="column.sortable"
+          [style.width]="column.width"
+          [style.min-width]="column.minWidth">
+
+        <span *ngIf="!column.headerTemplate" [textContent]="column.header"></span>
+        <span *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{column: column}"></span>
+
+        <span class="column-sort-icon" *ngIf="column.sortable">
+          <i class="fa fa-sort column-sortable-icon" [hidden]="column.property === sortBy"></i>
+          <span [hidden]="column.property !== sortBy">
+            <i class="fa fa-sort-asc" [hidden]="sortAsc"></i>
+            <i class="fa fa-sort-desc" [hidden]="!sortAsc"></i>
+          </span>
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tbody *ngFor="let item of items; let index=index"
+         appTableRow [item]="item" [index]="index" [columns]="columns">
+  </tbody>
+</table>

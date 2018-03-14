@@ -9,25 +9,18 @@
     <div class="portlet-body">
 
       <div class="table-container">
-        <table class="table table-bordered data-table">
-          <thead>
-          <tr>
-            <th [style.width]="100">Header1</th>
-            <th [style.width]="150">Header2</th>
-            <th [style.width]="220" class="sortable">
-              <span>Header3</span>
-              <span class="column-sort-icon">
-                <i class="fa fa-sort column-sortable-icon"></i>
-              </span>
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr><td>Value1</td><td>Value2</td><td>Value3</td></tr>
-          <tr class="row-odd"><td>Value1</td><td>Value2</td><td>Value3</td></tr>
-          <tr><td>Value1</td><td>Value2</td><td>Value3</td></tr>
-          </tbody>
-        </table>
+
+        <app-table [items]="sites">
+          <app-table-column [property]="'ranCode'" [header]="'Ran Code'" [minWidth]="'110px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'name'" [header]="'Name'" [width]="'100%'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'class'" [header]="'Site Class'" [minWidth]="'180px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'type'" [header]="'Site Type'" [minWidth]="'160px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'county'" [header]="'County'" [minWidth]="'100px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'city'" [header]="'City'" [minWidth]="'130px'"  [sortable]="true"></app-table-column>
+          <app-table-column [property]="'chronology'" [header]="'Chronology'" [minWidth]="'200px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'lastUpdate'" [header]="'LastUpdate'" [minWidth]="'120px'" [sortable]="true"></app-table-column>
+          <app-table-column [header]="'Actions'" [minWidth]="'140px'"></app-table-column>
+        </app-table>
 
         <app-pagination
           (goPage)="goToPage($event)"

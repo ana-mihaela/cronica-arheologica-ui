@@ -3,8 +3,17 @@
     [class.row-even]="index % 2 === 1"
     [class.selected]="selected">
 
+  <td [hidden]="!expandableRows" (click)="expanded = !expanded; $event.stopPropagation()" class="row-expand-button">
+    <span class="fa fa-caret-right" [hidden]="expanded"></span>
+    <span class="fa fa-caret-down" [hidden]="!expanded"></span>
+  </td>
   <td *ngFor="let column of columns">
     <div *ngIf="!column.cellTemplate" [textContent]="item[column.property]"></div>
     <div *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate" [ngTemplateOutletContext]="{column: column, item: item}"></div>
+  </td>
+</tr>
+<tr *ngIf="expandableRows" [hidden]="!expanded" class="row-expansion">
+  <td [attr.colspan]="columnCount">
+    <div [ngTemplateOutlet]="expandTemplate" [ngTemplateOutletContext]="{item: item}"></div>
   </td>
 </tr>

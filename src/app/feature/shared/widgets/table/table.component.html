@@ -2,6 +2,7 @@
 <table class="table table-bordered data-table">
   <thead>
     <tr>
+      <th [hidden]="!expandableRows" class="expand-column-header"></th>
       <th *ngFor="let column of columns" #th
           [class.sortable]="column.sortable"
           [style.width]="column.width"
@@ -23,6 +24,7 @@
   </thead>
   <tbody>
   <tbody *ngFor="let item of items; let index=index"
-         appTableRow [item]="item" [index]="index" [columns]="columns">
+         appTableRow [item]="item" [index]="index"
+         [expandableRows]="expandableRows" [expandTemplate]="expandTemplate" [columns]="columns">
   </tbody>
 </table>

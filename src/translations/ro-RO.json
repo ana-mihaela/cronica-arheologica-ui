@@ -26,6 +26,7 @@
 
   "SITE_RAN_CODE": "Cod RAN",
   "SITE_NAME": "Denumire",
+  "SITE_DESCRIPTION": "Descriere",
   "SITE_CLASS": "Categorie",
   "SITE_TYPE": "Tip",
   "SITE_COUNTY": "Județ",

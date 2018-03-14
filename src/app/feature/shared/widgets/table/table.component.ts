@@ -1,4 +1,9 @@
-import {Component, EventEmitter, ContentChildren, QueryList, Input, Output, OnInit} from '@angular/core';
+import {
+  Component, EventEmitter,
+  ContentChildren, ContentChild,
+  QueryList, Input, Output, OnInit, TemplateRef
+} from '@angular/core';
+
 import { TableColumnDirective } from './table-column.directive';
 
 @Component({
@@ -11,10 +16,13 @@ export class TableComponent implements OnInit {
   private _sortAsc: boolean = true;
   private _items: any[] = [];
 
+  @Input() expandableRows = false;
+
   @Output() tableSort = new EventEmitter<SortParams>();
   @Output() headerClick = new EventEmitter();
 
   @ContentChildren(TableColumnDirective) columns: QueryList<TableColumnDirective>;
+  @ContentChild('tableExpand') expandTemplate: TemplateRef<any>;
 
   ngOnInit(): void {
     this.initClickEvents();
@@ -48,12 +56,12 @@ export class TableComponent implements OnInit {
     this._items = items;
   }
 
-  headerClicked(column: TableColumnDirective, event: MouseEvent) {
-    this.headerClick.emit({ column, event });
-  }
-
   private initClickEvents(): void {
     this.headerClick.subscribe(tableEvent => this.sortColumn(tableEvent.column));
+  }
+
+  headerClicked(column: TableColumnDirective, event: MouseEvent) {
+    this.headerClick.emit({ column, event });
   }
 
   private sortColumn(column: TableColumnDirective): void {

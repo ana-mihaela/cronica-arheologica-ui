@@ -26,6 +26,7 @@
 
   "SITE_RAN_CODE": "Ran Code",
   "SITE_NAME": "Name",
+  "SITE_DESCRIPTION": "Description",
   "SITE_CLASS": "Site Class",
   "SITE_TYPE": "Site Type",
   "SITE_COUNTY": "County",

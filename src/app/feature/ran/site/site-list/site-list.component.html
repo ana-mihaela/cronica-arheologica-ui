@@ -10,7 +10,15 @@
 
       <div class="table-container">
 
-        <app-table [items]="sites" (tableSort)="onSort($event)">
+        <app-table [items]="sites"
+                   [expandableRows]="true"
+                   (tableSort)="onSort($event)">
+
+          <ng-template #tableExpand let-item="item">
+            <span><b>{{ 'SITE_DESCRIPTION' | translate }}:</b></span>
+            {{ item.name }}
+          </ng-template>
+
           <app-table-column [property]="'ranCode'" [minWidth]="'110px'" [sortable]="true">
             <ng-template #tableHeader>
               <span class="highlight-warning">{{ 'SITE_RAN_CODE' | translate}}</span>

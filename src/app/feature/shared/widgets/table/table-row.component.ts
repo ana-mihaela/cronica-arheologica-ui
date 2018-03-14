@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnDestroy, Input, Output, QueryList } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, Input, Output,
+  QueryList, TemplateRef } from '@angular/core';
+
 import { TableColumnDirective } from './table-column.directive';
 
 @Component({
@@ -9,8 +11,12 @@ export class TableRowComponent implements OnDestroy {
 
   @Input() item: any;
   @Input() index: number;
-  @Input() columns: QueryList<TableColumnDirective>;
+  @Input() expandableRows = false;
 
+  @Input() columns: QueryList<TableColumnDirective>;
+  @Input() expandTemplate: TemplateRef<any>;
+
+  expanded: boolean;
   private _selected: boolean;
 
   @Output() selectedChange = new EventEmitter<boolean>();
@@ -22,6 +28,13 @@ export class TableRowComponent implements OnDestroy {
   set selected(selected: boolean) {
     this._selected = selected;
     this.selectedChange.emit(selected);
+  }
+
+  get columnCount() {
+    let count = 0;
+    count += this.expandableRows ? 1 : 0;
+    count += this.columns.length;
+    return count;
   }
 
   ngOnDestroy() {

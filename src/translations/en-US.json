@@ -22,6 +22,17 @@
   "PAGE_NEXT": "Next",
   "PAGE_OF": "of",
   "PAGE_RECORDS": "records",
-  "PAGE_PAGES": "pages"
-}
+  "PAGE_PAGES": "pages",
 
+  "SITE_RAN_CODE": "Ran Code",
+  "SITE_NAME": "Name",
+  "SITE_CLASS": "Site Class",
+  "SITE_TYPE": "Site Type",
+  "SITE_COUNTY": "County",
+  "SITE_CITY": "City",
+  "SITE_CHRONOLOGY": "Chronology",
+  "SITE_LAST_UPDATE": "Last Update",
+  "SITE_ACTIONS": "Actions",
+  "SITE_VIEW_MAP": "View Map",
+  "SITE_VIEW": "View"
+}

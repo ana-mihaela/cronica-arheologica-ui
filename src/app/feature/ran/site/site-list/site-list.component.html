@@ -11,21 +11,21 @@
       <div class="table-container">
 
         <app-table [items]="sites" (tableSort)="onSort($event)">
-          <app-table-column [property]="'ranCode'" [header]="'Ran Code'" [minWidth]="'110px'" [sortable]="true">
+          <app-table-column [property]="'ranCode'" [minWidth]="'110px'" [sortable]="true">
             <ng-template #tableHeader>
-              <span class="highlight-warning">Ran Code</span>
+              <span class="highlight-warning">{{ 'SITE_RAN_CODE' | translate}}</span>
             </ng-template>
           </app-table-column>
-          <app-table-column [property]="'name'" [header]="'Name'" [width]="'100%'" [sortable]="true"></app-table-column>
-          <app-table-column [property]="'class'" [header]="'Site Class'" [minWidth]="'180px'" [sortable]="true"></app-table-column>
-          <app-table-column [property]="'type'" [header]="'Site Type'" [minWidth]="'160px'" [sortable]="true"></app-table-column>
-          <app-table-column [property]="'county'" [header]="'County'" [minWidth]="'100px'" [sortable]="true"></app-table-column>
-          <app-table-column [property]="'city'" [header]="'City'" [minWidth]="'130px'"  [sortable]="true"></app-table-column>
-          <app-table-column [property]="'chronology'" [header]="'Chronology'" [minWidth]="'200px'" [sortable]="true"></app-table-column>
-          <app-table-column [property]="'lastUpdate'" [header]="'LastUpdate'" [minWidth]="'120px'" [sortable]="true"></app-table-column>
-          <app-table-column [header]="'Actions'" [minWidth]="'110px'">
+          <app-table-column [property]="'name'" [header]="'SITE_NAME' | translate" [width]="'100%'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'class'" [header]="'SITE_CLASS' | translate" [minWidth]="'180px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'type'" [header]="'SITE_TYPE' | translate" [minWidth]="'160px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'county'" [header]="'SITE_COUNTY' | translate" [minWidth]="'100px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'city'" [header]="'SITE_CITY' | translate" [minWidth]="'200px'"  [sortable]="true"></app-table-column>
+          <app-table-column [property]="'chronology'" [header]="'SITE_CHRONOLOGY' | translate" [minWidth]="'200px'" [sortable]="true"></app-table-column>
+          <app-table-column [property]="'lastUpdate'" [header]="'SITE_LAST_UPDATE' | translate" [minWidth]="'160px'" [sortable]="true"></app-table-column>
+          <app-table-column [header]="'SITE_VIEW_MAP' | translate" [minWidth]="'110px'">
             <ng-template #tableCell let-item="item">
-              <a [routerLink]="['map', item.ranCode]" class="btn btn-success btn-sm">View Map</a>
+              <a [routerLink]="['map', item.ranCode]" class="btn btn-secondary btn-sm">{{ 'SITE_VIEW' | translate}}</a>
             </ng-template>
           </app-table-column>
         </app-table>

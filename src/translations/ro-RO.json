@@ -22,5 +22,16 @@
   "PAGE_NEXT": "Următoare",
   "PAGE_OF": "din",
   "PAGE_RECORDS": "înregistrări",
-  "PAGE_PAGES": "pagini"
+  "PAGE_PAGES": "pagini",
+
+  "SITE_RAN_CODE": "Cod RAN",
+  "SITE_NAME": "Denumire",
+  "SITE_CLASS": "Categorie",
+  "SITE_TYPE": "Tip",
+  "SITE_COUNTY": "Județ",
+  "SITE_CITY": "Localitate",
+  "SITE_CHRONOLOGY": "Cronologie",
+  "SITE_LAST_UPDATE": "Ultima modificare",
+  "SITE_VIEW_MAP": "Afişare hartă",
+  "SITE_VIEW": "Afişare"
 }

@@ -7,6 +7,8 @@ export {
   TranslateComponent } from './menus';
 
 export {
-  PaginationComponent
+  PaginationComponent,
+  TableColumnDirective,
+  TableComponent
 } from './widgets';
 

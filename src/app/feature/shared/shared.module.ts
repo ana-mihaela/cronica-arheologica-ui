@@ -15,7 +15,9 @@ import {
 } from './menus';
 
 import {
-  PaginationComponent
+  PaginationComponent,
+  TableColumnDirective,
+  TableComponent
 } from './widgets';
 
 @NgModule({
@@ -30,7 +32,9 @@ import {
     SidebarOpenComponent,
     SidebarCloseComponent,
     TranslateComponent,
-    PaginationComponent
+    PaginationComponent,
+    TableColumnDirective,
+    TableComponent
   ],
   exports: [
     CommonModule,
@@ -43,7 +47,9 @@ import {
     SidebarOpenComponent,
     SidebarCloseComponent,
     TranslateComponent,
-    PaginationComponent
+    PaginationComponent,
+    TableColumnDirective,
+    TableComponent
   ],
 })
 export class SharedModule {

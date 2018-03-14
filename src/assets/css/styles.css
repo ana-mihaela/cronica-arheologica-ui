@@ -764,7 +764,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   .page-link:hover {
     color: #222;
     background-color: transparent;
-    border-color: #ff8162; }
+    border-color: #00bcd4; }
   .page-link:focus {
     box-shadow: none; }
 
@@ -774,8 +774,8 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   border-radius: 0; }
 .page-item.active .page-link {
   color: #fff;
-  background-color: #ff8162;
-  border-color: #ff8162; }
+  background-color: #00bcd4;
+  border-color: #00bcd4; }
 .page-item.disabled .page-link {
   color: #999;
   cursor: auto;
@@ -795,7 +795,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
     font-weight: 600;
     padding: 0.68rem 0.75rem;
     text-transform: uppercase;
-    border-bottom: 1px solid #c6c6c6; }
+    border-bottom: 2px solid #00bcd4; }
     .data-table thead > tr > th.sortable {
       cursor: pointer; }
     .data-table thead > tr > th .column-sort-icon {
@@ -818,10 +818,10 @@ body {
   color: #555; }
 
 ::selection {
-  background: rgba(255, 196, 178, 0.54); }
+  background: rgba(100, 237, 255, 0.54); }
 
 ::-moz-selection {
-  background: rgba(255, 196, 178, 0.54); }
+  background: rgba(100, 237, 255, 0.54); }
 
 a {
   background-color: transparent;
@@ -861,7 +861,7 @@ img {
   .mobile-hide {
     display: none; } }
 .highlight {
-  color: #ff921e; }
+  color: #00bcd4; }
 
 .main-navigation {
   height: 70px;
@@ -988,7 +988,8 @@ img {
   .sidebar-social a {
     line-height: 30px;
     font-size: 18px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    cursor: pointer; }
   .sidebar-social a i {
     color: #fff;
     font-size: 12px;
@@ -996,7 +997,7 @@ img {
     -o-transition: color 0.15s ease-in-out 0s;
     transition: color 0.15s ease-in-out 0s; }
   .sidebar-social a i:hover {
-    color: #ffc4b2; }
+    color: #64edff; }
 
 .sidebar-menu {
   display: block;
@@ -1220,7 +1221,7 @@ img {
 .pagination-container {
   border: 1px solid #ececec;
   background: #fbfbfb;
-  box-shadow: 1px 0 0 0 #ffb036 inset; }
+  box-shadow: 1px 0 0 0 #00bcd4 inset; }
   .pagination-container .description {
     white-space: nowrap;
     margin: 10px 15px;

@@ -5,7 +5,8 @@
       <th *ngFor="let column of columns" #th
           [class.sortable]="column.sortable"
           [style.width]="column.width"
-          [style.min-width]="column.minWidth">
+          [style.min-width]="column.minWidth"
+          (click)="headerClicked(column, $event)">
 
         <span *ngIf="!column.headerTemplate" [textContent]="column.header"></span>
         <span *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{column: column}"></span>

@@ -6,11 +6,11 @@ button {
   border-radius: 0;
   outline: 0 !important;
   font-weight: 700;
-  line-height: 1.5rem;
   text-transform: uppercase;
   cursor: pointer;
   padding: 0.52rem 1.5rem;
   font-size: 0.72rem;
+  line-height: 1.5rem;
   -webkit-transition: none;
   -o-transition: none;
   transition: none; }
@@ -30,11 +30,13 @@ button {
 
 .btn-lg {
   padding: 0.68rem 1.5rem;
-  font-size: 1rem; }
+  font-size: 1rem;
+  line-height: 1.5rem; }
 
 .btn-sm {
   padding: 0rem 0.5rem;
-  font-size: 0.64rem; }
+  font-size: 0.6rem;
+  line-height: 1.2rem; }
 
 .btn-default {
   color: #464652;
@@ -867,6 +869,12 @@ img {
     display: none; } }
 .highlight {
   color: #ff8162; }
+
+.highlight-success {
+  color: #15b50c; }
+
+.highlight-warning {
+  color: #ff921e; }
 
 .main-navigation {
   height: 70px;

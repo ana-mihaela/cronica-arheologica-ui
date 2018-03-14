@@ -15,6 +15,6 @@ export class TableColumnDirective {
   @Input() width: string;
   @Input() minWidth: string;
 
-  @ContentChild('dataTableCell') cellTemplate;
-  @ContentChild('dataTableHeader') headerTemplate;
+  @ContentChild('tableHeader') headerTemplate;
+  @ContentChild('tableCell') cellTemplate;
 }

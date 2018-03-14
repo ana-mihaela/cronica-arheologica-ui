@@ -10,8 +10,12 @@
 
       <div class="table-container">
 
-        <app-table [items]="sites">
-          <app-table-column [property]="'ranCode'" [header]="'Ran Code'" [minWidth]="'110px'" [sortable]="true"></app-table-column>
+        <app-table [items]="sites" (tableSort)="onSort($event)">
+          <app-table-column [property]="'ranCode'" [header]="'Ran Code'" [minWidth]="'110px'" [sortable]="true">
+            <ng-template #tableHeader>
+              <span class="highlight-warning">Ran Code</span>
+            </ng-template>
+          </app-table-column>
           <app-table-column [property]="'name'" [header]="'Name'" [width]="'100%'" [sortable]="true"></app-table-column>
           <app-table-column [property]="'class'" [header]="'Site Class'" [minWidth]="'180px'" [sortable]="true"></app-table-column>
           <app-table-column [property]="'type'" [header]="'Site Type'" [minWidth]="'160px'" [sortable]="true"></app-table-column>
@@ -19,7 +23,11 @@
           <app-table-column [property]="'city'" [header]="'City'" [minWidth]="'130px'"  [sortable]="true"></app-table-column>
           <app-table-column [property]="'chronology'" [header]="'Chronology'" [minWidth]="'200px'" [sortable]="true"></app-table-column>
           <app-table-column [property]="'lastUpdate'" [header]="'LastUpdate'" [minWidth]="'120px'" [sortable]="true"></app-table-column>
-          <app-table-column [header]="'Actions'" [minWidth]="'140px'"></app-table-column>
+          <app-table-column [header]="'Actions'" [minWidth]="'110px'">
+            <ng-template #tableCell let-item="item">
+              <a [routerLink]="['map', item.ranCode]" class="btn btn-success btn-sm">View Map</a>
+            </ng-template>
+          </app-table-column>
         </app-table>
 
         <app-pagination

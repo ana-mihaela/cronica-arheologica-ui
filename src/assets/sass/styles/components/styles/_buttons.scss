@@ -9,11 +9,10 @@ button {
   border-radius: 0;
   outline: 0 !important;
   font-weight: 700;
-  line-height: 1.5rem;
   text-transform: uppercase;
   cursor: pointer;
 
-  @include button-size(0.52rem, 1.5rem, 0.72rem);
+  @include button-size(0.52rem, 1.5rem, 0.72rem, 1.5rem);
   @include transition(none);
 
   &::-moz-focus-inner {
@@ -39,10 +38,10 @@ button {
 // Button size
 
 .btn-lg {
-  @include button-size(0.68rem, 1.5rem, 1rem);
+  @include button-size(0.68rem, 1.5rem, 1rem, 1.5rem);
 }
 .btn-sm {
-  @include button-size(0rem, 0.5rem, 0.64rem);
+  @include button-size(0rem, 0.5rem, 0.6rem, 1.2rem);
 }
 
 // Buttons

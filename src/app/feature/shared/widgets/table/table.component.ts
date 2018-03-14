@@ -1,19 +1,24 @@
-import { Component, EventEmitter, ContentChildren, QueryList, Input, Output } from '@angular/core';
+import {Component, EventEmitter, ContentChildren, QueryList, Input, Output, OnInit} from '@angular/core';
 import { TableColumnDirective } from './table-column.directive';
 
 @Component({
   selector: 'app-table',
   templateUrl: 'table.component.html'
 })
-export class TableComponent {
+export class TableComponent implements OnInit {
 
   private _sortBy: string;
   private _sortAsc: boolean = true;
   private _items: any[] = [];
 
-  @Output() doSort = new EventEmitter<SortParams>();
+  @Output() tableSort = new EventEmitter<SortParams>();
+  @Output() headerClick = new EventEmitter();
 
   @ContentChildren(TableColumnDirective) columns: QueryList<TableColumnDirective>;
+
+  ngOnInit(): void {
+    this.initClickEvents();
+  }
 
   @Input()
   get sortBy() {
@@ -22,7 +27,7 @@ export class TableComponent {
 
   set sortBy(value: string) {
     this._sortBy = value;
-    this.triggerSort();
+    this.triggerReload();
   }
 
   @Input()
@@ -32,7 +37,7 @@ export class TableComponent {
 
   set sortAsc(value: boolean) {
     this._sortAsc = value;
-    this.triggerSort();
+    this.triggerReload();
   }
 
   @Input() get items() {
@@ -43,13 +48,33 @@ export class TableComponent {
     this._items = items;
   }
 
-  triggerSort(): void {
+  headerClicked(column: TableColumnDirective, event: MouseEvent) {
+    this.headerClick.emit({ column, event });
+  }
+
+  private initClickEvents(): void {
+    this.headerClick.subscribe(tableEvent => this.sortColumn(tableEvent.column));
+  }
+
+  private sortColumn(column: TableColumnDirective): void {
+    if (column.sortable) {
+      const ascending = this.sortBy === column.property ? !this.sortAsc : true;
+      this.sort(column.property, ascending);
+    }
+  }
+
+  private sort(sortBy: string, asc: boolean): void {
+    this.sortBy = sortBy;
+    this.sortAsc = asc;
+  }
+
+  private triggerReload(): void {
     const params = {
       sortBy: this.sortBy,
       sortAsc: this.sortAsc
     };
 
-    this.doSort.emit(params);
+    this.tableSort.emit(params);
   }
 }
 

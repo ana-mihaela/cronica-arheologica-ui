@@ -22,8 +22,9 @@ export class TableComponent implements OnInit {
 
   @Input() expandableRows = false;
 
-  @Output() rowClick = new EventEmitter();
   @Output() headerClick = new EventEmitter();
+  @Output() rowClick = new EventEmitter();
+  @Output() rowDoubleClick = new EventEmitter();
   @Output() selectItemChange = new EventEmitter();
   @Output() tableSort = new EventEmitter<SortParams>();
 
@@ -66,6 +67,7 @@ export class TableComponent implements OnInit {
   private initClickEvents(): void {
     this.headerClick.subscribe(tableEvent => this.sortColumn(tableEvent.column));
     this.rowClick.subscribe(tableEvent => tableEvent.row.selected = true);
+    this.rowDoubleClick.subscribe(tableEvent => tableEvent.row.expanded = !tableEvent.row.expanded);
   }
 
   private sortColumn(column: TableColumnDirective): void {
@@ -95,6 +97,10 @@ export class TableComponent implements OnInit {
 
   rowClicked(row: TableRowComponent, event: MouseEvent) {
     this.rowClick.emit({ row, event });
+  }
+
+  rowDoubleClicked(row: TableRowComponent, event: MouseEvent) {
+    this.rowDoubleClick.emit({ row, event });
   }
 
   rowSelectChanged(row: TableRowComponent) {

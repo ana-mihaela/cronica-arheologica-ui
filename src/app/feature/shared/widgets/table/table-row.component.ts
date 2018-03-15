@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, Input, Output,
+import { Component, EventEmitter, Input, Output,
   QueryList, TemplateRef } from '@angular/core';
 
 import { TableColumnDirective } from './table-column.directive';
@@ -7,7 +7,7 @@ import { TableColumnDirective } from './table-column.directive';
   selector: '[appTableRow]',
   templateUrl: './table-row.component.html'
 })
-export class TableRowComponent implements OnDestroy {
+export class TableRowComponent {
 
   @Input() item: any;
   @Input() index: number;
@@ -21,6 +21,7 @@ export class TableRowComponent implements OnDestroy {
 
   @Output() selectedChange = new EventEmitter();
   @Output() rowClick = new EventEmitter();
+  @Output() rowDoubleClick = new EventEmitter();
 
   get selected() {
     return this._selected;
@@ -42,7 +43,7 @@ export class TableRowComponent implements OnDestroy {
     this.rowClick.emit({ row: this, event });
   }
 
-  ngOnDestroy() {
-    this.selected = false;
+  rowDoubleClicked(event: MouseEvent) {
+    this.rowDoubleClick.emit({ row: this, event });
   }
 }

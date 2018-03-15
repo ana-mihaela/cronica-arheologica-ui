@@ -2,7 +2,8 @@
 <tr [class.row-odd]="index % 2 === 0"
     [class.row-even]="index % 2 === 1"
     [class.row-selected]="selected"
-    (click)="rowClicked($event)">
+    (click)="rowClicked($event)"
+    (dblclick)="rowDoubleClicked($event)">
 
   <td [hidden]="!expandableRows" (click)="expanded = !expanded; $event.stopPropagation()" class="row-expand-button">
     <span class="fa fa-caret-right" [hidden]="expanded"></span>

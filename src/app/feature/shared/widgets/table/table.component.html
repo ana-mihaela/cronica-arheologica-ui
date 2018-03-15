@@ -27,6 +27,7 @@
          appTableRow #row [item]="item" [index]="index"
          [expandableRows]="expandableRows" [expandTemplate]="expandTemplate" [columns]="columns"
          (rowClick)="rowClicked(row, $event)"
+         (rowDoubleClick)="rowDoubleClicked(row, $event)"
          (selectedChange)="rowSelectChanged(row)">
   </tbody>
 </table>

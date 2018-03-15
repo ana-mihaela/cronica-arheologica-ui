@@ -8,6 +8,30 @@
     </div>
     <div class="portlet-body">
 
+      <div class="card">
+        <div class="card-title">
+          <span>{{ 'SEARCH' | translate }}</span>
+          <i class="fa fa-search right"></i>
+        </div>
+        <div class="card-body">
+
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group input-group-sm date-picker">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                       name="dp" [(ngModel)]="startDate" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-default" (click)="d.toggle(); $event.stopPropagation()" type="button" (document:click)="d.close()">
+                    <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
       <app-table [items]="sites"
                  [expandableRows]="true"
                  [pagination]="true"

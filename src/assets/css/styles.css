@@ -8,7 +8,7 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 0.52rem 1.5rem;
+  padding: 0.5rem 1.2rem;
   font-size: 0.72rem;
   line-height: 1.5rem;
   -webkit-transition: none;
@@ -337,11 +337,69 @@ button {
     background-color: transparent;
     border-color: rgba(255, 73, 67, 0.85); }
 
+.bg-light {
+  color: #555;
+  background-color: #fafafa !important;
+  border: 1px solid transparent; }
+
+.btn-light:hover {
+  color: #555;
+  background-color: transparent;
+  border: 1px solid #ff8162; }
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
+  color: #212529;
+  background-color: #ffddd5;
+  border-color: #ffddd5; }
+
+.bg-primary {
+  background-color: #ff8162 !important; }
+
+.btn-link {
+  font-weight: 400;
+  color: #555;
+  background-color: transparent; }
+
+.btn-link:hover {
+  color: #ff8162; }
+
+.custom-select {
+  border: 1px solid #c2cad8;
+  border-radius: 0; }
+
+.custom-select:first-child {
+  border-right: none; }
+
+.custom-select:focus {
+  border-color: #c2cad8;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.date-picker .dropdown-menu {
+  border: 1px solid #eee;
+  border-radius: 0;
+  font-size: 0.8rem; }
+
+.date-picker .dropdown-menu .ngb-dp-weekday {
+  color: #ff8162; }
+
+.date-picker .dropdown-menu .ngb-dp-day .btn-light {
+  border-radius: 0; }
+
+.date-picker .dropdown-menu .ngb-dp-day > .active:not(.bg-primary) {
+  background-color: transparent;
+  border-color: transparent; }
+
+.date-picker .dropdown-menu .ngb-dp-day > .active:not(.bg-primary) {
+  background-color: transparent;
+  border-color: transparent; }
+
 .form-group {
   position: relative; }
 
 .form-control {
-  padding: 0.75rem 0.9rem;
+  padding: 0.5rem 0.9rem;
   font-size: 0.84rem;
   line-height: 1.25;
   color: #555;
@@ -388,7 +446,10 @@ select.form-control:not([size]):not([multiple]) {
     box-shadow: none; }
   .has-success .form-control::placeholder {
     color: #5BBC6D; }
-.has-success .input-group-addon {
+.has-success .input-group-prepend > .input-group-text,
+.has-success .input-group-append > .input-group-text,
+.has-success .input-group-prepend > .btn,
+.has-success .input-group-append > .btn {
   color: #5BBC6D;
   border-color: #5BBC6D;
   background-color: #b6ffd7; }
@@ -413,21 +474,28 @@ select.form-control:not([size]):not([multiple]) {
     box-shadow: none; }
   .has-error .form-control::placeholder {
     color: #ff3939; }
-.has-error .input-group-addon {
+.has-error .input-group-prepend > .input-group-text,
+.has-error .input-group-append > .input-group-text,
+.has-error .input-group-prepend > .btn,
+.has-error .input-group-append > .btn {
   color: #ff3939;
   border-color: #ff3939;
   background-color: #ffc3c3; }
 
 .form-control-sm, .input-group-sm > .form-control,
-.input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-prepend > .input-group-text,
+.input-group-sm > .input-group-append > .input-group-text,
+.input-group-sm > .input-group-prepend > .btn,
+.input-group-sm > .input-group-append > .btn {
   padding: 0.45rem 0.7rem;
   font-size: 0.72rem;
   border-radius: 0; }
 
 .form-control-lg, .input-group-lg > .form-control,
-.input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-prepend > .input-group-text,
+.input-group-lg > .input-group-append > .input-group-text,
+.input-group-lg > .input-group-prepend > .btn,
+.input-group-lg > .input-group-append > .btn {
   padding: 0.75rem 1.5rem;
   font-size: 0.92rem;
   border-radius: 0; }
@@ -442,7 +510,7 @@ select.form-control:not([size]):not([multiple]) {
   margin-left: 5px;
   top: 2px; }
 
-.input-group-addon {
+.input-group-text {
   padding: 0.75rem 0.9rem;
   font-size: 0.84rem;
   color: #666666;
@@ -450,29 +518,6 @@ select.form-control:not([size]):not([multiple]) {
   background-color: #fafafa;
   border: 1px solid #c2cad8;
   border-radius: 0; }
-  .input-group-addon.form-control-sm,
-  .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn {
-    padding: 0.45rem 0.7rem;
-    font-size: 0.72rem; }
-  .input-group-addon.form-control-lg,
-  .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.92rem; }
-
-.error-addon {
-  position: relative;
-  border: 1px solid transparent; }
-
-.error-addon > i {
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 16px;
-  color: #ff3939;
-  margin: 0.75rem 0.9rem;
-  z-index: 3; }
 
 .tooltip.bs-tooltip-top .arrow {
   margin-left: 4px; }
@@ -530,6 +575,7 @@ select.form-control:not([size]):not([multiple]) {
   margin: 10px 0 0 0;
   border: 1px solid #eee;
   border-radius: 0;
+  outline: none;
   -webkit-box-shadow: 5px 5px rgba(102, 102, 102, 0.1);
   box-shadow: 5px 5px rgba(102, 102, 102, 0.1); }
   .dropdown-menu .dropdown-divider {
@@ -556,26 +602,32 @@ select.form-control:not([size]):not([multiple]) {
   display: inline-block;
   position: relative;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
   border: 0;
   border-radius: 0;
   -webkit-box-shadow: 1px 0 0 0 #f3b300 inset, 0 1px 3px rgba(0, 0, 0, 0.12);
   box-shadow: 1px 0 0 0 #f3b300 inset, 0 1px 3px rgba(0, 0, 0, 0.12); }
-  .card .card-body {
-    padding: 0 1.25rem 1rem 1.25rem; }
   .card .card-title {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    line-height: 1.25em;
-    font-size: 1.225em;
-    color: #202021;
-    padding: 0.4rem 1.25rem; }
+    margin-top: 0.72rem;
+    margin-bottom: 0.72rem;
+    padding-left: 1rem; }
+    .card .card-title span {
+      line-height: 1.25em;
+      font-size: 1.225em;
+      color: #202021; }
+    .card .card-title i.right {
+      margin-left: 0.3rem; }
+    .card .card-title i.left {
+      margin-right: 0.5rem; }
   .card .card-title a {
     color: #202021; }
   .card .card-subtitle {
     font-size: 0.9rem;
     text-transform: capitalize;
     color: #8d8d8d; }
+  .card .card-body {
+    padding: 0;
+    margin: 0.5rem 1rem 1rem; }
   .card .card-footer {
     margin-top: 15px;
     padding: 0 0 20px;

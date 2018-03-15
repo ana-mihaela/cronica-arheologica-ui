@@ -12,7 +12,7 @@ button {
   text-transform: uppercase;
   cursor: pointer;
 
-  @include button-size(0.52rem, 1.5rem, 0.72rem, 1.5rem);
+  @include button-size(0.5rem, 1.2rem, 0.72rem, 1.5rem);
   @include transition(none);
 
   &::-moz-focus-inner {
@@ -85,4 +85,79 @@ button {
 }
 .btn-outline-danger {
   @include button-outline-variant(#ff4943, #ff4943);
+}
+
+// DatePicker
+
+.bg-light {
+  color: #555;
+  background-color: #fafafa!important;
+  border: 1px solid transparent;
+}
+
+.btn-light:hover {
+  color: #555;
+  background-color: transparent;
+  border: 1px solid #ff8162;
+}
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show>.btn-light.dropdown-toggle {
+  color: #212529;
+  background-color: #ffddd5;
+  border-color: #ffddd5;
+}
+
+.bg-primary {
+  background-color: #ff8162!important;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: #555 ;
+  background-color: transparent;
+}
+
+.btn-link:hover {
+  color: #ff8162;
+}
+
+.custom-select {
+  border: 1px solid #c2cad8;
+  border-radius: 0;
+}
+
+.custom-select:first-child {
+  border-right: none;
+}
+
+.custom-select:focus {
+  border-color: #c2cad8;
+  outline: none;
+  @include box-shadow(none);
+}
+
+
+.date-picker .dropdown-menu {
+  border: 1px solid #eee;
+  border-radius: 0;
+  font-size: 0.8rem;
+}
+
+.date-picker .dropdown-menu .ngb-dp-weekday {
+  color: #ff8162;
+}
+
+.date-picker .dropdown-menu .ngb-dp-day .btn-light {
+  border-radius: 0;
+}
+
+.date-picker .dropdown-menu .ngb-dp-day > .active:not(.bg-primary) {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+.date-picker .dropdown-menu .ngb-dp-day > .active:not(.bg-primary) {
+  background-color: transparent;
+  border-color: transparent;
 }

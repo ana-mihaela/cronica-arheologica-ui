@@ -4,12 +4,19 @@ import { Site } from '@app/core/model';
 import { TableParams } from '@app/feature/shared';
 
 const log = new Logger('SiteListComponent');
+const now = new Date();
 
 @Component({
   selector: 'app-site-list',
   templateUrl: 'site-list.component.html'
 })
 export class SiteListComponent implements OnInit {
+
+  startDate = {
+    year: now.getFullYear(),
+    month: now.getMonth() + 1,
+    day: now.getDate()
+  };
 
   sites: Site[];
   selectedSite: Site;

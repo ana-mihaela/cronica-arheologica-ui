@@ -30,7 +30,10 @@
     }
   }
 
-  .input-group-addon {
+  .input-group-prepend > .input-group-text,
+  .input-group-append > .input-group-text,
+  .input-group-prepend > .btn,
+  .input-group-append > .btn {
     color: $text-color;
     border-color: $border-color;
     background-color: darken($background-color, 10%);

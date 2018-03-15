@@ -1,6 +1,7 @@
 
-<table class="table table-bordered data-table">
-  <thead>
+<div class="tab-container">
+  <table class="table table-bordered data-table">
+    <thead>
     <tr>
       <th [hidden]="!expandableRows" class="expand-column-header"></th>
       <th *ngFor="let column of columns" #th
@@ -21,13 +22,26 @@
         </span>
       </th>
     </tr>
-  </thead>
-  <tbody>
-  <tbody *ngFor="let item of items; let index=index"
-         appTableRow #row [item]="item" [index]="index"
-         [expandableRows]="expandableRows" [expandTemplate]="expandTemplate" [columns]="columns"
-         (rowClick)="rowClicked(row, $event)"
-         (rowDoubleClick)="rowDoubleClicked(row, $event)"
-         (selectedChange)="rowSelectChanged(row)">
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <tbody *ngFor="let item of items; let index=index"
+           appTableRow #row [item]="item" [index]="index"
+           [expandableRows]="expandableRows" [expandTemplate]="expandTemplate" [columns]="columns"
+           (rowClick)="rowClicked(row, $event)"
+           (rowDoubleClick)="rowDoubleClicked(row, $event)"
+           (selectedChange)="rowSelectChanged(row)">
+    </tbody>
+  </table>
+
+  <div *ngIf="pagination">
+    <app-pagination
+      [page]="page"
+      [total]="total"
+      [perPage]="perPage"
+      [pagesToShow]="5"
+      [loading]="loading"
+      (goPage)="goToPage($event)"
+      (goNext)="onNext()"
+      (goPrev)="onPrev()"></app-pagination>
+  </div>
+</div>

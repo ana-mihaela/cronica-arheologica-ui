@@ -10,6 +10,7 @@ export {
   PaginationComponent,
   TableColumnDirective,
   TableRowComponent,
-  TableComponent
+  TableComponent,
+  TableParams
 } from './widgets';
 

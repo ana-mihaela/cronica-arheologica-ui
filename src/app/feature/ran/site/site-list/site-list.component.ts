@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from '@app/support';
 import { Site } from '@app/core/model';
-import { SortParams } from '@app/feature/shared/widgets/table/table.component';
+import { TableParams } from '@app/feature/shared';
 
 const log = new Logger('SiteListComponent');
 
@@ -24,19 +24,7 @@ export class SiteListComponent implements OnInit {
     this.sites = SITES;
   }
 
-  goToPage(page: number): void {
-    this.page = page;
-  }
-
-  onNext(): void {
-    this.page++;
-  }
-
-  onPrev(): void {
-    this.page--;
-  }
-
-  onSort(params: SortParams): void {
+  onTableReload(params: TableParams): void {
     log.debug(params);
   }
 

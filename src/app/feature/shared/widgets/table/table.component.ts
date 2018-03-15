@@ -16,25 +16,27 @@ export class TableComponent implements OnInit {
 
   private _sortBy: string;
   private _sortAsc: boolean = true;
-  private _items: any[] = [];
-
-  selectedRow: TableRowComponent;
+  private _page: number;
 
   @Input() expandableRows = false;
+  @Input() pagination = false;
+  @Input() total: number;
+  @Input() perPage: number;
+  @Input() pagesToShow: number;
+  @Input() loading: boolean;
+  @Input() items: any[] = [];
 
   @Output() headerClick = new EventEmitter();
   @Output() rowClick = new EventEmitter();
   @Output() rowDoubleClick = new EventEmitter();
   @Output() selectItemChange = new EventEmitter();
-  @Output() tableSort = new EventEmitter<SortParams>();
+  @Output() tableReload = new EventEmitter();
 
   @ContentChildren(TableColumnDirective) columns: QueryList<TableColumnDirective>;
   @ViewChildren(TableRowComponent) rows: QueryList<TableRowComponent>;
   @ContentChild('tableExpand') expandTemplate: TemplateRef<any>;
 
-  ngOnInit(): void {
-    this.initClickEvents();
-  }
+  selectedRow: TableRowComponent;
 
   @Input()
   get sortBy() {
@@ -56,12 +58,20 @@ export class TableComponent implements OnInit {
     this.triggerReload();
   }
 
-  @Input() get items() {
-    return this._items;
+  @Input()
+  get page() {
+    return this._page;
   }
 
-  set items(items: any[]) {
-    this._items = items;
+  set page(value: number) {
+    this._page = value;
+    this.triggerReload();
+  }
+
+  // Init
+
+  ngOnInit(): void {
+    this.initClickEvents();
   }
 
   private initClickEvents(): void {
@@ -70,26 +80,7 @@ export class TableComponent implements OnInit {
     this.rowDoubleClick.subscribe(tableEvent => tableEvent.row.expanded = !tableEvent.row.expanded);
   }
 
-  private sortColumn(column: TableColumnDirective): void {
-    if (column.sortable) {
-      const ascending = this.sortBy === column.property ? !this.sortAsc : true;
-      this.sort(column.property, ascending);
-    }
-  }
-
-  private sort(sortBy: string, asc: boolean): void {
-    this.sortBy = sortBy;
-    this.sortAsc = asc;
-  }
-
-  private triggerReload(): void {
-    const params = {
-      sortBy: this.sortBy,
-      sortAsc: this.sortAsc
-    };
-
-    this.tableSort.emit(params);
-  }
+  // Click events
 
   headerClicked(column: TableColumnDirective, event: MouseEvent) {
     this.headerClick.emit({ column, event });
@@ -115,9 +106,50 @@ export class TableComponent implements OnInit {
       });
     }
   }
+
+  // Paging events
+
+  goToPage(page: number): void {
+    this.page = page;
+  }
+
+  onNext(): void {
+    this.page++;
+  }
+
+  onPrev(): void {
+    this.page--;
+  }
+
+  // Methods
+
+  private sortColumn(column: TableColumnDirective): void {
+    if (column.sortable) {
+      const ascending = this.sortBy === column.property ? !this.sortAsc : true;
+      this.sort(column.property, ascending);
+    }
+  }
+
+  private sort(sortBy: string, asc: boolean): void {
+    this.sortBy = sortBy;
+    this.sortAsc = asc;
+  }
+
+  private triggerReload(): void {
+    const params = {
+      sortBy: this.sortBy,
+      sortAsc: this.sortAsc,
+      page: this.page,
+      perPage: this.perPage
+    };
+
+    this.tableReload.emit(params);
+  }
 }
 
-export interface SortParams {
+export interface TableParams {
   sortBy: string;
   sortAsc: boolean;
+  page: number;
+  perPage: number;
 }

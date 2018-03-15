@@ -24,7 +24,9 @@
   </thead>
   <tbody>
   <tbody *ngFor="let item of items; let index=index"
-         appTableRow [item]="item" [index]="index"
-         [expandableRows]="expandableRows" [expandTemplate]="expandTemplate" [columns]="columns">
+         appTableRow #row [item]="item" [index]="index"
+         [expandableRows]="expandableRows" [expandTemplate]="expandTemplate" [columns]="columns"
+         (rowClick)="rowClicked(row, $event)"
+         (selectedChange)="rowSelectChanged(row)">
   </tbody>
 </table>

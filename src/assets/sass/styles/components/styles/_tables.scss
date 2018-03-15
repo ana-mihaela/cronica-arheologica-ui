@@ -33,16 +33,16 @@
     }
   }
 
-  tbody>tr:hover {
-    background-color: #f4f4f4;
-  }
-
   tbody+tbody {
     border-top: none;
   }
 
   .row-even {
     background-color: #fbfbfb;
+  }
+
+  .row-selected {
+    background-color: #ffeee9;
   }
 
   .expand-column-header {

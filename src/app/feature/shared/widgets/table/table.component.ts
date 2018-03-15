@@ -1,10 +1,12 @@
 import {
   Component, EventEmitter,
   ContentChildren, ContentChild,
-  QueryList, Input, Output, OnInit, TemplateRef
+  QueryList, Input, Output, OnInit,
+  TemplateRef, ViewChildren
 } from '@angular/core';
 
 import { TableColumnDirective } from './table-column.directive';
+import { TableRowComponent } from './table-row.component';
 
 @Component({
   selector: 'app-table',
@@ -16,12 +18,17 @@ export class TableComponent implements OnInit {
   private _sortAsc: boolean = true;
   private _items: any[] = [];
 
+  selectedRow: TableRowComponent;
+
   @Input() expandableRows = false;
 
-  @Output() tableSort = new EventEmitter<SortParams>();
+  @Output() rowClick = new EventEmitter();
   @Output() headerClick = new EventEmitter();
+  @Output() selectItemChange = new EventEmitter();
+  @Output() tableSort = new EventEmitter<SortParams>();
 
   @ContentChildren(TableColumnDirective) columns: QueryList<TableColumnDirective>;
+  @ViewChildren(TableRowComponent) rows: QueryList<TableRowComponent>;
   @ContentChild('tableExpand') expandTemplate: TemplateRef<any>;
 
   ngOnInit(): void {
@@ -58,10 +65,7 @@ export class TableComponent implements OnInit {
 
   private initClickEvents(): void {
     this.headerClick.subscribe(tableEvent => this.sortColumn(tableEvent.column));
-  }
-
-  headerClicked(column: TableColumnDirective, event: MouseEvent) {
-    this.headerClick.emit({ column, event });
+    this.rowClick.subscribe(tableEvent => tableEvent.row.selected = true);
   }
 
   private sortColumn(column: TableColumnDirective): void {
@@ -83,6 +87,27 @@ export class TableComponent implements OnInit {
     };
 
     this.tableSort.emit(params);
+  }
+
+  headerClicked(column: TableColumnDirective, event: MouseEvent) {
+    this.headerClick.emit({ column, event });
+  }
+
+  rowClicked(row: TableRowComponent, event: MouseEvent) {
+    this.rowClick.emit({ row, event });
+  }
+
+  rowSelectChanged(row: TableRowComponent) {
+    if (row.selected) {
+      this.selectedRow = row;
+      this.selectItemChange.emit(this.selectedRow.item);
+
+      this.rows.toArray().filter(r => r.selected).forEach(r => {
+        if (r !== row) {
+          r.selected = false;
+        }
+      });
+    }
   }
 }
 

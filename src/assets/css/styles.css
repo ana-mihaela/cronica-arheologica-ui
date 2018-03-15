@@ -618,7 +618,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .alert {
   border-radius: 0;
-  border: 0; }
+  border: 1px solid; }
   .alert .close {
     float: right;
     font-weight: normal;
@@ -631,9 +631,20 @@ select.form-control:not([size]):not([multiple]) {
       text-decoration: none;
       opacity: .75; }
 
+.alert-default {
+  color: #464652;
+  border-color: #c2cad8;
+  background-color: #fafafa; }
+
 .alert-danger {
-  color: #fff6f6;
-  background-color: #ff7373; }
+  color: #555;
+  border-color: #ffdcdc;
+  background-color: #fff3f3; }
+
+.alert-success {
+  color: #555;
+  border-color: #a3efbf;
+  background-color: #ecfff3; }
 
 .checkbox label {
   cursor: pointer;
@@ -807,12 +818,12 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
       float: right; }
     .data-table thead > tr > th .column-sort-icon > i {
       color: #d3d3d3; }
-  .data-table tbody > tr:hover {
-    background-color: #f4f4f4; }
   .data-table tbody + tbody {
     border-top: none; }
   .data-table .row-even {
     background-color: #fbfbfb; }
+  .data-table .row-selected {
+    background-color: #ffeee9; }
   .data-table .expand-column-header {
     min-width: 40px; }
   .data-table .row-expand-button {

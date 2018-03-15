@@ -12,6 +12,7 @@ const log = new Logger('SiteListComponent');
 export class SiteListComponent implements OnInit {
 
   sites: Site[];
+  selectedSite: Site;
 
   total = 400;
   page = 1;
@@ -37,6 +38,10 @@ export class SiteListComponent implements OnInit {
 
   onSort(params: SortParams): void {
     log.debug(params);
+  }
+
+  onSelectItemChange(item: Site): void {
+    this.selectedSite = item;
   }
 }
 

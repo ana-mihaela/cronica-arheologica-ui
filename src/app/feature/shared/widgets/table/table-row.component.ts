@@ -19,7 +19,8 @@ export class TableRowComponent implements OnDestroy {
   expanded: boolean;
   private _selected: boolean;
 
-  @Output() selectedChange = new EventEmitter<boolean>();
+  @Output() selectedChange = new EventEmitter();
+  @Output() rowClick = new EventEmitter();
 
   get selected() {
     return this._selected;
@@ -35,6 +36,10 @@ export class TableRowComponent implements OnDestroy {
     count += this.expandableRows ? 1 : 0;
     count += this.columns.length;
     return count;
+  }
+
+  rowClicked(event: MouseEvent) {
+    this.rowClick.emit({ row: this, event });
   }
 
   ngOnDestroy() {

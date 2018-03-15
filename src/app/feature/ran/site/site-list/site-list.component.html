@@ -12,7 +12,8 @@
 
         <app-table [items]="sites"
                    [expandableRows]="true"
-                   (tableSort)="onSort($event)">
+                   (tableSort)="onSort($event)"
+                   (selectItemChange)="onSelectItemChange($event)">
 
           <ng-template #tableExpand let-item="item">
             <span><b>{{ 'SITE_DESCRIPTION' | translate }}:</b></span>
@@ -47,6 +48,12 @@
           [perPage]="perPage"
           [total]="total"
           [loading]="loading"></app-pagination>
+      </div>
+
+      <div *ngIf="selectedSite" style="margin-top:1rem">
+        <ngb-alert [type]="'default'" [dismissible]="false">
+          <span><b>{{ 'SITE_SELECTED' | translate }}</b> {{ selectedSite.name }}</span>
+        </ngb-alert>
       </div>
 
     </div>

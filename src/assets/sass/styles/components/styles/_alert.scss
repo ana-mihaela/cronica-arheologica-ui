@@ -1,6 +1,6 @@
 .alert {
   border-radius: 0;
-  border: 0;
+  border: 1px solid;
 
   .close {
     float: right;
@@ -19,6 +19,15 @@
   }
 }
 
-.alert-danger {
-  @include alert-variant(#ff7373, #fff6f6);
+.alert-default {
+  @include alert-variant(#fafafa, #c2cad8, #464652)
 }
+
+.alert-danger {
+  @include alert-variant(#fff3f3, #ffdcdc, #555);
+}
+
+.alert-success {
+  @include alert-variant(#ecfff3, #a3efbf, #555);
+}
+

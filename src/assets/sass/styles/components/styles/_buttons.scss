@@ -56,6 +56,27 @@ button {
   }
 }
 
+.btn-light {
+  color: #555;
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &:focus,
+  &:hover,
+  &.focus {
+    color: #555;
+    background-color: transparent;
+    border-color: #ff8162;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: #212529;
+    background-color: #ffddd5;
+    border-color: #ffddd5;
+  }
+}
+
 // Button size
 
 .btn-lg {
@@ -106,28 +127,6 @@ button {
 }
 .btn-outline-danger {
   @include button-outline-variant(#ff4943, #ff4943);
-}
-
-// Button light
-.btn-light {
-  color: #555;
-  background-color: transparent;
-  border: 1px solid transparent;
-
-  &:focus,
-  &:hover,
-  &.focus {
-    color: #555;
-    background-color: transparent;
-    border-color: #ff8162;
-  }
-
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active {
-    color: #212529;
-    background-color: #ffddd5;
-    border-color: #ffddd5;
-  }
 }
 
 // Custom forms

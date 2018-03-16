@@ -20,6 +20,27 @@ button {
   }
 }
 
+.btn-link {
+  font-weight: normal;
+  color: #ff8162;
+
+  &:hover {
+    color: darken(#ff8162,10%);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: #c2cad8;
+  }
+}
+
+
 .btn-circle {
   border-radius: 25px;
   overflow: hidden;
@@ -87,39 +108,29 @@ button {
   @include button-outline-variant(#ff4943, #ff4943);
 }
 
-// DatePicker
-
-.bg-light {
+// Button light
+.btn-light {
   color: #555;
-  background-color: #fafafa!important;
+  background-color: transparent;
   border: 1px solid transparent;
+
+  &:focus,
+  &:hover,
+  &.focus {
+    color: #555;
+    background-color: transparent;
+    border-color: #ff8162;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: #212529;
+    background-color: #ffddd5;
+    border-color: #ffddd5;
+  }
 }
 
-.btn-light:hover {
-  color: #555;
-  background-color: transparent;
-  border: 1px solid #ff8162;
-}
-
-.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show>.btn-light.dropdown-toggle {
-  color: #212529;
-  background-color: #ffddd5;
-  border-color: #ffddd5;
-}
-
-.bg-primary {
-  background-color: #ff8162!important;
-}
-
-.btn-link {
-  font-weight: 400;
-  color: #555 ;
-  background-color: transparent;
-}
-
-.btn-link:hover {
-  color: #ff8162;
-}
+// Custom forms
 
 .custom-select {
   border: 1px solid #c2cad8;
@@ -134,30 +145,4 @@ button {
   border-color: #c2cad8;
   outline: none;
   @include box-shadow(none);
-}
-
-
-.date-picker .dropdown-menu {
-  border: 1px solid #eee;
-  border-radius: 0;
-  font-size: 0.8rem;
-}
-
-.date-picker .dropdown-menu .ngb-dp-weekday {
-  color: #ff8162;
-}
-
-.date-picker .dropdown-menu .ngb-dp-day .btn-light {
-  border-radius: 0;
-}
-
-.date-picker .dropdown-menu .ngb-dp-day > .active:not(.bg-primary) {
-  background-color: transparent;
-  border-color: transparent;
-}
-
-
-.date-picker .dropdown-menu .ngb-dp-day > .active:not(.bg-primary) {
-  background-color: transparent;
-  border-color: transparent;
 }

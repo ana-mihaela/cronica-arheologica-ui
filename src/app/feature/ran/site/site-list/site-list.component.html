@@ -74,7 +74,7 @@
     </div>
 
     <div *ngIf="selectedSite" style="margin-top:1rem">
-      <ngb-alert [type]="'default'" [dismissible]="false">
+      <ngb-alert [type]="'info'" [dismissible]="false">
         <span><b>{{ 'SITE_SELECTED' | translate }}</b> {{ selectedSite.name }}</span>
       </ngb-alert>
     </div>

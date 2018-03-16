@@ -19,17 +19,10 @@
   }
 }
 
-.alert-default {
-  @include alert-variant(#fafafa, #c2cad8, #464652)
+.alert-info {
+  @include alert-variant(#00d3ee, #fff)
 }
 
-.alert-danger {
-  @include alert-variant(#fff3f3, #ffdcdc, #555);
-}
-
-.alert-success {
-  @include alert-variant(#ecfff3, #a3efbf, #555);
-}
 
 // Background
 

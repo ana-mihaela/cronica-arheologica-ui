@@ -368,9 +368,9 @@ button {
 .custom-select {
   padding: 0.5rem 0.9rem;
   font-size: 0.84rem;
-  line-height: 1.25;
+  line-height: 1.5;
   color: #555;
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #c2cad8;
   border-radius: 0;
   -webkit-box-shadow: none;
@@ -462,6 +462,13 @@ select.form-control:not([size]):not([multiple]) {
   font-size: 0.72rem;
   border-radius: 0; }
 
+select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]),
+.input-group-sm > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
+.input-group-sm > .input-group-append > select.input-group-text:not([size]):not([multiple]),
+.input-group-sm > .input-group-prepend > select.btn:not([size]):not([multiple]),
+.input-group-sm > .input-group-append > select.btn:not([size]):not([multiple]) {
+  height: calc(1.8125rem + 4px); }
+
 .form-control-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
@@ -470,6 +477,13 @@ select.form-control:not([size]):not([multiple]) {
   padding: 0.75rem 1.5rem;
   font-size: 0.92rem;
   border-radius: 0; }
+
+select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]),
+.input-group-lg > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
+.input-group-lg > .input-group-append > select.input-group-text:not([size]):not([multiple]),
+.input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]),
+.input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]) {
+  height: calc(1.8125rem + 2px); }
 
 .control-label {
   font-weight: 700; }

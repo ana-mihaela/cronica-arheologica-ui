@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
 
-          <form class="form-inline">
+          <form novalidate>
             <div class="form-group">
               <div class="input-group input-group-sm date-picker">
                 <input class="form-control" placeholder="yyyy-mm-dd"
@@ -26,6 +26,12 @@
                   </button>
                 </div>
               </div>
+            </div>
+            <div class="form-group">
+              <select class="form-control form-control-sm custom-select">
+                <option [ngValue]="true">Week numbers</option>
+                <option [ngValue]="false">No week numbers</option>
+              </select>
             </div>
           </form>
 

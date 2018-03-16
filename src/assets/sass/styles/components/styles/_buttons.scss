@@ -128,20 +128,3 @@ button {
 .btn-outline-danger {
   @include button-outline-variant(#ff4943, #ff4943);
 }
-
-// Custom forms
-
-.custom-select {
-  border: 1px solid #c2cad8;
-  border-radius: 0;
-}
-
-.custom-select:first-child {
-  border-right: none;
-}
-
-.custom-select:focus {
-  border-color: #c2cad8;
-  outline: none;
-  @include box-shadow(none);
-}

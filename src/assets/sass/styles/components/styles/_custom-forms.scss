@@ -1,0 +1,71 @@
+
+.custom-control-label {
+  margin-bottom: 0rem;
+}
+
+.custom-control-input {
+  &:checked ~ .custom-control-label::before {
+    color: #fff;
+    background-color: #ff8162;
+    border-color: #ff8162;
+    @include box-shadow(none);
+  }
+
+  &:focus ~ .custom-control-label::before {
+    @include box-shadow(none);
+  }
+
+  &:active ~ .custom-control-label::before {
+    color: #fff;
+    background-color: #ff8162;
+    border-color: #ff8162;
+    @include box-shadow(none);
+  }
+
+  &:disabled {
+    ~ .custom-control-label {
+      color: #6c757d;
+
+      &::before {
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+      }
+    }
+  }
+}
+
+// Checkboxes
+
+.custom-checkbox {
+  .custom-control-label::before {
+    border-radius: 0;
+    background-color: #fafafa;
+    border: 1px solid #c2cad8;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      background-color: #ff8162;
+      border-color: #ff8162;
+    }
+  }
+
+  .custom-control-input:indeterminate ~ .custom-control-label {
+    &::before {
+      background-color: #ff8162;
+      border-color: #ff8162;
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: rgba(#ff8162, .5);
+      border-color: rgba(#ff8162, .5);
+    }
+    &:indeterminate ~ .custom-control-label::before {
+      background-color: rgba(#ff8162, .5);
+      border-color: rgba(#ff8162, .5);
+    }
+  }
+}
+

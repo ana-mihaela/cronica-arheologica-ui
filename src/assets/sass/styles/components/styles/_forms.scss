@@ -69,7 +69,8 @@ select.form-control-lg {
 }
 
 .control-label {
-  font-weight: 700;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
 }
 
 .control-label.required:after {
@@ -79,7 +80,3 @@ select.form-control-lg {
   margin-left: 5px;
   top: 2px;
 }
-
-
-// Select
-

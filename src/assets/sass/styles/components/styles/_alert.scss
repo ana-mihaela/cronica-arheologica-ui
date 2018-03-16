@@ -23,8 +23,17 @@
   @include alert-variant(#00d3ee, #fff)
 }
 
+.highlight {
+  color: #ff8162;
+}
 
-// Background
+.highlight-success {
+  color: #15b50c;
+}
+
+.highlight-warning {
+  color: #ff921e;
+}
 
 .bg-light {
   background-color: #fafafa!important;
@@ -33,4 +42,3 @@
 .bg-primary {
   background-color: #ff8162!important;
 }
-

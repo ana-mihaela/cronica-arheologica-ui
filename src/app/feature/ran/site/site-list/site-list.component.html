@@ -14,30 +14,18 @@
           <i class="fa fa-search right"></i>
         </div>
         <div class="card-body">
-
           <form>
-            <div class="form-row align-end">
+            <div class="form-row">
               <div class="col-auto my-1">
                 <label class="control-label mr-sm-2">Start Date</label>
-                <div class="input-group date-picker mr-sm-2">
-                  <input class="form-control" placeholder="yyyy-mm-dd"
-                         name="dp" [(ngModel)]="startDate" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Select date" bsDatepicker #d="bsDatepicker" [bsConfig]="{ containerClass: 'theme-custom' }">
                   <div class="input-group-append">
                     <button class="btn btn-default" (click)="d.toggle();" type="button">
                       <i class="fa fa-calendar" style="cursor: pointer;"></i>
                     </button>
                   </div>
                 </div>
-              </div>
-              <div class="col-auto my-1">
-                <label class="control-label mr-sm-2" for="select1">Type</label>
-                <select class="form-control custom-select mr-sm-2" id="select1">
-                  <option [ngValue]="true">Type 1</option>
-                  <option [ngValue]="false">Type 2</option>
-                </select>
-              </div>
-              <div class="col-auto my-1">
-                <button type="submit" class="btn btn-primary mr-sm-2">Search</button>
               </div>
             </div>
             <div class="form-row">
@@ -68,12 +56,13 @@
                 </label>
               </div>
             </div>
-            <div class="form-row">
+
+            <!--<div class="form-row">
               <div class="col-auto my-1">
                 <label class="control-label mr-sm-2" for="select2">Type</label>
                 <ngx-select placeholder="No city selected" class="mr-sm-2" id="select2" [items]="['111', '222']"></ngx-select>
               </div>
-            </div>
+            </div>-->
           </form>
 
         </div>
@@ -96,7 +85,7 @@
 
         <app-table-column [property]="'ranCode'" [minWidth]="'110px'" [sortable]="true">
           <ng-template #tableHeader>
-            <span class="highlight-warning">{{ 'SITE_RAN_CODE' | translate}}</span>
+            <span class="highlight">{{ 'SITE_RAN_CODE' | translate}}</span>
           </ng-template>
         </app-table-column>
         <app-table-column [property]="'name'" [header]="'SITE_NAME' | translate" [width]="'100%'" [sortable]="true"></app-table-column>
@@ -115,9 +104,9 @@
     </div>
 
     <div *ngIf="selectedSite" style="margin-top:1rem">
-      <ngb-alert [type]="'info'" [dismissible]="false">
-        <span><b>{{ 'SITE_SELECTED' | translate }}</b> {{ selectedSite.name }}</span>
-      </ngb-alert>
+      <alert type="info">
+        <strong>{{ 'SITE_SELECTED' | translate }}</strong> {{ selectedSite.name }}
+      </alert>
     </div>
 
   </div>

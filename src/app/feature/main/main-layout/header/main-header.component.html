@@ -8,10 +8,10 @@
       <li><a href="#">{{ 'HOME' | translate }}</a></li>
       <li><a href="#">{{ 'NEWS' | translate }}</a></li>
       <li class="has-children">
-        <a href="javascript:void(0)" (click)="heritageMenuOpen = !heritageMenuOpen" [attr.aria-expanded]="heritageMenuOpen" aria-controls="heritageMenu" (document:click)="closeTopMenus()" (click)="$event.stopPropagation()">
+        <a href="javascript:void(0)" (click)="heritageMenuOpen = !heritageMenuOpen" (document:click)="closeTopMenus()" (click)="$event.stopPropagation()">
           {{ 'HERITAGE' | translate }} <i class="fa fa-angle-down arrow-down"></i>
         </a>
-        <div id="heritageMenu" [ngbCollapse]="!heritageMenuOpen">
+        <div [collapse]="!heritageMenuOpen">
           <ul class="sub-menu">
             <li><a href="#">{{ 'ARCHEOLOGY' | translate }}</a></li>
             <li><a href="#">{{ 'ART_ARCHITECTURE' | translate }}</a></li>

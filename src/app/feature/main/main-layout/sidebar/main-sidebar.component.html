@@ -21,14 +21,14 @@
       <li><a href="/"><i class="fa fa-home"></i><p>{{ 'HOME' | translate }}</p></a></li>
       <li><a href="/"><i class="fa fa-newspaper-o"></i><p>{{ 'NEWS' | translate }}</p></a></li>
       <li class="has-children">
-        <div (click)="heritageMenuOpen = !heritageMenuOpen" [attr.aria-expanded]="heritageMenuOpen" aria-controls="heritageMenu">
+        <div (click)="heritageMenuOpen = !heritageMenuOpen">
           <i class="fa fa-angle-down arrow-down" [class.rotated]="heritageMenuOpen"></i>
           <a href="javascript:void(0)">
             <i class="fa fa-music"></i>
             <p>{{ 'HERITAGE' | translate }}</p>
           </a>
         </div>
-        <div id="heritageMenu" [ngbCollapse]="!heritageMenuOpen">
+        <div [collapse]="!heritageMenuOpen">
           <ul class="sub-menu">
             <li><a href="#">{{ 'ARCHEOLOGY' | translate }}</a></li>
             <li><a href="#">{{ 'ART_ARCHITECTURE' | translate }}</a></li>

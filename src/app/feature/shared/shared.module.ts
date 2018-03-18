@@ -3,7 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { CoreModule } from '@app/core';
 import { SupportModule } from '@app/support';
@@ -21,6 +23,17 @@ import {
   TableRowComponent,
   TableComponent
 } from './widgets';
+
+const COMPONENTS = [
+  SocialComponent,
+  SidebarOpenComponent,
+  SidebarCloseComponent,
+  TranslateComponent,
+  PaginationComponent,
+  TableColumnDirective,
+  TableRowComponent,
+  TableComponent
+];
 
 @NgModule({
   imports: [
@@ -44,17 +57,13 @@ import {
     FormsModule,
     HttpClientModule,
     TranslateModule,
-    NgbModule,
+    CollapseModule,
+    AlertModule,
+    BsDatepickerModule,
     NgxSelectModule,
+    CollapseModule,
     CoreModule,
-    SocialComponent,
-    SidebarOpenComponent,
-    SidebarCloseComponent,
-    TranslateComponent,
-    PaginationComponent,
-    TableColumnDirective,
-    TableRowComponent,
-    TableComponent
+    COMPONENTS
   ],
 })
 export class SharedModule {

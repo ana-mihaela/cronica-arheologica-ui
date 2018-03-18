@@ -1,3 +1,4 @@
+@charset "UTF-8";
 button {
   outline: 0 !important;
   cursor: pointer; }
@@ -902,6 +903,10 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     box-shadow: none; }
     .custom-file-input:focus ~ .custom-file-label::after {
       border-color: #727c8e; }
+  .custom-file-input:lang(en) ~ .custom-file-label::after {
+    content: "Choose file"; }
+  .custom-file-input:lang(ro) ~ .custom-file-label::after {
+    content: "Alege fișier"; }
 
 .custom-file-label {
   padding: 0.5rem 0.9rem;
@@ -918,7 +923,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     padding: 0.5rem 0.9rem;
     line-height: 1.5;
     color: #666666;
-    content: "Browse";
+    content: "Choose file";
     background-color: #fafafa;
     border-radius: 0; }
 

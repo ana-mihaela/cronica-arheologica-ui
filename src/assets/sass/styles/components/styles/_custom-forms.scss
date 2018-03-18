@@ -95,6 +95,11 @@
 
 // File
 
+$custom-file-text: (
+  en: "Choose file",
+  ro: "Alege fișier"
+) !default;
+
 .custom-file-input {
   height: calc(2.25rem + 2px);
 
@@ -104,6 +109,12 @@
 
     &::after {
       border-color: #727c8e;
+    }
+  }
+
+  @each $lang, $value in $custom-file-text {
+    &:lang(#{$lang}) ~ .custom-file-label::after {
+      content: $value;
     }
   }
 }
@@ -123,7 +134,7 @@
     padding: 0.5rem 0.9rem;
     line-height: 1.5;
     color: #666666;
-    content: "Browse";
+    content: "Choose file";
     background-color: #fafafa;
     border-radius: 0;
   }

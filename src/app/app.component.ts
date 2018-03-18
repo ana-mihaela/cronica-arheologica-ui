@@ -9,7 +9,9 @@ const log = new Logger('AppComponent');
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   template: `
-    <router-outlet></router-outlet>
+    <div lang="{{ language }}">
+      <router-outlet></router-outlet>
+    </div>
   `
 })
 export class AppComponent implements OnInit {
@@ -24,5 +26,9 @@ export class AppComponent implements OnInit {
     }
 
     this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
+  }
+
+  get language(): string {
+    return this.i18nService.language;
   }
 }

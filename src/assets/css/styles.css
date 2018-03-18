@@ -8,7 +8,7 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 0.5rem 1.2rem;
+  padding: 0.42rem 1.1rem;
   font-size: 0.72rem;
   line-height: 1.5rem;
   -webkit-transition: none;
@@ -58,7 +58,7 @@ button {
   line-height: 1.5rem; }
 
 .btn-sm {
-  padding: 0.4rem 0.9rem;
+  padding: 0.3rem 0.9rem;
   font-size: 0.6rem;
   line-height: 1.2rem; }
 
@@ -747,112 +747,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .bg-primary {
   background-color: #ff8162 !important; }
 
-.checkbox label {
-  cursor: pointer;
-  padding-left: 0;
-  color: #333;
-  margin-bottom: 0; }
-  .form-group.is-focused .checkbox label {
-    color: #333; }
-    .form-group.is-focused .checkbox label:hover, .form-group.is-focused .checkbox label:focus {
-      color: rgba(0, 0, 0, 0.54); }
-    fieldset[disabled] .form-group.is-focused .checkbox label {
-      color: #333; }
-.checkbox input[type=checkbox] {
-  opacity: 0;
-  position: absolute;
-  margin: 0;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  left: 0;
-  pointer-events: none; }
-.checkbox .checkbox-material {
-  vertical-align: middle;
-  position: relative;
-  top: 3px;
-  padding-right: 5px; }
-  .checkbox .checkbox-material:before {
-    display: block;
-    position: absolute;
-    left: 0;
-    content: "";
-    background-color: rgba(145, 197, 9, 0.84);
-    height: 20px;
-    width: 20px;
-    border-radius: 100%;
-    z-index: 1;
-    opacity: 0;
-    margin: 0;
-    transform: scale3d(2.3, 2.3, 1); }
-  .checkbox .checkbox-material .check {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #333;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 0; }
-  .checkbox .checkbox-material .check:before {
-    position: absolute;
-    content: "";
-    transform: rotate(45deg);
-    display: block;
-    margin-top: -3px;
-    margin-left: 7px;
-    width: 0;
-    height: 0;
-    background: red;
-    animation: checkbox-off 0.3s forwards; }
-.checkbox input[type=checkbox]:focus + .checkbox-material .check:after {
-  opacity: 0.2; }
-.checkbox input[type=checkbox]:checked + .checkbox-material .check {
-  background: #15b50c; }
-.checkbox input[type=checkbox]:checked + .checkbox-material .check:before {
-  color: #fff;
-  animation: checkbox-on 0.3s forwards; }
-.checkbox input[type=checkbox]:checked + .checkbox-material:before {
-  animation: rippleOn 500ms; }
-.checkbox input[type=checkbox]:checked + .checkbox-material .check:after {
-  animation: rippleOn 500ms forwards; }
-.checkbox input[type=checkbox]:not(:checked) + .checkbox-material:before {
-  animation: rippleOff 500ms; }
-.checkbox input[type=checkbox]:not(:checked) + .checkbox-material .check:after {
-  animation: rippleOff 500ms; }
-fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
-.checkbox input[type=checkbox][disabled] ~ .checkbox-material .check,
-.checkbox input[type=checkbox][disabled] + .circle {
-  opacity: 0.5; }
-.checkbox input[type=checkbox][disabled] ~ .checkbox-material .check {
-  border-color: #000000;
-  opacity: .26; }
-.checkbox input[type=checkbox][disabled] + .checkbox-material .check:after {
-  background-color: rgba(0, 0, 0, 0.87);
-  transform: rotate(-45deg); }
-
-@keyframes checkbox-on {
-  0% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px; }
-  50% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px; }
-  100% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px; } }
-@keyframes rippleOn {
-  0% {
-    opacity: 0; }
-  50% {
-    opacity: 0.2; }
-  100% {
-    opacity: 0; } }
-@keyframes rippleOff {
-  0% {
-    opacity: 0; }
-  50% {
-    opacity: 0.2; }
-  100% {
-    opacity: 0; } }
 .modal-content {
   border-radius: 0; }
 
@@ -1000,6 +894,33 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
   background-color: rgba(255, 129, 98, 0.5);
   border-color: rgba(255, 129, 98, 0.5); }
+
+.custom-file-input {
+  height: calc(2.25rem + 2px); }
+  .custom-file-input:focus ~ .custom-file-label {
+    border-color: #727c8e;
+    box-shadow: none; }
+    .custom-file-input:focus ~ .custom-file-label::after {
+      border-color: #727c8e; }
+
+.custom-file-label {
+  padding: 0.5rem 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #c2cad8;
+  border-radius: 0;
+  height: calc(2.25rem + 2px);
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .custom-file-label::after {
+    height: 2.25rem;
+    padding: 0.5rem 0.9rem;
+    line-height: 1.5;
+    color: #666666;
+    content: "Browse";
+    background-color: #fafafa;
+    border-radius: 0; }
 
 body {
   margin: 0;

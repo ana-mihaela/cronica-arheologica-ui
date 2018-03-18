@@ -93,3 +93,38 @@
   }
 }
 
+// File
+
+.custom-file-input {
+  height: calc(2.25rem + 2px);
+
+  &:focus ~ .custom-file-label {
+    border-color: #727c8e;
+    box-shadow: none;
+
+    &::after {
+      border-color: #727c8e;
+    }
+  }
+}
+
+.custom-file-label {
+  padding: 0.5rem 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #c2cad8;
+  border-radius: 0;
+  height: calc(2.25rem + 2px);
+  @include box-shadow(none);
+
+  &::after {
+    height: 2.25rem;
+    padding: 0.5rem 0.9rem;
+    line-height: 1.5;
+    color: #666666;
+    content: "Browse";
+    background-color: #fafafa;
+    border-radius: 0;
+  }
+}

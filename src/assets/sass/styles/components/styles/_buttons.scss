@@ -61,16 +61,13 @@ button {
   background-color: transparent;
   border: 1px solid transparent;
 
-  &:focus,
-  &:hover,
-  &.focus {
+  @include button-focus-hover {
     color: #555;
     background-color: transparent;
     border-color: #ff8162;
   }
 
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active {
+  @include button-active {
     color: #212529;
     background-color: #ffddd5;
     border-color: #ffddd5;

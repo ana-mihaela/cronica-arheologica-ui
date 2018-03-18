@@ -1,6 +1,6 @@
 
 .custom-control-label {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .custom-control-input {
@@ -63,6 +63,30 @@
       border-color: rgba(#ff8162, .5);
     }
     &:indeterminate ~ .custom-control-label::before {
+      background-color: rgba(#ff8162, .5);
+      border-color: rgba(#ff8162, .5);
+    }
+  }
+}
+
+// Radios
+
+.custom-radio {
+  .custom-control-label::before {
+    border-radius: 50%;
+    background-color: #fafafa;
+    border: 1px solid #c2cad8;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      background-color: #ff8162;
+      border-color: #ff8162;
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
       background-color: rgba(#ff8162, .5);
       border-color: rgba(#ff8162, .5);
     }

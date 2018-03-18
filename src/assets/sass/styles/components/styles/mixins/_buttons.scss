@@ -23,6 +23,12 @@
   &:focus,
   &:hover,
   &.focus,
+  .show > &.dropdown-toggle {
+    @content
+  }
+}
+
+@mixin  button-active {
   &:active,
   &.active,
   &:active:hover,
@@ -31,7 +37,8 @@
   &.active:hover,
   &.active:focus,
   &.active.focus,
-  .show > &.dropdown-toggle {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
     @content
   }
 }
@@ -68,6 +75,12 @@
     border-color: darken($border,10%);
   }
 
+  @include button-active {
+    color: $color;
+    background-color: darken($background,10%);
+    border-color: darken($border,10%);
+  }
+
   @include button-disabled {
     color: rgba($color,0.95);
     background-color: rgba($background,0.85);
@@ -89,6 +102,12 @@
     border-color: darken($background, 10%);
   }
 
+  @include button-active {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($background, 10%);
+  }
+
   @include button-disabled {
     color: rgba($color,0.95);
     background-color: rgba($background,0.95);
@@ -104,6 +123,12 @@
   @include button-shadow-reset;
 
   @include button-focus-hover {
+    color: $color-hover;
+    background-color: $background;
+    border-color: $color;
+  }
+
+  @include button-active {
     color: $color-hover;
     background-color: $background;
     border-color: $color;

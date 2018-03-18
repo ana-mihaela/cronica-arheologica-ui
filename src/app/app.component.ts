@@ -3,7 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { Logger, I18nService } from '@app/support';
 
 import { environment } from '@env/environment';
-const log = new Logger('AppComponent');
 
 @Component({
   selector: 'app',

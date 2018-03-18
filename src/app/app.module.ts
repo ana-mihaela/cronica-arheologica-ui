@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSelectModule } from 'ngx-select-ex';
 import { CoreModule } from './core';
 import { SupportModule } from './support';
 
@@ -24,6 +25,7 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    NgxSelectModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules

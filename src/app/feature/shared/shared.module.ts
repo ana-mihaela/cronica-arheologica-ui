@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSelectModule } from 'ngx-select-ex';
 import { CoreModule } from '@app/core';
 import { SupportModule } from '@app/support';
 
@@ -44,6 +45,7 @@ import {
     HttpClientModule,
     TranslateModule,
     NgbModule,
+    NgxSelectModule,
     CoreModule,
     SocialComponent,
     SidebarOpenComponent,

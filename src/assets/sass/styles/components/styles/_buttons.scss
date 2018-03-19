@@ -128,3 +128,11 @@ button {
 .btn-outline-danger {
   @include button-outline-variant(#ff4943, #ff4943);
 }
+
+i.right {
+  margin-left: 0.3rem;
+}
+
+i.left {
+  margin-right: 0.5rem;
+}

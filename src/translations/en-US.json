@@ -14,6 +14,7 @@
   "CONTACT": "Contact",
   "SEARCH": "Search",
   "RESET": "Reset",
+  "VIEW": "View",
 
   "LOGO_TITLE": "Gate to the Romanian cultural heritage",
   "RAN_TITLE": "National Archeology Repertory",
@@ -37,6 +38,5 @@
   "SITE_LAST_UPDATE": "Last Update",
   "SITE_ACTIONS": "Actions",
   "SITE_VIEW_MAP": "View Map",
-  "SITE_VIEW": "View",
   "SITE_SELECTED": "Selected site"
 }

@@ -14,6 +14,7 @@
   "CONTACT": "Contact",
   "SEARCH": "Căutare",
   "RESET": "Resetare",
+  "VIEW": "Afişare",
 
   "LOGO_TITLE": "Poarta către patrimoniul cultural al României",
   "RAN_TITLE": "Repertoriul Arheologic Naţional",
@@ -36,6 +37,5 @@
   "SITE_CHRONOLOGY": "Cronologie",
   "SITE_LAST_UPDATE": "Ultima modificare",
   "SITE_VIEW_MAP": "Afişare hartă",
-  "SITE_VIEW": "Afişare",
   "SITE_SELECTED": "Site selectat"
 }

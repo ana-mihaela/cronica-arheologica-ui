@@ -5,6 +5,11 @@
       <div class="caption">
         {{ 'RAN_TITLE' | translate }} <span class="highlight">(RAN)</span>
       </div>
+      <div class="actions">
+        <a [routerLink]="['site/add']" class="btn btn-primary btn-sm">
+          <i class="fa fa-plus left"></i> Add Site
+        </a>
+      </div>
     </div>
     <div class="portlet-body">
 
@@ -29,6 +34,9 @@
           <ng-template #tableHeader>
             <span class="highlight">{{ 'SITE_RAN_CODE' | translate}}</span>
           </ng-template>
+          <ng-template #tableCell let-item="item">
+            <a [routerLink]="['site', item.ranCode]" class="btn btn-success btn-xs" [title]="'VIEW' | translate">{{ item.ranCode }}</a>
+          </ng-template>
         </app-table-column>
         <app-table-column [property]="'name'" [header]="'SITE_NAME' | translate" [width]="'100%'" [sortable]="true"></app-table-column>
         <app-table-column [property]="'class'" [header]="'SITE_CLASS' | translate" [minWidth]="'180px'" [sortable]="true"></app-table-column>
@@ -39,7 +47,7 @@
         <app-table-column [property]="'lastUpdate'" [header]="'SITE_LAST_UPDATE' | translate" [minWidth]="'160px'" [sortable]="true"></app-table-column>
         <app-table-column [header]="'SITE_VIEW_MAP' | translate" [minWidth]="'110px'">
           <ng-template #tableCell let-item="item">
-            <a [routerLink]="['map', item.ranCode]" class="btn btn-secondary btn-xs">{{ 'SITE_VIEW' | translate}}</a>
+            <a [routerLink]="['map', item.ranCode]" class="btn btn-secondary btn-xs" [title]="'SITE_VIEW_MAP' | translate">{{ 'VIEW' | translate}}</a>
           </ng-template>
         </app-table-column>
       </app-table>

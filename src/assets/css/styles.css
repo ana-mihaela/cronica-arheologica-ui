@@ -419,6 +419,12 @@ button {
     background-color: transparent;
     border-color: rgba(255, 73, 67, 0.85); }
 
+i.right {
+  margin-left: 0.3rem; }
+
+i.left {
+  margin-right: 0.5rem; }
+
 .form-group {
   position: relative; }
 
@@ -657,10 +663,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
       line-height: 1.25em;
       font-size: 1.225em;
       color: #202021; }
-    .card .card-title i.right {
-      margin-left: 0.3rem; }
-    .card .card-title i.left {
-      margin-right: 0.5rem; }
   .card .card-title a {
     color: #202021; }
   .card .card-subtitle {
@@ -695,11 +697,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
       float: right;
       display: inline-block;
       padding: 6px 0 14px 0; }
-      .portlet .portlet-title .actions .btn,
-      .portlet .portlet-title .actions .btn-group > .btn {
-        padding: 4px 10px;
-        font-size: 13px;
-        line-height: 1.5; }
   .portlet .portlet-title:before,
   .portlet .portlet-title:after {
     content: " ";

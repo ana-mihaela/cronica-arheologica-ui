@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { LocaleService } from './locale.service';
 import { includes } from 'lodash';
 
 import { Logger } from '../logger/logger.service';
@@ -15,7 +16,8 @@ export class I18nService {
   defaultLanguage: string;
   supportedLanguages: string[];
 
-  constructor(private translateService: TranslateService) {
+  constructor(private translateService: TranslateService,
+              private localeService: LocaleService) {
     translateService.setTranslation('en-US', enUS);
     translateService.setTranslation('ro-RO', roRO);
   }
@@ -44,10 +46,6 @@ export class I18nService {
     language = language || localStorage.getItem(languageKey) || this.translateService.getBrowserCultureLang();
     let isSupportedLanguage = includes(this.supportedLanguages, language);
 
-    /*log.debug(this.supportedLanguages);
-    log.debug(language);
-    log.debug(isSupportedLanguage);*/
-
     // If no exact match is found, search without the region
     if (language && !isSupportedLanguage) {
       language = language.split('-')[0];
@@ -61,6 +59,7 @@ export class I18nService {
 
     log.debug(`Language set to ${language}`);
     this.translateService.use(language);
+    this.localeService.use('de');
   }
 
   /**

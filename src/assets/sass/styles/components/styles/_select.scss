@@ -1,0 +1,23 @@
+
+.ngx-select {
+  position: relative;
+  min-width: 300px;
+  outline: none;
+
+  .ngx-select__toggle.btn {
+    font-weight: normal;
+    text-transform: none;
+    padding: 0.54rem 0.9rem;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: #555 !important;
+  }
+
+  .ngx-select__placeholder.text-muted {
+    color: #999 !important;
+  }
+
+  .ngx-select__item.dropdown-item {
+    padding: 8px 20px;
+  }
+}

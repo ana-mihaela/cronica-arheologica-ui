@@ -444,13 +444,11 @@ button {
     box-shadow: none; }
   .form-control::placeholder,
   .custom-select::placeholder {
-    color: #999;
-    opacity: 1; }
+    color: #999; }
   .form-control:disabled, .form-control[readonly],
   .custom-select:disabled,
   .custom-select[readonly] {
-    background-color: #fafafa;
-    opacity: 1; }
+    background-color: #fafafa; }
 
 select.form-control:not([size]):not([multiple]) {
   height: calc(2.25rem + 4px); }
@@ -544,7 +542,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   height: calc(1.8125rem + 2px); }
 
 .control-label {
-  font-weight: 600;
   margin-bottom: 0.2rem; }
 
 .control-label.required:after {
@@ -917,9 +914,25 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     background-color: #fafafa;
     border-radius: 0; }
 
+.ngx-select {
+  position: relative;
+  min-width: 300px;
+  outline: none; }
+  .ngx-select .ngx-select__toggle.btn {
+    font-weight: normal;
+    text-transform: none;
+    padding: 0.54rem 0.9rem;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: #555 !important; }
+  .ngx-select .ngx-select__placeholder.text-muted {
+    color: #999 !important; }
+  .ngx-select .ngx-select__item.dropdown-item {
+    padding: 8px 20px; }
+
 body {
   margin: 0;
-  background: #fff;
+  background: #fafafa;
   line-height: 2;
   font-family: "ProximaNovaRegular", sans-serif;
   font-size: 0.9rem;
@@ -1032,22 +1045,23 @@ img {
     font-size: 0.8rem;
     padding: 5px 20px; }
 
-.main-logo .container {
+.main-logo {
+  background-color: #fff;
   border-bottom: 1px solid #eeeeee; }
-.main-logo .logo {
-  margin-top: 0;
-  margin-bottom: 1px;
-  text-align: center; }
-.main-logo .logo img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle; }
-.main-logo .logo .logo-description {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  line-height: 1.5em;
-  text-transform: uppercase;
-  color: #ba9343; }
+  .main-logo .logo {
+    margin-top: 0;
+    margin-bottom: 1px;
+    text-align: center; }
+  .main-logo .logo img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle; }
+  .main-logo .logo .logo-description {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: #ba9343; }
 
 .overlay {
   background: rgba(0, 0, 0, 0);
@@ -1330,7 +1344,7 @@ img {
 
 .pagination-container {
   border: 1px solid #ececec;
-  background: #fbfbfb;
+  background: #fff;
   box-shadow: 1px 0 0 0 #ff8162 inset; }
   .pagination-container .description {
     white-space: nowrap;

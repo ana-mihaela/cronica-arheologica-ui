@@ -23,13 +23,11 @@
 
   &::placeholder {
     color: #999;
-    opacity: 1;
   }
 
   &:disabled,
   &[readonly] {
     background-color: #fafafa;
-    opacity: 1;
   }
 }
 
@@ -69,7 +67,6 @@ select.form-control-lg {
 }
 
 .control-label {
-  font-weight: 600;
   margin-bottom: 0.2rem;
 }
 

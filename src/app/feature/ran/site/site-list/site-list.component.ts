@@ -4,19 +4,14 @@ import { Site } from '@app/core/model';
 import { TableParams } from '@app/feature/shared';
 
 const log = new Logger('SiteListComponent');
-const now = new Date();
+
+import { SITES } from '../data/sites';
 
 @Component({
   selector: 'app-site-list',
   templateUrl: 'site-list.component.html'
 })
 export class SiteListComponent implements OnInit {
-
-  startDate = {
-    year: now.getFullYear(),
-    month: now.getMonth() + 1,
-    day: now.getDate()
-  };
 
   sites: Site[];
   selectedSite: Site;
@@ -27,8 +22,8 @@ export class SiteListComponent implements OnInit {
   loading = false;
 
   ngOnInit(): void {
-    log.debug('init');
     this.sites = SITES;
+    log.debug('init');
   }
 
   onTableReload(params: TableParams): void {
@@ -40,42 +35,3 @@ export class SiteListComponent implements OnInit {
   }
 }
 
-const SITES = [{
-    ranCode: '160181.14',
-    name: 'Descoperirea monetară de la Chilia Veche - Gârla Tatanir I.',
-    class: 'descoperire monrtară',
-    type: 'Descoperire izolată',
-    county: 'Tulcea',
-    city: 'Chilia Veche, com. Chilia Veche',
-    chronology: 'Epoca medievală / sec. XII',
-    lastUpdate: '08.03.2018'
-  },
-  {
-    ranCode: '160181.13',
-    name: 'Aşezarea medievală de la Chilia Veche-la S de sat.',
-    class: 'locuire civilă',
-    type: 'aşezare',
-    county: 'Tulcea',
-    city: 'Chilia Veche, com. Chilia Veche',
-    chronology: 'Epoca medievală',
-    lastUpdate: '08.03.2018'
-  }, {
-    ranCode: '160181.14',
-    name: 'Descoperirea monetară de la Chilia Veche - Gârla Tatanir I.',
-    class: 'descoperire monrtară',
-    type: 'Descoperire izolată',
-    county: 'Tulcea',
-    city: 'Chilia Veche, com. Chilia Veche',
-    chronology: 'Epoca medievală / sec. XII',
-    lastUpdate: '08.03.2018'
-  },
-  {
-    ranCode: '160181.13',
-    name: 'Aşezarea medievală de la Chilia Veche-la S de sat.',
-    class: 'locuire civilă',
-    type: 'aşezare',
-    county: 'Tulcea',
-    city: 'Chilia Veche, com. Chilia Veche',
-    chronology: 'Epoca medievală',
-    lastUpdate: '08.03.2018'
-  }];

@@ -8,49 +8,7 @@
     </div>
     <div class="portlet-body">
 
-      <div class="card">
-        <div class="card-title">
-          <span>{{ 'SEARCH' | translate }}</span>
-          <i class="fa fa-search right"></i>
-        </div>
-        <div class="card-body">
-          <form>
-            <div class="form-row">
-              <div class="col-auto">
-                <label class="control-label" for="classSelect">{{ 'SITE_CLASS' | translate }}</label>
-                <ngx-select [placeholder]="'SITE_CLASS' | translate" id="classSelect" [items]="['Apeduct', 'Asezare Civila', 'Asezare deschisa']"></ngx-select>
-              </div>
-              <div class="col-auto">
-                <label class="control-label" for="typeSelect">{{ 'SITE_TYPE' | translate }}</label>
-                <ngx-select [placeholder]="'SITE_TYPE' | translate" id="typeSelect" [items]="['Descoperire izolată', 'Asezare']"></ngx-select>
-              </div>
-              <div class="col-auto">
-                <label class="control-label" for="countySelect">{{ 'SITE_COUNTY' | translate }}</label>
-                <ngx-select [placeholder]="'SITE_COUNTY' | translate" id="countySelect" [items]="['Alba', 'Arad', 'Arges']"></ngx-select>
-              </div>
-              <div class="col-auto">
-                <label class="control-label">{{ 'SITE_LAST_UPDATE' | translate }}</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" [placeholder]="'SITE_LAST_UPDATE' | translate" bsDatepicker #d="bsDatepicker" [bsConfig]="{ containerClass: 'theme-custom' }">
-                  <div class="input-group-append">
-                    <button class="btn btn-default" (click)="d.toggle();" type="button">
-                      <i class="fa fa-calendar" style="cursor: pointer;"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-row" style="margin-top: 1rem">
-              <div class="col-auto">
-                <button type="submit" class="btn btn-primary btn-sm">{{ 'SEARCH' | translate }}</button>
-              </div>
-              <div class="col-auto">
-                <button type="button" class="btn btn-secondary btn-sm">{{ 'RESET' | translate }}</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      <app-site-filters></app-site-filters>
 
       <app-table [items]="sites"
                  [expandableRows]="true"

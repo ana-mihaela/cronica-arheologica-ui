@@ -6,13 +6,15 @@ import { routes } from './site.routes';
 
 import { SiteListComponent } from './site-list/site-list.component';
 import { SiteFiltersComponent } from './site-filters/site-filters.component';
-import { SiteItemComponent } from './site-item/site-item.component';
+import { SiteViewComponent } from './site-view/site-view.component';
+import { SiteAddComponent } from './site-add/site-add.component';
 
 @NgModule({
   declarations: [
     SiteListComponent,
     SiteFiltersComponent,
-    SiteItemComponent
+    SiteViewComponent,
+    SiteAddComponent
   ],
   imports: [
     SharedModule,

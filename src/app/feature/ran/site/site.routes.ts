@@ -1,10 +1,11 @@
 import { SiteListComponent } from './site-list/site-list.component';
-import { SiteItemComponent } from './site-item/site-item.component';
+import { SiteViewComponent } from './site-view/site-view.component';
+import { SiteAddComponent } from './site-add/site-add.component';
 
 export const routes = [
   { path: '', children: [
     { path: '', component: SiteListComponent },
-    { path: 'site/:id', component: SiteItemComponent },
-    { path: 'site/add', component: SiteItemComponent },
+    { path: 'site/add', component: SiteAddComponent },
+    { path: 'site/:id', component: SiteViewComponent },
   ]},
 ];

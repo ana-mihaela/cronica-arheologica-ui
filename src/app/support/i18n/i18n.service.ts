@@ -59,7 +59,9 @@ export class I18nService {
 
     log.debug(`Language set to ${language}`);
     this.translateService.use(language);
-    this.localeService.use('de');
+
+    const languagePrefix = language.split('-')[0];
+    this.localeService.use(languagePrefix);
   }
 
   /**

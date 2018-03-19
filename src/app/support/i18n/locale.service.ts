@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { BsLocaleService } from 'ngx-bootstrap';
 
 import { defineLocale } from 'ngx-bootstrap/chronos';
-import { deLocale } from 'ngx-bootstrap/locale';
+import { roLocale } from './locales/ro.locale';
 
-defineLocale('de', deLocale);
+defineLocale('ro', roLocale);
 
 @Injectable()
 export class LocaleService {

@@ -738,6 +738,9 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .bg-primary {
   background-color: #5cb85c !important; }
 
+.bg-light-green {
+  background-color: #91c509 !important; }
+
 .modal-content {
   border-radius: 0; }
 

@@ -35,7 +35,7 @@
             <span class="highlight">{{ 'SITE_RAN_CODE' | translate}}</span>
           </ng-template>
           <ng-template #tableCell let-item="item">
-            <a [routerLink]="['site', item.ranCode]" class="btn btn-secondary btn-xs" [title]="'VIEW' | translate">{{ item.ranCode }}</a>
+            <a [routerLink]="['site', item.ranCode]" class="btn btn-success btn-xs" [title]="'VIEW' | translate">{{ item.ranCode }}</a>
           </ng-template>
         </app-table-column>
         <app-table-column [property]="'name'" [header]="'SITE_NAME' | translate" [width]="'100%'" [sortable]="true"></app-table-column>

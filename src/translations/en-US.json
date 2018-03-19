@@ -39,5 +39,10 @@
   "SITE_ACTIONS": "Actions",
   "SITE_VIEW_MAP": "View Map",
   "SITE_SELECTED": "Selected site",
-  "SITE_ADD": "Add Site"
+  "SITE_ADD": "Add Site",
+
+  "SITE_TABS_LOCATION": "Full location",
+  "SITE_TABS_CATEGORY": "Site type",
+  "SITE_TABS_CHRONOLOGY": "Chronology",
+  "SITE_TABS_MEMBERS": "Members"
 }

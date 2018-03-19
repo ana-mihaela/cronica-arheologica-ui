@@ -38,5 +38,10 @@
   "SITE_LAST_UPDATE": "Ultima modificare",
   "SITE_VIEW_MAP": "Afişare hartă",
   "SITE_SELECTED": "Site selectat",
-  "SITE_ADD": "Adaugă Sit"
+  "SITE_ADD": "Adaugă Sit",
+
+  "SITE_TABS_LOCATION": "Localizarea completă",
+  "SITE_TABS_CATEGORY": "Tipul de sit",
+  "SITE_TABS_CHRONOLOGY": "Încadrare cronologică",
+  "SITE_TABS_MEMBERS": "Colectiv"
 }

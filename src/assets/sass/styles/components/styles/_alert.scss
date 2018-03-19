@@ -1,6 +1,6 @@
 .alert {
   border-radius: 0;
-  border: 1px solid;
+  border: 0;
 
   .close {
     float: right;
@@ -19,16 +19,12 @@
   }
 }
 
-.alert-info {
-  @include alert-variant(#00d3ee, #fff)
+.alert-success {
+  @include alert-variant(#459e6d, #30845e, #fff)
 }
 
 .highlight {
-  color: #ff8162;
-}
-
-.highlight-success {
-  color: #15b50c;
+  color: #5cb85c;
 }
 
 .highlight-warning {
@@ -40,5 +36,5 @@
 }
 
 .bg-primary {
-  background-color: #ff8162!important;
+  background-color: #5cb85c!important;
 }

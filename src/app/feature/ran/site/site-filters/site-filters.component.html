@@ -22,7 +22,7 @@
         <div class="col-auto">
           <label class="control-label">{{ 'SITE_LAST_UPDATE' | translate }}</label>
           <div class="input-group">
-            <input type="text" class="form-control" [placeholder]="'SITE_LAST_UPDATE' | translate" bsDatepicker #d="bsDatepicker" [bsConfig]="{ containerClass: 'theme-custom' }">
+            <input type="text" class="form-control" [placeholder]="'SITE_LAST_UPDATE' | translate" bsDatepicker #d="bsDatepicker" >
             <div class="input-group-append">
               <button class="btn btn-default" (click)="d.toggle();" type="button">
                 <i class="fa fa-calendar" style="cursor: pointer;"></i>

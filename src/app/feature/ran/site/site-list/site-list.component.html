@@ -7,7 +7,7 @@
       </div>
       <div class="actions">
         <a [routerLink]="['site/add']" class="btn btn-primary btn-sm">
-          <i class="fa fa-plus left"></i> Add Site
+          <i class="fa fa-plus left"></i> {{ 'SITE_ADD' | translate }}
         </a>
       </div>
     </div>
@@ -35,7 +35,7 @@
             <span class="highlight">{{ 'SITE_RAN_CODE' | translate}}</span>
           </ng-template>
           <ng-template #tableCell let-item="item">
-            <a [routerLink]="['site', item.ranCode]" class="btn btn-success btn-xs" [title]="'VIEW' | translate">{{ item.ranCode }}</a>
+            <a [routerLink]="['site', item.ranCode]" class="btn btn-secondary btn-xs" [title]="'VIEW' | translate">{{ item.ranCode }}</a>
           </ng-template>
         </app-table-column>
         <app-table-column [property]="'name'" [header]="'SITE_NAME' | translate" [width]="'100%'" [sortable]="true"></app-table-column>
@@ -54,7 +54,7 @@
     </div>
 
     <div *ngIf="selectedSite" style="margin-top:1rem">
-      <alert type="info">
+      <alert type="success">
         <strong>{{ 'SITE_SELECTED' | translate }}</strong> {{ selectedSite.name }}
       </alert>
     </div>

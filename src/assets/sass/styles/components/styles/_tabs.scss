@@ -14,13 +14,13 @@
 
     &:focus,
     &:hover {
-      border-bottom: 2px solid #ffb036;
+      border-bottom: 2px solid #5cb85c;
     }
   }
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    border-bottom: 2px solid #ffb036;
+    border-bottom: 2px solid #5cb85c;
   }
 }
 

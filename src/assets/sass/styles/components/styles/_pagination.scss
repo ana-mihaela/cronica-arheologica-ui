@@ -15,7 +15,7 @@
   &:hover {
     color: #222;
     background-color: transparent;
-    border-color: #ff8162;
+    border-color: #5cb85c;
   }
 
   &:focus {
@@ -37,8 +37,8 @@
 
   &.active .page-link {
     color: #fff;
-    background-color: #ff8162;
-    border-color: #ff8162;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
   }
 
   &.disabled .page-link {

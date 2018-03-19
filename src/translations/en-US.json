@@ -38,5 +38,6 @@
   "SITE_LAST_UPDATE": "Last Update",
   "SITE_ACTIONS": "Actions",
   "SITE_VIEW_MAP": "View Map",
-  "SITE_SELECTED": "Selected site"
+  "SITE_SELECTED": "Selected site",
+  "SITE_ADD": "Add Site"
 }

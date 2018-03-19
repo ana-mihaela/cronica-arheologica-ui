@@ -18,7 +18,7 @@
     font-weight: 600;
     padding: 0.68rem 0.75rem;
     text-transform: uppercase;
-    border-bottom: 2px solid #ff8162;
+    border-bottom: 2px solid #5cb85c;
 
     &.sortable {
       cursor: pointer;
@@ -42,7 +42,7 @@
   }
 
   .row-selected {
-    background-color: #ffeee9;
+    background-color: rgba(48,132,94,0.1)
   }
 
   .expand-column-header {

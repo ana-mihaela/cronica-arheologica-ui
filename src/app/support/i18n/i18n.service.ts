@@ -27,9 +27,6 @@ export class I18nService {
    */
   init(defaultLanguage: string, supportedLanguages: string[]) {
 
-    log.debug(defaultLanguage);
-    log.debug(this.supportedLanguages);
-
     this.defaultLanguage = defaultLanguage;
     this.supportedLanguages = supportedLanguages;
     this.language = defaultLanguage;

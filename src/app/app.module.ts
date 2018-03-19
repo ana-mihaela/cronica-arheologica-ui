@@ -3,6 +3,7 @@ import { APP_BASE_HREF, PlatformLocation} from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -26,6 +27,7 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
   ],
   imports: [
     BrowserModule,
+    BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     AlertModule.forRoot(),
     BsDatepickerModule.forRoot(),

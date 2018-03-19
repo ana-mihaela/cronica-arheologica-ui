@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -57,11 +58,11 @@ const COMPONENTS = [
     FormsModule,
     HttpClientModule,
     TranslateModule,
+    BsDropdownModule,
     CollapseModule,
     AlertModule,
     BsDatepickerModule,
     NgxSelectModule,
-    CollapseModule,
     CoreModule,
     COMPONENTS
   ],

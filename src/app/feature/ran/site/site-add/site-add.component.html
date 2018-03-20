@@ -10,67 +10,23 @@
       <div class="card">
         <div class="card-body">
 
-          <form novalidate>
-            <div class="form-wizard">
-              <div class="form-body">
-
-                <ul class="nav nav-fill steps">
-                  <li class="nav-item active">
-                    <a href="#tab1" class="nav-link step">
-                      <div class="icon-circle">
-                        <i class="fa fa-map"></i>
-                      </div>
-                      <span class="desc"> {{ 'SITE_TABS_LOCATION' | translate }} </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#tab2" class="nav-link step">
-                      <div class="icon-circle">
-                        <i class="fa fa-bookmark"></i>
-                      </div>
-                      <span class="desc"> {{ 'SITE_TABS_CATEGORY' | translate }} </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#tab3" class="nav-link step">
-                      <div class="icon-circle">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <span class="desc"> {{ 'SITE_TABS_CHRONOLOGY' | translate }} </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#tab4" class="nav-link step">
-                      <div class="icon-circle">
-                        <i class="fa fa-users"></i>
-                      </div>
-                      <span class="desc"> {{ 'SITE_TABS_MEMBERS' | translate }} </span>
-                    </a>
-                  </li>
-                </ul>
-
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped bg-light-green" style="width: 25%;"></div>
-                </div>
-
-                <div class="tab-content">
-                  <div class="tab-pane active" id="tab1">
-                  </div>
-                  <div class="tab-pane" id="tab2">
-                  </div>
-                  <div class="tab-pane" id="tab3">
-                  </div>
-                  <div class="tab-pane" id="tab4">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </form>
+          <app-wizard>
+            <app-wizard-step [title]="'SITE_TABS_LOCATION' | translate" [iconClass]="'fa fa-map'" (onNext)="onStep1Next($event)">
+              Step1
+            </app-wizard-step>
+            <app-wizard-step [title]="'SITE_TABS_CATEGORY' | translate" [iconClass]="'fa fa-bookmark'" (onNext)="onStep2Next($event)">
+              Step2
+            </app-wizard-step>
+            <app-wizard-step [title]="'SITE_TABS_CHRONOLOGY' | translate" [iconClass]="'fa fa-calendar'" (onNext)="onStep3Next($event)">
+              Step3
+            </app-wizard-step>
+            <app-wizard-step [title]="'SITE_TABS_MEMBERS' | translate" [iconClass]="'fa fa-users'" (onComplete)="onComplete($event)">
+              Step4
+            </app-wizard-step>
+          </app-wizard>
 
         </div>
       </div>
     </div>
   </div>
 </div>
-

@@ -11,6 +11,8 @@ export {
   TableColumnDirective,
   TableRowComponent,
   TableComponent,
-  TableParams
+  TableParams,
+  WizardStepComponent,
+  WizardComponent
 } from './widgets';
 

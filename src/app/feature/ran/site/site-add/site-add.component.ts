@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: 'site-add.component.html'
 })
 export class SiteAddComponent {
+
+  public onStep1Next(event: any): void { }
+
+  public onStep2Next(event: any): void { }
+
+  public onStep3Next(event: any): void { }
+
+  public onComplete(event: any): void { }
 }

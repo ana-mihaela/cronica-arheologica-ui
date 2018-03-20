@@ -22,7 +22,9 @@ import {
   PaginationComponent,
   TableColumnDirective,
   TableRowComponent,
-  TableComponent
+  TableComponent,
+  WizardStepComponent,
+  WizardComponent
 } from './widgets';
 
 const COMPONENTS = [
@@ -33,7 +35,9 @@ const COMPONENTS = [
   PaginationComponent,
   TableColumnDirective,
   TableRowComponent,
-  TableComponent
+  TableComponent,
+  WizardStepComponent,
+  WizardComponent
 ];
 
 @NgModule({
@@ -44,14 +48,7 @@ const COMPONENTS = [
     SupportModule
   ],
   declarations: [
-    SocialComponent,
-    SidebarOpenComponent,
-    SidebarCloseComponent,
-    TranslateComponent,
-    PaginationComponent,
-    TableColumnDirective,
-    TableRowComponent,
-    TableComponent
+    COMPONENTS
   ],
   exports: [
     CommonModule,

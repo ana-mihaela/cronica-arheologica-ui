@@ -1,11 +1,11 @@
 
 .form-wizard {
 
-  .steps {
+  .wizard-header {
     padding: 10px 0;
     margin-bottom: 15px;
 
-    > li > a.step > .icon-circle {
+    .nav-item > a.step > .icon-circle {
       background-color: #fff;
       border: 2px solid #5cb85c;
       border-radius: 50%;
@@ -24,16 +24,60 @@
       }
     }
 
-    > li > a.step > .desc {
+    .nav-item > a.step {
+      overflow: hidden;
+      min-width: 240px;
+    }
+
+    .nav-item > a.step > .desc {
       float: left;
       position: relative;
       margin-left: 15px;
       margin-top: 12px;
     }
 
-    >li.active > a.step .icon-circle {
+    .nav-item.enabled > a.step .icon-circle {
+      background-color: #63c815;
+      border-color: #63c815;
+      color: #499937;
+    }
+
+    .nav-item.active > a.step .icon-circle {
       background-color: #5cb85c;
       border-color: #5cb85c;
+      color: #298229;
+    }
+
+    .nav-item.active > a.step .desc {
+      font-weight: bold;
+    }
+
+    .nav-item.disabled > a.step .desc {
+      color: #999;
+    }
+
+    .nav-item.enabled {
+      cursor: pointer;
+    }
+
+    .nav-item.completed {
+      cursor: default;
+    }
+
+    .progress {
+      margin-top: 0.9rem;
     }
   }
+
+  .wizard-body {
+    margin-bottom: 1rem;
+  }
+
+  .wizard-footer {
+    border-top: 1px solid #ececec;
+    padding-top: 1rem;
+    overflow: hidden;
+  }
 }
+
+

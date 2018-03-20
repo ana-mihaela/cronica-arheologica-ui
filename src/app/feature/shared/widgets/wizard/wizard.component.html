@@ -1,0 +1,25 @@
+<div class="form-wizard">
+  <div class="wizard-header">
+    <ul class="nav nav-justified">
+      <li class="nav-item" *ngFor="let step of steps" [ngClass]="{'active': step.isActive, 'enabled': !step.isDisabled, 'disabled': step.isDisabled, 'completed': isCompleted}">
+        <a class="nav-link step" (click)="goToStep(step)">
+          <div class="icon-circle">
+            <i [class]="step.iconClass"></i>
+          </div>
+          <span class="desc"> {{step.title}} </span>
+        </a>
+      </li>
+    </ul>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-light-green" style="width: 25%;"></div>
+    </div>
+  </div>
+  <div class="wizard-body">
+    <ng-content></ng-content>
+  </div>
+  <div class="wizard-footer" [hidden]="isCompleted">
+    <button type="button" class="btn btn-default float-left" (click)="previous()" [hidden]="!hasPrevStep || !activeStep.showPrev">Previous</button>
+    <button type="button" class="btn btn-default float-right" (click)="next()" [disabled]="!activeStep.isValid" [hidden]="!hasNextStep || !activeStep.showNext">Next</button>
+    <button type="button" class="btn btn-default float-right" (click)="complete()" [disabled]="!activeStep.isValid" [hidden]="hasNextStep">Done</button>
+  </div>
+</div>

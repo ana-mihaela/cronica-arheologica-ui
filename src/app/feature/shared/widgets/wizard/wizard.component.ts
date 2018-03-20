@@ -11,7 +11,7 @@ export class WizardComponent implements AfterContentInit {
   @ContentChildren(WizardStepComponent) wizardSteps: QueryList<WizardStepComponent>;
 
   private _steps: Array<WizardStepComponent> = [];
-  private _isCompleted: boolean = false;
+  isCompleted: boolean = false;
 
   @Output()
   onStepChanged: EventEmitter<WizardStepComponent> = new EventEmitter<WizardStepComponent>();
@@ -22,11 +22,7 @@ export class WizardComponent implements AfterContentInit {
   }
 
   get steps(): Array<WizardStepComponent> {
-    return this._steps.filter(step => !step.hidden);
-  }
-
-  get isCompleted(): boolean {
-    return this._isCompleted;
+    return this._steps;
   }
 
   get activeStep(): WizardStepComponent {
@@ -43,6 +39,10 @@ export class WizardComponent implements AfterContentInit {
 
   public get activeStepIndex(): number {
     return this.steps.indexOf(this.activeStep);
+  }
+
+  public get progressPercent(): number {
+    return this.steps.length > 0 ? ((this.activeStepIndex + 1) / this.steps.length) * 100 : 0;
   }
 
   get hasNextStep(): boolean {
@@ -79,6 +79,6 @@ export class WizardComponent implements AfterContentInit {
 
   public complete(): void {
     this.activeStep.onComplete.emit();
-    this._isCompleted = true;
+    this.isCompleted = true;
   }
 }

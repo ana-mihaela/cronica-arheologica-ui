@@ -12,7 +12,6 @@ export class WizardStepComponent {
 
   @Input() title: string;
   @Input() iconClass: string;
-  @Input() hidden: boolean = false;
   @Input() isValid: boolean = true;
   @Input() showNext: boolean = true;
   @Input() showPrev: boolean = true;
@@ -24,11 +23,9 @@ export class WizardStepComponent {
   private _isActive: boolean = false;
   isDisabled: boolean = true;
 
-  constructor() { }
-
-  @Input('isActive')
-  set isActive(isActive: boolean) {
-    this._isActive = isActive;
+  @Input()
+  set isActive(value: boolean) {
+    this._isActive = value;
     this.isDisabled = false;
   }
 

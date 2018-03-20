@@ -21,7 +21,12 @@
               Step3
             </app-wizard-step>
             <app-wizard-step [title]="'SITE_TABS_MEMBERS' | translate" [iconClass]="'fa fa-users'" (onComplete)="onComplete($event)">
-              Step4
+              <div *ngIf="!isCompleted">
+                Step4
+              </div>
+              <div *ngIf="isCompleted">
+                Thank you!
+              </div>
             </app-wizard-step>
           </app-wizard>
 

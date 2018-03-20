@@ -10,16 +10,14 @@
         </a>
       </li>
     </ul>
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped bg-light-green" style="width: 25%;"></div>
-    </div>
+    <progressbar [value]="progressPercent" type="success" [striped]="true"></progressbar>
   </div>
   <div class="wizard-body">
     <ng-content></ng-content>
   </div>
   <div class="wizard-footer" [hidden]="isCompleted">
-    <button type="button" class="btn btn-default float-left" (click)="previous()" [hidden]="!hasPrevStep || !activeStep.showPrev">Previous</button>
-    <button type="button" class="btn btn-default float-right" (click)="next()" [disabled]="!activeStep.isValid" [hidden]="!hasNextStep || !activeStep.showNext">Next</button>
-    <button type="button" class="btn btn-default float-right" (click)="complete()" [disabled]="!activeStep.isValid" [hidden]="hasNextStep">Done</button>
+    <button type="button" class="btn btn-default float-left" (click)="previous()" [hidden]="!hasPrevStep || !activeStep.showPrev">{{ 'WIZARD_PREV' | translate }}</button>
+    <button type="button" class="btn btn-default float-right" (click)="next()" [disabled]="!activeStep.isValid" [hidden]="!hasNextStep || !activeStep.showNext"> {{ 'WIZARD_NEXT' | translate }}</button>
+    <button type="button" class="btn btn-default float-right" (click)="complete()" [disabled]="!activeStep.isValid" [hidden]="hasNextStep">{{ 'WIZARD_DONE' | translate }}</button>
   </div>
 </div>

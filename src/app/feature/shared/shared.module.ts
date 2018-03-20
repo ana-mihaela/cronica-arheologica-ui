@@ -7,6 +7,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { CoreModule } from '@app/core';
 import { SupportModule } from '@app/support';
@@ -44,6 +45,7 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     TranslateModule,
+    ProgressbarModule,
     CoreModule,
     SupportModule
   ],
@@ -59,8 +61,10 @@ const COMPONENTS = [
     CollapseModule,
     AlertModule,
     BsDatepickerModule,
+    ProgressbarModule,
     NgxSelectModule,
     CoreModule,
+    SupportModule,
     COMPONENTS
   ],
 })

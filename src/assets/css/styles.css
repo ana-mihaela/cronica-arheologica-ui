@@ -738,7 +738,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .bg-primary {
   background-color: #5cb85c !important; }
 
-.bg-light-green {
+.bg-success {
   background-color: #91c509 !important; }
 
 .modal-content {
@@ -1388,7 +1388,7 @@ img {
   .form-wizard .wizard-header .nav-item.enabled > a.step .icon-circle {
     background-color: #63c815;
     border-color: #63c815;
-    color: #499937; }
+    color: #fff; }
   .form-wizard .wizard-header .nav-item.active > a.step .icon-circle {
     background-color: #5cb85c;
     border-color: #5cb85c;

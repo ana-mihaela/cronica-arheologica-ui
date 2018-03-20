@@ -27,6 +27,10 @@
   "PAGE_RECORDS": "înregistrări",
   "PAGE_PAGES": "pagini",
 
+  "WIZARD_PREV": "Înapoi",
+  "WIZARD_NEXT": "Înainte",
+  "WIZARD_DONE": "Finalizare",
+
   "SITE_RAN_CODE": "Cod RAN",
   "SITE_NAME": "Denumire",
   "SITE_DESCRIPTION": "Descriere",

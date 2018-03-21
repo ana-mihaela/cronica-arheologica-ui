@@ -55,7 +55,12 @@
   "SITE_RAN_HELP": "Cod RAN al sitului",
   "SITE_TOPONYM_HELP": "Toponim (dacă se cunoaște)",
 
-  "SITE_CITY_REQUIRED": "Localitatea este necesara",
+  "SITE_CITY_REQUIRED": "Localitatea este obligatorie",
+  "SITE_COUNTY_REQUIRED": "Judetul este oblifatoriu",
+  "SITE_UAT_REQUIRED": "UAT este obligatoriu",
+  "SITE_SIRUTA_CODE_REQUIRED": "Codul SIRUTA este obligatoriu",
+  "SITE_RAN_REQUIRED": "Codul RAN este obligatoriu",
+  "SITE_SECTOR_REQUIRED": "Sectorul este obligatoriu",
 
   "SITE_TABS_LOCATION": "Localizarea completă",
   "SITE_TABS_CATEGORY": "Tipul de sit",

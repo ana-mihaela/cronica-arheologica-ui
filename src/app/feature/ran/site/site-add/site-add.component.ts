@@ -1,64 +1,34 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SiteLocationComponent } from '../site-steps/site-location.component';
 
 @Component({
   selector: 'app-site-add',
   templateUrl: 'site-add.component.html'
 })
-export class SiteAddComponent {
-
-  locationForm: FormGroup;
-  city: FormControl;
-  county: FormControl;
-  address: FormControl;
-  uat: FormControl;
-  sirutaCode: FormControl;
-  ranCode: FormControl;
-  toponym: FormControl;
-  sector: FormControl;
-  campaignYear: FormControl;
+export class SiteAddComponent implements OnInit {
 
   isCompleted: boolean = false;
+  locationStatus: boolean = false;
 
-  constructor() {
+  @ViewChild('step1') locationStep: SiteLocationComponent;
 
-    this.createFormControls();
-    this.createForm();
+  ngOnInit(): void {
+    this.initEvents();
   }
 
-  createForm() {
-    this.locationForm = new FormGroup({
-      city: this.city,
-      county: this.county,
-      address: this.address,
-      uat: this.uat,
-      sirutaCode: this.sirutaCode,
-      ranCode: this.ranCode,
-      toponym: this.toponym,
-      sector: this.sector,
-      campaignYear: this.campaignYear,
-    });
+  public initEvents(): void {
+    this.locationStep.form.statusChanges.subscribe(status => this.locationStatus = status);
   }
 
-  createFormControls() {
-    this.city = new FormControl('', Validators.required);
-    this.county = new FormControl('', Validators.required);
-    this.address = new FormControl('');
-    this.uat = new FormControl('', Validators.required);
-    this.sirutaCode = new FormControl('', Validators.required);
-    this.ranCode = new FormControl('', Validators.required);
-    this.toponym = new FormControl('');
-    this.sector = new FormControl('', Validators.required);
-    this.campaignYear = new FormControl('', Validators.required);
+  public onLocationBeforeNext(event: any): void {
+    this.locationStep.triggerValidation();
   }
-
-  public onStep1Next(event: any): void { }
-
-  public onStep2Next(event: any): void { }
-
-  public onStep3Next(event: any): void { }
 
   public onComplete(event: any): void {
+
+    const location = this.locationStep.form.value;
     this.isCompleted = true;
+
+    console.log(location);
   }
 }

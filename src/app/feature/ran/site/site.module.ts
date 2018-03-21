@@ -8,13 +8,15 @@ import { SiteListComponent } from './site-list/site-list.component';
 import { SiteFiltersComponent } from './site-filters/site-filters.component';
 import { SiteViewComponent } from './site-view/site-view.component';
 import { SiteAddComponent } from './site-add/site-add.component';
+import { SiteLocationComponent } from './site-steps/site-location.component';
 
 @NgModule({
   declarations: [
     SiteListComponent,
     SiteFiltersComponent,
     SiteViewComponent,
-    SiteAddComponent
+    SiteAddComponent,
+    SiteLocationComponent
   ],
   imports: [
     SharedModule,

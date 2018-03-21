@@ -16,6 +16,7 @@ export class WizardStepComponent {
   @Input() showNext: boolean = true;
   @Input() showPrev: boolean = true;
 
+  @Output() onBeforeNext: EventEmitter<any> = new EventEmitter<any>();
   @Output() onNext: EventEmitter<any> = new EventEmitter<any>();
   @Output() onPrev: EventEmitter<any> = new EventEmitter<any>();
   @Output() onComplete: EventEmitter<any> = new EventEmitter<any>();

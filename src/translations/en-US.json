@@ -57,6 +57,11 @@
   "SITE_TOPONYM_HELP": "Toponim (if known)",
 
   "SITE_CITY_REQUIRED": "The city is required",
+  "SITE_COUNTY_REQUIRED": "The county is required",
+  "SITE_UAT_REQUIRED": "UAT is required",
+  "SITE_SIRUTA_CODE_REQUIRED": "The SIRUTA code is required",
+  "SITE_RAN_REQUIRED": "The RAN code is required",
+  "SITE_SECTOR_REQUIRED": "The sector is required",
 
   "SITE_TABS_LOCATION": "Full location",
   "SITE_TABS_CATEGORY": "Site type",

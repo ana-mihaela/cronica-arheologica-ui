@@ -11,65 +11,9 @@
         <div class="card-body">
 
           <app-wizard>
-            <app-wizard-step [title]="'SITE_TABS_LOCATION' | translate" [isValid]="locationForm.valid" [iconClass]="'fa fa-map'" (onNext)="onStep1Next($event)">
-              <div class="container">
-                <form novalidate [formGroup]="locationForm">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                      <div class="form-group" [ngClass]="{ 'has-error': city.invalid && city.touched }">
-                        <label for="city" class="control-label required">{{ 'SITE_CITY' | translate }}</label>
-                        <i class="fa fa-warning error-icon" [hidden]="!(city.errors && city.touched)" [tooltip]="cityErrors"></i>
-                        <input type="text" id="city" class="form-control" [placeholder]="'SITE_CITY' | translate" formControlName="city">
-                        <ng-template #cityErrors>
-                          <span *ngIf="locationForm.hasError('required', 'city')">{{ 'SITE_CITY_REQUIRED' | translate }}</span>
-                        </ng-template>
-                      </div>
-                      <div class="form-group">
-                        <label for="county" class="control-label required">{{ 'SITE_COUNTY' | translate }}</label>
-                        <input type="text" id="county" class="form-control" [placeholder]="'SITE_COUNTY' | translate" formControlName="county">
-                      </div>
-                      <div class="form-group">
-                        <label for="address" class="control-label">{{ 'SITE_ADDRESS' | translate }}</label>
-                        <input type="text" id="address" class="form-control" [placeholder]="'SITE_ADDRESS_HELP' | translate" formControlName="address">
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                      <div class="form-group">
-                        <label for="uat" class="control-label required">{{ 'SITE_UAT' | translate }}</label>
-                        <input type="text" id="uat" class="form-control" [placeholder]="'SITE_UAT_HELP' | translate" formControlName="uat">
-                      </div>
-                      <div class="form-group">
-                        <label for="sirutaCode" class="control-label required">{{ 'SITE_SIRUTA_CODE' | translate }}</label>
-                        <input type="text" id="sirutaCode" class="form-control" [placeholder]="'SITE_SIRUTA_CODE' | translate" formControlName="sirutaCode">
-                      </div>
-                      <div class="form-group">
-                        <label for="ranCode" class="control-label required">{{ 'SITE_RAN_CODE' | translate }}</label>
-                        <input type="text" id="ranCode" class="form-control" [placeholder]="'SITE_RAN_HELP' | translate" formControlName="ranCode">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                      <div class="form-group">
-                        <label for="toponym" class="control-label">{{ 'SITE_TOPONYM' | translate }}</label>
-                        <input type="text" id="toponym" class="form-control" [placeholder]="'SITE_TOPONYM_HELP' | translate" formControlName="toponym">
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                      <div class="form-group">
-                        <label for="sector" class="control-label required">{{ 'SITE_SECTOR' | translate }}</label>
-                        <input type="text" id="sector" class="form-control" [placeholder]="'SITE_SECTOR' | translate" formControlName="sector">
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                      <div class="form-group">
-                        <label for="year" class="control-label required">{{ 'SITE_CAMPAIGN_YEAR' | translate }}</label>
-                        <input type="number" id="year" class="form-control" [placeholder]="'SITE_CAMPAIGN_YEAR' | translate" formControlName="campaignYear">
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
+            <app-wizard-step [title]="'SITE_TABS_LOCATION' | translate" [iconClass]="'fa fa-map'"
+                             [isValid]="locationStatus" (onBeforeNext)="onLocationBeforeNext($event)">
+              <app-site-location #step1></app-site-location>
             </app-wizard-step>
             <app-wizard-step [title]="'SITE_TABS_CATEGORY' | translate" [iconClass]="'fa fa-bookmark'" (onNext)="onStep2Next($event)">
               Step2

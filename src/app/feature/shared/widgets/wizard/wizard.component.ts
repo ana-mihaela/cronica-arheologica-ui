@@ -60,7 +60,10 @@ export class WizardComponent implements AfterContentInit {
   }
 
   public next(): void {
-    if (this.hasNextStep) {
+    this.activeStep.onBeforeNext.emit();
+    console.log(this.activeStep.isValid);
+
+    if (this.activeStep.isValid && this.hasNextStep) {
       const nextStep: WizardStepComponent = this.steps[this.activeStepIndex + 1];
       this.activeStep.onNext.emit();
       nextStep.isDisabled = false;

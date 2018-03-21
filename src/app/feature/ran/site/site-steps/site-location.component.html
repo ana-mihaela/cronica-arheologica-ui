@@ -1,22 +1,36 @@
 <div class="container">
   <form novalidate [formGroup]="form">
+
+    <ng-template #cityErrors>
+      <span *ngIf="fieldHasError('city', 'required')">{{ 'SITE_CITY_REQUIRED' | translate }}</span>
+    </ng-template>
+    <ng-template #countyErrors>
+      <span *ngIf="fieldHasError('county', 'required')">{{ 'SITE_COUNTY_REQUIRED' | translate }}</span>
+    </ng-template>
+    <ng-template #uatErrors>
+      <span *ngIf="fieldHasError('uat', 'required')">{{ 'SITE_UAT_REQUIRED' | translate }}</span>
+    </ng-template>
+    <ng-template #sirutaCodeErrors>
+      <span *ngIf="fieldHasError('sirutaCode', 'required')">{{ 'SITE_SIRUTA_CODE_REQUIRED' | translate }}</span>
+    </ng-template>
+    <ng-template #ranCodeErrors>
+      <span *ngIf="fieldHasError('ranCode', 'required')">{{ 'SITE_RAN_REQUIRED' | translate }}</span>
+    </ng-template>
+    <ng-template #sectorErrors>
+      <span *ngIf="fieldHasError('sector', 'required')">{{ 'SITE_SECTOR_REQUIRED' | translate }}</span>
+    </ng-template>
+
     <div class="row">
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group" [ngClass]="{ 'has-error': city.invalid && city.touched }">
+        <div class="form-group" [ngClass]="displayFieldCss('city')">
           <label for="city" class="control-label required">{{ 'SITE_CITY' | translate }}</label>
-          <i class="fa fa-warning error-icon" [hidden]="!(city.errors && city.touched)" [tooltip]="cityErrors"></i>
+          <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('city')" [tooltip]="cityErrors"></i>
           <input type="text" id="city" class="form-control" [placeholder]="'SITE_CITY' | translate" formControlName="city">
-          <ng-template #cityErrors>
-            <span *ngIf="city.hasError('required')">{{ 'SITE_CITY_REQUIRED' | translate }}</span>
-          </ng-template>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': county.invalid && county.touched }">
+        <div class="form-group" [ngClass]="displayFieldCss('county')">
           <label for="county" class="control-label required">{{ 'SITE_COUNTY' | translate }}</label>
-          <i class="fa fa-warning error-icon" [hidden]="!(county.errors && county.touched)" [tooltip]="countyErrors"></i>
+          <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('county')" [tooltip]="countyErrors"></i>
           <input type="text" id="county" class="form-control" [placeholder]="'SITE_COUNTY' | translate" formControlName="county">
-          <ng-template #countyErrors>
-            <span *ngIf="county.hasError('required')">{{ 'SITE_COUNTY_REQUIRED' | translate }}</span>
-          </ng-template>
         </div>
         <div class="form-group">
           <label for="address" class="control-label">{{ 'SITE_ADDRESS' | translate }}</label>
@@ -24,29 +38,20 @@
         </div>
       </div>
       <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group" [ngClass]="{ 'has-error': uat.invalid && uat.touched }">
+        <div class="form-group" [ngClass]="displayFieldCss('uat')">
           <label for="uat" class="control-label required">{{ 'SITE_UAT' | translate }}</label>
-          <i class="fa fa-warning error-icon" [hidden]="!(uat.errors && uat.touched)" [tooltip]="uatErrors"></i>
+          <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('uat')" [tooltip]="uatErrors"></i>
           <input type="text" id="uat" class="form-control" [placeholder]="'SITE_UAT_HELP' | translate" formControlName="uat">
-          <ng-template #uatErrors>
-            <span *ngIf="uat.hasError('required')">{{ 'SITE_UAT_REQUIRED' | translate }}</span>
-          </ng-template>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': sirutaCode.invalid && sirutaCode.touched }">
+        <div class="form-group" [ngClass]="displayFieldCss('sirutaCode')">
           <label for="sirutaCode" class="control-label required">{{ 'SITE_SIRUTA_CODE' | translate }}</label>
-          <i class="fa fa-warning error-icon" [hidden]="!(sirutaCode.errors && sirutaCode.touched)" [tooltip]="sirutaCodeErrors"></i>
+          <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('sirutaCode')" [tooltip]="sirutaCodeErrors"></i>
           <input type="text" id="sirutaCode" class="form-control" [placeholder]="'SITE_SIRUTA_CODE' | translate" formControlName="sirutaCode">
-          <ng-template #sirutaCodeErrors>
-            <span *ngIf="sirutaCode.hasError('required')">{{ 'SITE_SIRUTA_CODE_REQUIRED' | translate }}</span>
-          </ng-template>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': ranCode.invalid && ranCode.touched }">
+        <div class="form-group" [ngClass]="displayFieldCss('ranCode')">
           <label for="ranCode" class="control-label required">{{ 'SITE_RAN_CODE' | translate }}</label>
-          <i class="fa fa-warning error-icon" [hidden]="!(ranCode.errors && ranCode.touched)" [tooltip]="ranCodeErrors"></i>
+          <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('ranCode')" [tooltip]="ranCodeErrors"></i>
           <input type="text" id="ranCode" class="form-control" [placeholder]="'SITE_RAN_HELP' | translate" formControlName="ranCode">
-          <ng-template #ranCodeErrors>
-            <span *ngIf="ranCode.hasError('required')">{{ 'SITE_RAN_REQUIRED' | translate }}</span>
-          </ng-template>
         </div>
       </div>
     </div>
@@ -58,18 +63,15 @@
         </div>
       </div>
       <div class="col-md-3 col-sm-12 col-xs-12">
-        <div class="form-group" [ngClass]="{ 'has-error': sector.invalid && sector.touched }">
+        <div class="form-group" [ngClass]="displayFieldCss('sector')">
           <label for="sector" class="control-label required">{{ 'SITE_SECTOR' | translate }}</label>
-          <i class="fa fa-warning error-icon" [hidden]="!(sector.errors && sector.touched)" [tooltip]="sectorErrors"></i>
+          <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('sector')" [tooltip]="sectorErrors"></i>
           <input type="text" id="sector" class="form-control" [placeholder]="'SITE_SECTOR' | translate" formControlName="sector">
-          <ng-template #sectorErrors>
-            <span *ngIf="sector.hasError('required')">{{ 'SITE_SECTOR_REQUIRED' | translate }}</span>
-          </ng-template>
         </div>
       </div>
       <div class="col-md-3 col-sm-12 col-xs-12">
         <div class="form-group">
-          <label for="year" class="control-label required">{{ 'SITE_CAMPAIGN_YEAR' | translate }}</label>
+          <label for="year" class="control-label">{{ 'SITE_CAMPAIGN_YEAR' | translate }}</label>
           <input type="number" id="year" class="form-control" [placeholder]="'SITE_CAMPAIGN_YEAR' | translate" formControlName="campaignYear">
         </div>
       </div>

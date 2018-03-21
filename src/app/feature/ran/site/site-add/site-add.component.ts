@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { SiteLocationComponent } from '../site-steps/site-location.component';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidationService } from '@app/support';
 
 @Component({
   selector: 'app-site-add',
@@ -8,27 +9,35 @@ import { SiteLocationComponent } from '../site-steps/site-location.component';
 export class SiteAddComponent implements OnInit {
 
   isCompleted: boolean = false;
-  locationStatus: boolean = false;
-
-  @ViewChild('step1') locationStep: SiteLocationComponent;
+  locationForm: FormGroup;
 
   ngOnInit(): void {
-    this.initEvents();
+    this.createForm();
   }
 
-  public initEvents(): void {
-    this.locationStep.form.statusChanges.subscribe(status => this.locationStatus = status);
+  createForm() {
+    this.locationForm = new FormGroup({
+      city: new FormControl('', Validators.required),
+      county: new FormControl('', Validators.required),
+      address: new FormControl(''),
+      uat: new FormControl('', Validators.required),
+      sirutaCode: new FormControl('', Validators.required),
+      ranCode: new FormControl('', Validators.required),
+      toponym: new FormControl(''),
+      sector: new FormControl('', Validators.required),
+      campaignYear: new FormControl(''),
+    });
   }
 
   public onLocationBeforeNext(event: any): void {
-    this.locationStep.triggerValidation();
+    ValidationService.triggerValidation(this.locationForm);
   }
 
   public onComplete(event: any): void {
 
-    const location = this.locationStep.form.value;
     this.isCompleted = true;
 
+    const location = this.locationForm.value;
     console.log(location);
   }
 }

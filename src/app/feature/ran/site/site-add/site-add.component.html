@@ -11,8 +11,7 @@
         <div class="card-body">
 
           <app-wizard>
-            <app-wizard-step [title]="'SITE_TABS_LOCATION' | translate" [iconClass]="'fa fa-map'"
-                             [isValid]="locationStatus" (onBeforeNext)="onLocationBeforeNext($event)">
+            <app-wizard-step [title]="'SITE_TABS_LOCATION' | translate" [iconClass]="'fa fa-map'" [isValid]="locationStatus" (onBeforeNext)="onLocationBeforeNext($event)">
               <app-site-location #step1></app-site-location>
             </app-wizard-step>
             <app-wizard-step [title]="'SITE_TABS_CATEGORY' | translate" [iconClass]="'fa fa-bookmark'">

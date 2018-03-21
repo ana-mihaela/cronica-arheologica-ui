@@ -56,6 +56,8 @@
   "SITE_RAN_HELP": "RAN code of the site",
   "SITE_TOPONYM_HELP": "Toponim (if known)",
 
+  "SITE_CITY_REQUIRED": "The city is required",
+
   "SITE_TABS_LOCATION": "Full location",
   "SITE_TABS_CATEGORY": "Site type",
   "SITE_TABS_CHRONOLOGY": "Chronology",

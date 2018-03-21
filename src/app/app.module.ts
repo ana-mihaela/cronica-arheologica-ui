@@ -8,6 +8,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { CoreModule } from './core';
 import { SupportModule } from './support';
@@ -33,6 +34,7 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
     AlertModule.forRoot(),
     BsDatepickerModule.forRoot(),
     ProgressbarModule.forRoot(),
+    TooltipModule.forRoot(),
     NgxSelectModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,

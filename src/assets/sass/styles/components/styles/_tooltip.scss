@@ -2,36 +2,35 @@
 .tooltip {
   &.bs-tooltip-top {
     .arrow {
-      margin-left: 4px;
+      margin-left: -6px;
     }
     .arrow::before {
-      border-top-color: #212529;
+      border-top-color: #c2cad8;
     }
   }
   &.bs-tooltip-right {
     .arrow::before {
-      border-right-color: #212529;
+      border-right-color: #c2cad8;
     }
   }
   &.bs-tooltip-bottom {
     .arrow::before {
-      border-bottom-color: #212529;
+      border-bottom-color: #c2cad8;
     }
   }
   &.bs-tooltip-left {
     .arrow::before {
-      border-left-color: #212529;
+      border-left-color: #c2cad8;
     }
   }
 }
 
 .tooltip-inner {
-  border-radius: 2px;
-  background: rgba(#212529, 0.97);
-  color: #fff;
-  padding: 10px 15px;
-  @include box-shadow(0 0.08em 0.1em 0em rgba(0, 0, 0, 0.2), 0 0.1em 1.6em rgba(0, 0, 0, 0.2));
+  border-radius: 0;
+  background: #fff;
+  color: #555;
+  padding: 8px 15px 10px;
+  @include box-shadow(0 0.02em 0.1em 0em rgba(0, 0, 0, 0.1), 0 0.1em 0.5em rgba(0, 0, 0, 0.1));
   min-width: 180px;
-  margin-left: 5px;
 }
 

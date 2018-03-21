@@ -9,6 +9,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { CoreModule } from '@app/core';
 import { SupportModule } from '@app/support';
@@ -64,6 +65,7 @@ const COMPONENTS = [
     AlertModule,
     BsDatepickerModule,
     ProgressbarModule,
+    TooltipModule,
     NgxSelectModule,
     CoreModule,
     SupportModule,

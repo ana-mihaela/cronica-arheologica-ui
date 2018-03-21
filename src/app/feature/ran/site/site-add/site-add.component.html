@@ -16,9 +16,13 @@
                 <form novalidate [formGroup]="locationForm">
                   <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                      <div class="form-group">
+                      <div class="form-group" [ngClass]="{ 'has-error': city.invalid && city.touched }">
                         <label for="city" class="control-label required">{{ 'SITE_CITY' | translate }}</label>
+                        <i class="fa fa-warning error-icon" [hidden]="!(city.errors && city.touched)" [tooltip]="cityErrors"></i>
                         <input type="text" id="city" class="form-control" [placeholder]="'SITE_CITY' | translate" formControlName="city">
+                        <ng-template #cityErrors>
+                          <span *ngIf="locationForm.hasError('required', 'city')">{{ 'SITE_CITY_REQUIRED' | translate }}</span>
+                        </ng-template>
                       </div>
                       <div class="form-group">
                         <label for="county" class="control-label required">{{ 'SITE_COUNTY' | translate }}</label>

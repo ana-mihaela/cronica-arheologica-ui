@@ -55,6 +55,8 @@
   "SITE_RAN_HELP": "Cod RAN al sitului",
   "SITE_TOPONYM_HELP": "Toponim (dacă se cunoaște)",
 
+  "SITE_CITY_REQUIRED": "Localitatea este necesara",
+
   "SITE_TABS_LOCATION": "Localizarea completă",
   "SITE_TABS_CATEGORY": "Tipul de sit",
   "SITE_TABS_CHRONOLOGY": "Încadrare cronologică",

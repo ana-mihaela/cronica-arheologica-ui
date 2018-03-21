@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
@@ -55,6 +56,7 @@ const COMPONENTS = [
   exports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TranslateModule,
     BsDropdownModule,

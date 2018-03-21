@@ -19,8 +19,6 @@ export class SiteLocationComponent {
   }
 
   displayFieldCss(field: string) {
-    return {
-      'has-error': this.isFieldNotValid(field)
-    };
+    return { 'has-error': this.isFieldNotValid(field) };
   }
 }

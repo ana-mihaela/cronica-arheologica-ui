@@ -15,10 +15,10 @@
                              [isValid]="locationStatus" (onBeforeNext)="onLocationBeforeNext($event)">
               <app-site-location #step1></app-site-location>
             </app-wizard-step>
-            <app-wizard-step [title]="'SITE_TABS_CATEGORY' | translate" [iconClass]="'fa fa-bookmark'" (onNext)="onStep2Next($event)">
+            <app-wizard-step [title]="'SITE_TABS_CATEGORY' | translate" [iconClass]="'fa fa-bookmark'">
               Step2
             </app-wizard-step>
-            <app-wizard-step [title]="'SITE_TABS_CHRONOLOGY' | translate" [iconClass]="'fa fa-calendar'" (onNext)="onStep3Next($event)">
+            <app-wizard-step [title]="'SITE_TABS_CHRONOLOGY' | translate" [iconClass]="'fa fa-calendar'">
               Step3
             </app-wizard-step>
             <app-wizard-step [title]="'SITE_TABS_MEMBERS' | translate" [iconClass]="'fa fa-users'" (onComplete)="onComplete($event)">

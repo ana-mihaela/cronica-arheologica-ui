@@ -37,7 +37,9 @@
   "SITE_NAME": "Denumire",
   "SITE_DESCRIPTION": "Descriere",
   "SITE_CATEGORY": "Categorie",
+  "SITE_CATEGORY_LONG": "Categoria de sit",
   "SITE_TYPE": "Tip",
+  "SITE_TYPE_LONG": "Tipul de sit",
   "SITE_COUNTY": "Județ",
   "SITE_CITY": "Localitate",
   "SITE_ADDRESS": "Adresa",
@@ -54,6 +56,8 @@
   "SITE_UAT_HELP": "UAT (comună, oraș sau municipiu)",
   "SITE_RAN_HELP": "Cod RAN al sitului",
   "SITE_TOPONYM_HELP": "Toponim (dacă se cunoaște)",
+  "SITE_TYPE_HELP": "(cf. listei aprobate prin Ordinul nr. 2562/4.10.2010, privind aprobarea Procedurii de acordare a autorizațiilor pentru cercetarea arheologică, anexele 11 și 12)",
+  "SITE_CATEGORY_HELP": "(confom listei integrate în baza de date)",
 
   "SITE_CITY_REQUIRED": "Localitatea este obligatorie",
   "SITE_COUNTY_REQUIRED": "Judetul este oblifatoriu",

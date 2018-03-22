@@ -99,16 +99,18 @@
                   </ng-template>
 
                   <div class="row">
-                    <div class="col-md-6 offset-md-3 col-sm-12 col-xs-12">
+                    <div class="col-md-8 offset-md-2 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('class.type')">
-                        <label for="type" class="control-label required">{{ 'SITE_TYPE' | translate }}</label>
+                        <label for="type" class="control-label required">{{ 'SITE_TYPE_LONG' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('class.type')" [tooltip]="typeErrors"></i>
-                        <ngx-select id="type" [placeholder]="'SITE_TYPE' | translate" [items]="siteTypes" formControlName="type"></ngx-select>
+                        <ngx-select id="type" [placeholder]="'SITE_TYPE_LONG' | translate" [items]="siteTypes" formControlName="type"></ngx-select>
+                        <small class="form-text text-muted">{{ 'SITE_TYPE_HELP' | translate }}</small>
                       </div>
                       <div class="form-group" [ngClass]="displayFieldCss('class.category')">
-                        <label for="category" class="control-label required">{{ 'SITE_CATEGORY' | translate }}</label>
+                        <label for="category" class="control-label required">{{ 'SITE_CATEGORY_LONG' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('class.category')" [tooltip]="categoryErrors"></i>
-                        <ngx-select id="category" [placeholder]="'SITE_CATEGORY' | translate" [items]="siteCategories" formControlName="category"></ngx-select>
+                        <ngx-select id="category" [placeholder]="'SITE_CATEGORY_LONG' | translate" [items]="siteCategories" formControlName="category"></ngx-select>
+                        <small class="form-text text-muted">{{ 'SITE_CATEGORY_HELP' | translate }}</small>
                       </div>
                     </div>
                   </div>

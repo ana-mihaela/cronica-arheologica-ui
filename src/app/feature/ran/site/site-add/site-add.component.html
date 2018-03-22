@@ -100,6 +100,9 @@
                   <ng-template #periodErrors>
                     <span *ngIf="fieldHasError('chronology.periods', 'required')">{{ 'SITE_PERIODS_REQUIRED' | translate }}</span>
                   </ng-template>
+                  <ng-template #epochErrors>
+                    <span *ngIf="fieldHasError('chronology.epochs', 'required')">{{ 'SITE_EPOCHS_REQUIRED' | translate }}</span>
+                  </ng-template>
 
                   <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
@@ -126,6 +129,16 @@
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.periods')" [tooltip]="periodErrors"></i>
                         <i class="fa fa-info-circle info-icon" [tooltip]="'SITE_CHRONOLOGY_HELP' | translate"></i>
                         <ngx-select id="period" class="select-multiple" [placeholder]="'SITE_PERIODS' | translate" [items]="sitePeriods" [multiple]="true" formControlName="periods"></ngx-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="form-group" [ngClass]="displayFieldCss('chronology.epochs')">
+                        <label for="epochs" class="control-label required">{{ 'SITE_EPOCHS' | translate }}</label>
+                        <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.epochs')" [tooltip]="epochErrors"></i>
+                        <i class="fa fa-info-circle info-icon" [tooltip]="'SITE_CHRONOLOGY_HELP' | translate"></i>
+                        <ngx-select id="epochs" class="select-multiple" [placeholder]="'SITE_EPOCHS' | translate" [items]="siteEpochs" [multiple]="true" formControlName="epochs"></ngx-select>
                       </div>
                     </div>
                   </div>

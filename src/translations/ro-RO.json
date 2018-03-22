@@ -47,6 +47,7 @@
   "SITE_TOPONYM": "Toponim",
   "SITE_SECTOR": "Sector",
   "SITE_PERIODS": "Perioade",
+  "SITE_EPOCHS": "Epoci",
   "SITE_CAMPAIGN_YEAR": "Anul campaniei",
   "SITE_LAST_UPDATE": "Ultima modificare",
   "SITE_VIEW_MAP": "Afişare hartă",
@@ -67,7 +68,8 @@
   "SITE_SECTOR_REQUIRED": "Sectorul este obligatoriu",
   "SITE_TYPE_REQUIRED": "Tipul este obligatoriu",
   "SITE_CATEGORY_REQUIRED": "Categoria este obligatorie",
-  "SITE_PERIODS_REQUIRED": "Selectați perioadele sitului",
+  "SITE_PERIODS_REQUIRED": "Selectați perioadele",
+  "SITE_EPOCHS_REQUIRED": "Selectați epocile",
 
   "SITE_TABS_LOCATION": "Localizarea completă",
   "SITE_TABS_CHRONOLOGY": "Încadrare cronologică",

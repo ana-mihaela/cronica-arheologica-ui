@@ -12,6 +12,7 @@ export class SiteAddComponent implements OnInit {
   siteTypes: string[] = ['Tip 1', 'Tip 2', 'Tip 3', 'Tip 4'];
   siteCategories: string[] = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4'];
   sitePeriods: string[] = ['Perioada 1', 'Perioada 2', 'Perioada 3', 'Perioada 4', 'Perioada 5', 'Perioada 6', 'Perioada 7', 'Perioada 8'];
+  siteEpochs: string[] = ['Epoca 1', 'Epoca 2', 'Epoca 3', 'Epoca 4', 'Epoca 5', 'Epoca 6', 'Epoca 7', 'Epoca 8'];
 
   form: FormGroup;
   location: FormGroup;
@@ -49,7 +50,8 @@ export class SiteAddComponent implements OnInit {
     this.chronology = new FormGroup({
       type: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required),
-      periods: new FormControl('', Validators.required)
+      periods: new FormControl('', Validators.required),
+      epochs: new FormControl('', Validators.required)
     });
   }
 

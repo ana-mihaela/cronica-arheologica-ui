@@ -89,26 +89,26 @@
                   </div>
                 </div>
               </app-wizard-step>
-              <app-wizard-step [title]="'SITE_TABS_CLASS' | translate" [iconClass]="'fa fa-bookmark'" [isValid]="class.valid" (onBeforeNext)="onCategoryBeforeNext($event)">
-                <div class="container" formGroupName="class">
+              <app-wizard-step [title]="'SITE_TABS_CHRONOLOGY' | translate" [iconClass]="'fa fa-calendar'" [isValid]="chronology.valid" (onBeforeNext)="onChronologyBeforeNext($event)">
+                <div class="container" formGroupName="chronology">
                   <ng-template #typeErrors>
-                    <span *ngIf="fieldHasError('class.type', 'required')">{{ 'SITE_TYPE_REQUIRED' | translate }}</span>
+                    <span *ngIf="fieldHasError('chronology.type', 'required')">{{ 'SITE_TYPE_REQUIRED' | translate }}</span>
                   </ng-template>
                   <ng-template #categoryErrors>
-                    <span *ngIf="fieldHasError('class.category', 'required')">{{ 'SITE_CATEGORY_REQUIRED' | translate }}</span>
+                    <span *ngIf="fieldHasError('chronology.category', 'required')">{{ 'SITE_CATEGORY_REQUIRED' | translate }}</span>
                   </ng-template>
 
                   <div class="row">
                     <div class="col-md-8 offset-md-2 col-sm-12 col-xs-12">
-                      <div class="form-group" [ngClass]="displayFieldCss('class.type')">
+                      <div class="form-group" [ngClass]="displayFieldCss('chronology.type')">
                         <label for="type" class="control-label required">{{ 'SITE_TYPE_LONG' | translate }}</label>
-                        <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('class.type')" [tooltip]="typeErrors"></i>
+                        <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.type')" [tooltip]="typeErrors"></i>
                         <ngx-select id="type" [placeholder]="'SITE_TYPE_LONG' | translate" [items]="siteTypes" formControlName="type"></ngx-select>
                         <small class="form-text text-muted">{{ 'SITE_TYPE_HELP' | translate }}</small>
                       </div>
-                      <div class="form-group" [ngClass]="displayFieldCss('class.category')">
+                      <div class="form-group" [ngClass]="displayFieldCss('chronology.category')">
                         <label for="category" class="control-label required">{{ 'SITE_CATEGORY_LONG' | translate }}</label>
-                        <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('class.category')" [tooltip]="categoryErrors"></i>
+                        <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.category')" [tooltip]="categoryErrors"></i>
                         <ngx-select id="category" [placeholder]="'SITE_CATEGORY_LONG' | translate" [items]="siteCategories" formControlName="category"></ngx-select>
                         <small class="form-text text-muted">{{ 'SITE_CATEGORY_HELP' | translate }}</small>
                       </div>
@@ -116,10 +116,10 @@
                   </div>
                 </div>
               </app-wizard-step>
-              <app-wizard-step [title]="'SITE_TABS_CHRONOLOGY' | translate" [iconClass]="'fa fa-calendar'">
+              <app-wizard-step [title]="'SITE_TABS_MEMBERS' | translate" [iconClass]="'fa fa-users'">
                 Step3
               </app-wizard-step>
-              <app-wizard-step [title]="'SITE_TABS_MEMBERS' | translate" [iconClass]="'fa fa-users'" (onComplete)="onComplete($event)">
+              <app-wizard-step [title]="'SITE_TABS_CAMPAIGN' | translate" [iconClass]="'fa fa-comments'" (onComplete)="onComplete($event)">
                 <div *ngIf="!isCompleted">
                   Step4
                 </div>

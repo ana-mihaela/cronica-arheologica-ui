@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Form, FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { ValidationService } from '@app/support';
 
 @Component({
@@ -14,7 +14,7 @@ export class SiteAddComponent implements OnInit {
 
   form: FormGroup;
   location: FormGroup;
-  class: FormGroup;
+  chronology: FormGroup;
 
   ngOnInit(): void {
     this.initForm();
@@ -22,11 +22,11 @@ export class SiteAddComponent implements OnInit {
 
   initForm() {
     this.initLocation();
-    this.initCategory();
+    this.initChronology();
 
     this.form = new FormGroup({
       location: this.location,
-      class: this.class
+      chronology: this.chronology
     });
   }
 
@@ -44,8 +44,8 @@ export class SiteAddComponent implements OnInit {
     });
   }
 
-  initCategory(): void {
-    this.class = new FormGroup({
+  initChronology(): void {
+    this.chronology = new FormGroup({
       type: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required)
     });
@@ -57,8 +57,8 @@ export class SiteAddComponent implements OnInit {
     ValidationService.triggerValidation(this.location);
   }
 
-  onCategoryBeforeNext(e: any): void {
-    ValidationService.triggerValidation(this.class);
+  onChronologyBeforeNext(e: any): void {
+    ValidationService.triggerValidation(this.chronology);
   }
 
   onComplete(e: any): void {

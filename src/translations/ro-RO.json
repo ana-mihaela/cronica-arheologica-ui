@@ -69,7 +69,7 @@
   "SITE_CATEGORY_REQUIRED": "Categoria este obligatorie",
 
   "SITE_TABS_LOCATION": "Localizarea completă",
-  "SITE_TABS_CLASS": "Tipul de sit",
   "SITE_TABS_CHRONOLOGY": "Încadrare cronologică",
-  "SITE_TABS_MEMBERS": "Colectiv"
+  "SITE_TABS_MEMBERS": "Colectiv",
+  "SITE_TABS_CAMPAIGN": "Campanie"
 }

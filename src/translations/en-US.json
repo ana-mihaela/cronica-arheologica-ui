@@ -70,7 +70,7 @@
   "SITE_CATEGORY_REQUIRED": "The class is required",
 
   "SITE_TABS_LOCATION": "Full location",
-  "SITE_TABS_CLASS": "Site type",
   "SITE_TABS_CHRONOLOGY": "Chronology",
-  "SITE_TABS_MEMBERS": "Members"
+  "SITE_TABS_MEMBERS": "Members",
+  "SITE_TABS_CAMPAIGN": "Campanie"
 }

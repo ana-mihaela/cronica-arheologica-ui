@@ -36,7 +36,7 @@
   "SITE_UAT": "UAT",
   "SITE_NAME": "Denumire",
   "SITE_DESCRIPTION": "Descriere",
-  "SITE_CLASS": "Categorie",
+  "SITE_CATEGORY": "Categorie",
   "SITE_TYPE": "Tip",
   "SITE_COUNTY": "Județ",
   "SITE_CITY": "Localitate",
@@ -61,9 +61,11 @@
   "SITE_SIRUTA_CODE_REQUIRED": "Codul SIRUTA este obligatoriu",
   "SITE_RAN_REQUIRED": "Codul RAN este obligatoriu",
   "SITE_SECTOR_REQUIRED": "Sectorul este obligatoriu",
+  "SITE_TYPE_REQUIRED": "Tipul este obligatoriu",
+  "SITE_CATEGORY_REQUIRED": "Categoria este obligatorie",
 
   "SITE_TABS_LOCATION": "Localizarea completă",
-  "SITE_TABS_CATEGORY": "Tipul de sit",
+  "SITE_TABS_CLASS": "Tipul de sit",
   "SITE_TABS_CHRONOLOGY": "Încadrare cronologică",
   "SITE_TABS_MEMBERS": "Colectiv"
 }

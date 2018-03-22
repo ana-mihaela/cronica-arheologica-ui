@@ -36,7 +36,7 @@
   "SITE_UAT": "UAT",
   "SITE_NAME": "Name",
   "SITE_DESCRIPTION": "Description",
-  "SITE_CLASS": "Site Class",
+  "SITE_CATEGORY": "Site Class",
   "SITE_TYPE": "Site Type",
   "SITE_COUNTY": "County",
   "SITE_CITY": "City",
@@ -62,9 +62,11 @@
   "SITE_SIRUTA_CODE_REQUIRED": "The SIRUTA code is required",
   "SITE_RAN_REQUIRED": "The RAN code is required",
   "SITE_SECTOR_REQUIRED": "The sector is required",
+  "SITE_TYPE_REQUIRED": "The type is required",
+  "SITE_CATEGORY_REQUIRED": "The class is required",
 
   "SITE_TABS_LOCATION": "Full location",
-  "SITE_TABS_CATEGORY": "Site type",
+  "SITE_TABS_CLASS": "Site type",
   "SITE_TABS_CHRONOLOGY": "Chronology",
   "SITE_TABS_MEMBERS": "Members"
 }

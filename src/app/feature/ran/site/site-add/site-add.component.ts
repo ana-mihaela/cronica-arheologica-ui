@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {Form, FormControl, FormGroup, Validators} from '@angular/forms';
 import { ValidationService } from '@app/support';
 
 @Component({
@@ -9,14 +9,27 @@ import { ValidationService } from '@app/support';
 export class SiteAddComponent implements OnInit {
 
   isCompleted: boolean = false;
-  locationForm: FormGroup;
+
+  form: FormGroup;
+  location: FormGroup;
+  class: FormGroup;
 
   ngOnInit(): void {
-    this.createForm();
+    this.initForm();
   }
 
-  createForm() {
-    this.locationForm = new FormGroup({
+  initForm() {
+    this.initLocation();
+    this.initCategory();
+
+    this.form = new FormGroup({
+      location: this.location,
+      class: this.class
+    });
+  }
+
+  initLocation(): void {
+    this.location = new FormGroup({
       city: new FormControl('', Validators.required),
       county: new FormControl('', Validators.required),
       address: new FormControl(''),
@@ -29,15 +42,42 @@ export class SiteAddComponent implements OnInit {
     });
   }
 
-  public onLocationBeforeNext(event: any): void {
-    ValidationService.triggerValidation(this.locationForm);
+  initCategory(): void {
+    this.class = new FormGroup({
+      type: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required)
+    });
   }
 
-  public onComplete(event: any): void {
+  // Events
+
+  onLocationBeforeNext(e: any): void {
+    ValidationService.triggerValidation(this.location);
+  }
+
+  onCategoryBeforeNext(e: any): void {
+    ValidationService.triggerValidation(this.class);
+  }
+
+  onComplete(e: any): void {
 
     this.isCompleted = true;
 
-    const location = this.locationForm.value;
+    const location = this.form.value;
     console.log(location);
+  }
+
+  // Methods
+
+  isFieldNotValid(field: string): boolean {
+    return !this.form.get(field).valid && this.form.get(field).touched;
+  }
+
+  fieldHasError(field: string, error: string): boolean {
+    return this.form.get(field).hasError(error);
+  }
+
+  displayFieldCss(field: string) {
+    return { 'has-error': this.isFieldNotValid(field) };
   }
 }

@@ -46,6 +46,7 @@
   "SITE_CHRONOLOGY": "Chronology",
   "SITE_TOPONYM": "Toponym",
   "SITE_SECTOR": "Sector",
+  "SITE_PERIODS": "Periods",
   "SITE_CAMPAIGN_YEAR": "Campaign Year",
   "SITE_LAST_UPDATE": "Last Update",
   "SITE_ACTIONS": "Actions",
@@ -57,8 +58,7 @@
   "SITE_UAT_HELP": "UAT (village, city)",
   "SITE_RAN_HELP": "RAN code of the site",
   "SITE_TOPONYM_HELP": "Toponim (if known)",
-  "SITE_TYPE_HELP": "",
-  "SITE_CATEGORY_HELP": "",
+  "SITE_CHRONOLOGY_HELP": "",
 
   "SITE_CITY_REQUIRED": "The city is required",
   "SITE_COUNTY_REQUIRED": "The county is required",
@@ -68,6 +68,7 @@
   "SITE_SECTOR_REQUIRED": "The sector is required",
   "SITE_TYPE_REQUIRED": "The type is required",
   "SITE_CATEGORY_REQUIRED": "The class is required",
+  "SITE_PERIODS_REQUIRED": "Select the site periods",
 
   "SITE_TABS_LOCATION": "Full location",
   "SITE_TABS_CHRONOLOGY": "Chronology",

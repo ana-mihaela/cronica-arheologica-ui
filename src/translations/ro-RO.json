@@ -46,6 +46,7 @@
   "SITE_CHRONOLOGY": "Cronologie",
   "SITE_TOPONYM": "Toponim",
   "SITE_SECTOR": "Sector",
+  "SITE_PERIODS": "Perioade",
   "SITE_CAMPAIGN_YEAR": "Anul campaniei",
   "SITE_LAST_UPDATE": "Ultima modificare",
   "SITE_VIEW_MAP": "Afişare hartă",
@@ -56,8 +57,7 @@
   "SITE_UAT_HELP": "UAT (comună, oraș sau municipiu)",
   "SITE_RAN_HELP": "Cod RAN al sitului",
   "SITE_TOPONYM_HELP": "Toponim (dacă se cunoaște)",
-  "SITE_TYPE_HELP": "(cf. listei aprobate prin Ordinul nr. 2562/4.10.2010, privind aprobarea Procedurii de acordare a autorizațiilor pentru cercetarea arheologică, anexele 11 și 12)",
-  "SITE_CATEGORY_HELP": "(confom listei integrate în baza de date)",
+  "SITE_CHRONOLOGY_HELP": "(conform listei integrate în baza de date care conține care conține lista aprobate prin Ordinul nr. 2562/4.10.2010 privind aprobarea Procedurii de acordare a autorizațiilor pentru cercetarea arheologică, anexele 11 și 12)",
 
   "SITE_CITY_REQUIRED": "Localitatea este obligatorie",
   "SITE_COUNTY_REQUIRED": "Judetul este oblifatoriu",
@@ -67,6 +67,7 @@
   "SITE_SECTOR_REQUIRED": "Sectorul este obligatoriu",
   "SITE_TYPE_REQUIRED": "Tipul este obligatoriu",
   "SITE_CATEGORY_REQUIRED": "Categoria este obligatorie",
+  "SITE_PERIODS_REQUIRED": "Selectați perioadele sitului",
 
   "SITE_TABS_LOCATION": "Localizarea completă",
   "SITE_TABS_CHRONOLOGY": "Încadrare cronologică",

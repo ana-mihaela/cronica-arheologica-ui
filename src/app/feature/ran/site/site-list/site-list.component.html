@@ -47,7 +47,7 @@
         <app-table-column [property]="'lastUpdate'" [header]="'SITE_LAST_UPDATE' | translate" [minWidth]="'160px'" [sortable]="true"></app-table-column>
         <app-table-column [header]="'SITE_VIEW_MAP' | translate" [minWidth]="'110px'">
           <ng-template #tableCell let-item="item">
-            <a [routerLink]="['map', item.ranCode]" class="btn btn-secondary btn-xs" [title]="'SITE_VIEW_MAP' | translate">{{ 'VIEW' | translate}}</a>
+            <a [routerLink]="['map', item.ranCode]" class="btn btn-dark btn-xs" [title]="'SITE_VIEW_MAP' | translate">{{ 'VIEW' | translate}}</a>
           </ng-template>
         </app-table-column>
       </app-table>

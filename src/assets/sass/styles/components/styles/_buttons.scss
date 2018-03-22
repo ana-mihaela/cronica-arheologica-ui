@@ -84,15 +84,21 @@ button {
 .btn-xs {
   @include button-size(0rem, 0.5rem, 0.6rem, 1.2rem);
 }
+.btn-xs {
+  font-weight: normal;
+}
 
 // Buttons
 .btn-default {
   @include button-default(#464652, #fafafa, #c2cad8);
 }
+.btn-secondary {
+  @include button-default(#464652, #fafafa, #c2cad8);
+}
 .btn-primary {
   @include button-variant(#fff, #5cb85c);
 }
-.btn-secondary {
+.btn-dark {
   @include button-variant(#fff, #212529);
 }
 .btn-info {

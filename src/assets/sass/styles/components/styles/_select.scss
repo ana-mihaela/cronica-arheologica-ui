@@ -1,4 +1,6 @@
 
+// Single select
+
 .ngx-select {
   position: relative;
   min-width: 220px;
@@ -11,6 +13,19 @@
     font-size: 0.84rem;
     line-height: 1.5;
     color: #555 !important;
+    border-color: #c2cad8;
+
+    @include button-focus-hover {
+      color: #555;
+      background-color: #fff;
+      border-color: #c2cad8;
+    }
+
+    @include button-active {
+      color: #555;
+      background-color: #fff;
+      border-color: #727c8e;
+    }
   }
 
   .ngx-select__placeholder.text-muted {
@@ -33,4 +48,26 @@
   .ngx-select__placeholder.text-muted {
     color: #ff3939 !important;
   }
+}
+
+// Multiple select
+
+.select-multiple .ngx-select.dropdown.ngx-select_multiple.form-control {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #c2cad8;
+  border-radius: 0;
+
+  .ngx-select__search.form-control {
+    margin-bottom: 0;
+  }
+}
+
+.has-error .select-multiple .ngx-select.dropdown.ngx-select_multiple.form-control {
+  color: #ff3939;
+  border-color: #ff3939;
+  background-color: #fff6f6;
 }

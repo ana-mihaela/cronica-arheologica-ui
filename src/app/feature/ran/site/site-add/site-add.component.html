@@ -10,7 +10,7 @@
         <div class="card-body">
           <form novalidate [formGroup]="form">
             <app-wizard>
-              <app-wizard-step [title]="'SITE_TABS_LOCATION' | translate" [iconClass]="'fa fa-map'" [isValid]="location.valid" (onBeforeNext)="onLocationBeforeNext($event)">
+              <app-wizard-step [title]="'SITE_TABS_LOCATION' | translate" [iconClass]="'fa fa-map'" [isValid]="true" (onBeforeNext)="onLocationBeforeNext($event)">
                 <div class="container" formGroupName="location">
                   <ng-template #cityErrors>
                     <span *ngIf="fieldHasError('location.city', 'required')">{{ 'SITE_CITY_REQUIRED' | translate }}</span>
@@ -97,20 +97,35 @@
                   <ng-template #categoryErrors>
                     <span *ngIf="fieldHasError('chronology.category', 'required')">{{ 'SITE_CATEGORY_REQUIRED' | translate }}</span>
                   </ng-template>
+                  <ng-template #periodErrors>
+                    <span *ngIf="fieldHasError('chronology.periods', 'required')">{{ 'SITE_PERIODS_REQUIRED' | translate }}</span>
+                  </ng-template>
 
                   <div class="row">
-                    <div class="col-md-8 offset-md-2 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('chronology.type')">
                         <label for="type" class="control-label required">{{ 'SITE_TYPE_LONG' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.type')" [tooltip]="typeErrors"></i>
+                        <i class="fa fa-info-circle info-icon" [tooltip]="'SITE_CHRONOLOGY_HELP' | translate"></i>
                         <ngx-select id="type" [placeholder]="'SITE_TYPE_LONG' | translate" [items]="siteTypes" formControlName="type"></ngx-select>
-                        <small class="form-text text-muted">{{ 'SITE_TYPE_HELP' | translate }}</small>
                       </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('chronology.category')">
                         <label for="category" class="control-label required">{{ 'SITE_CATEGORY_LONG' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.category')" [tooltip]="categoryErrors"></i>
+                        <i class="fa fa-info-circle info-icon" [tooltip]="'SITE_CHRONOLOGY_HELP' | translate"></i>
                         <ngx-select id="category" [placeholder]="'SITE_CATEGORY_LONG' | translate" [items]="siteCategories" formControlName="category"></ngx-select>
-                        <small class="form-text text-muted">{{ 'SITE_CATEGORY_HELP' | translate }}</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="form-group" [ngClass]="displayFieldCss('chronology.periods')">
+                        <label for="period" class="control-label required">{{ 'SITE_PERIODS' | translate }}</label>
+                        <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.periods')" [tooltip]="periodErrors"></i>
+                        <i class="fa fa-info-circle info-icon" [tooltip]="'SITE_CHRONOLOGY_HELP' | translate"></i>
+                        <ngx-select id="period" class="select-multiple" [placeholder]="'SITE_PERIODS' | translate" [items]="sitePeriods" [multiple]="true" formControlName="periods"></ngx-select>
                       </div>
                     </div>
                   </div>

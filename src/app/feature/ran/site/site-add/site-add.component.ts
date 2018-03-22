@@ -9,6 +9,8 @@ import { ValidationService } from '@app/support';
 export class SiteAddComponent implements OnInit {
 
   isCompleted: boolean = false;
+  siteTypes: string[] = ['Tip 1', 'Tip 2', 'Tip 3', 'Tip 4'];
+  siteCategories: string[] = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4'];
 
   form: FormGroup;
   location: FormGroup;

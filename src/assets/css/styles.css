@@ -933,6 +933,13 @@ i.error-icon {
   .ngx-select .ngx-select__item.dropdown-item {
     padding: 8px 20px; }
 
+.has-error .ngx-select .ngx-select__toggle.btn {
+  color: #ff3939;
+  border-color: #ff3939;
+  background-color: #fff6f6; }
+.has-error .ngx-select .ngx-select__placeholder.text-muted {
+  color: #ff3939 !important; }
+
 body {
   margin: 0;
   background: #fafafa;

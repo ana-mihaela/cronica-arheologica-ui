@@ -103,12 +103,12 @@
                       <div class="form-group" [ngClass]="displayFieldCss('class.type')">
                         <label for="type" class="control-label required">{{ 'SITE_TYPE' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('class.type')" [tooltip]="typeErrors"></i>
-                        <input type="text" id="type" class="form-control" [placeholder]="'SITE_TYPE' | translate" formControlName="type">
+                        <ngx-select id="type" [placeholder]="'SITE_TYPE' | translate" [items]="siteTypes" formControlName="type"></ngx-select>
                       </div>
                       <div class="form-group" [ngClass]="displayFieldCss('class.category')">
-                        <label for="class" class="control-label required">{{ 'SITE_CATEGORY' | translate }}</label>
+                        <label for="category" class="control-label required">{{ 'SITE_CATEGORY' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('class.category')" [tooltip]="categoryErrors"></i>
-                        <input type="text" id="class" class="form-control" [placeholder]="'SITE_CATEGORY' | translate" formControlName="category">
+                        <ngx-select id="category" [placeholder]="'SITE_CATEGORY' | translate" [items]="siteCategories" formControlName="category"></ngx-select>
                       </div>
                     </div>
                   </div>

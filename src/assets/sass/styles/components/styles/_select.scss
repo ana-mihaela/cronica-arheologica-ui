@@ -21,3 +21,16 @@
     padding: 8px 20px;
   }
 }
+
+.has-error .ngx-select {
+
+  .ngx-select__toggle.btn {
+    color: #ff3939;
+    border-color: #ff3939;
+    background-color: #fff6f6;
+  }
+
+  .ngx-select__placeholder.text-muted {
+    color: #ff3939 !important;
+  }
+}

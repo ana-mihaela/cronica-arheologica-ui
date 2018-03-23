@@ -51,7 +51,8 @@ export class SiteAddComponent implements OnInit {
       type: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required),
       periods: new FormControl('', Validators.required),
-      epochs: new FormControl('', Validators.required)
+      epochs: new FormControl('', Validators.required),
+      cultures: new FormControl('', Validators.required),
     });
   }
 

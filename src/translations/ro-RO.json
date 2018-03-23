@@ -48,6 +48,7 @@
   "SITE_SECTOR": "Sector",
   "SITE_PERIODS": "Perioade",
   "SITE_EPOCHS": "Epoci",
+  "SITE_CULTURES": "Culturi arheologice",
   "SITE_CAMPAIGN_YEAR": "Anul campaniei",
   "SITE_LAST_UPDATE": "Ultima modificare",
   "SITE_VIEW_MAP": "Afişare hartă",
@@ -70,6 +71,7 @@
   "SITE_CATEGORY_REQUIRED": "Categoria este obligatorie",
   "SITE_PERIODS_REQUIRED": "Selectați perioadele",
   "SITE_EPOCHS_REQUIRED": "Selectați epocile",
+  "SITE_CULTURES_REQUIRED": "Culturile arheologice sunt obligatorii",
 
   "SITE_TABS_LOCATION": "Localizarea completă",
   "SITE_TABS_CHRONOLOGY": "Încadrare cronologică",

@@ -108,7 +108,7 @@
                   </ng-template>
 
                   <div class="row">
-                    <div class="col-md-6 offset-3 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('chronology.type')">
                         <label for="type" class="control-label required">{{ 'SITE_TYPE_LONG' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.type')" [tooltip]="typeErrors"></i>
@@ -116,9 +116,7 @@
                         <ngx-select id="type" [placeholder]="'SITE_TYPE_LONG' | translate" [items]="siteTypes" formControlName="type"></ngx-select>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 offset-3 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('chronology.category')">
                         <label for="category" class="control-label required">{{ 'SITE_CATEGORY_LONG' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.category')" [tooltip]="categoryErrors"></i>
@@ -128,7 +126,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-6 offset-3 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('chronology.periods')">
                         <label for="period" class="control-label required">{{ 'SITE_PERIODS' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.periods')" [tooltip]="periodErrors"></i>
@@ -136,9 +134,7 @@
                         <ngx-select id="period" class="select-multiple" [placeholder]="'SITE_PERIODS' | translate" [items]="sitePeriods" [multiple]="true" formControlName="periods"></ngx-select>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 offset-3 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('chronology.epochs')">
                         <label for="epochs" class="control-label required">{{ 'SITE_EPOCHS' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.epochs')" [tooltip]="epochErrors"></i>
@@ -148,7 +144,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-6 offset-3 col-sm-12 col-xs-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="form-group" [ngClass]="displayFieldCss('chronology.cultures')">
                         <label for="culture" class="control-label required">{{ 'SITE_CULTURES' | translate }}</label>
                         <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('chronology.cultures')" [tooltip]="cultureErrors"></i>

@@ -79,27 +79,22 @@ button {
   @include button-size(0.68rem, 1.5rem, 1rem, 1.5rem);
 }
 .btn-sm {
-  @include button-size(0.3rem, 0.9rem, 0.6rem, 1.2rem);
+  @include button-size(0.34rem, 0.9rem, 0.7rem, 1.2rem);
 }
 .btn-xs {
-  @include button-size(0rem, 0.5rem, 0.6rem, 1.2rem);
+  @include button-size(0rem, 0.5rem, 0.7rem, 1.2rem);
 }
 .btn-xs {
   font-weight: normal;
 }
 
 // Buttons
-.btn-default {
-  @include button-default(#464652, #fafafa, #c2cad8);
-}
+.btn-default,
 .btn-secondary {
   @include button-default(#464652, #fafafa, #c2cad8);
 }
 .btn-primary {
   @include button-variant(#fff, #5cb85c);
-}
-.btn-dark {
-  @include button-variant(#fff, #212529);
 }
 .btn-info {
   @include button-variant(#fff, #0faced);
@@ -112,6 +107,9 @@ button {
 }
 .btn-danger {
   @include button-variant(#fff, #ff4943);
+}
+.btn-dark {
+  @include button-variant(#fff, #212529);
 }
 
 // Buttons outline

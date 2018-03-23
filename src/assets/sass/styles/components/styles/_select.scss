@@ -6,7 +6,7 @@
   min-width: 220px;
   outline: none;
 
-  .ngx-select__toggle.btn {
+  .btn.ngx-select__toggle {
     font-weight: normal;
     text-transform: none;
     padding: 0.54rem 0.9rem;
@@ -39,20 +39,20 @@
 
 .has-error .ngx-select {
 
-  .ngx-select__toggle.btn {
+  .btn.ngx-select__toggle {
     color: #ff3939;
     border-color: #ff3939;
     background-color: #fff6f6;
   }
 
-  .ngx-select__placeholder.text-muted {
+  .text-muted.ngx-select__placeholder {
     color: #ff3939 !important;
   }
 }
 
 // Multiple select
 
-.select-multiple .ngx-select.dropdown.ngx-select_multiple.form-control {
+.select-multiple .ngx-select.ngx-select_multiple {
   padding: 0.5rem 0.9rem;
   font-size: 0.84rem;
   line-height: 1.5;
@@ -64,9 +64,15 @@
   .ngx-select__search.form-control {
     margin-bottom: 0;
   }
+
+  .ngx-select__clear-icon:before,
+  .ngx-select__clear-icon:after {
+    border-top: 1px solid;
+    margin-top: 0;
+  }
 }
 
-.has-error .select-multiple .ngx-select.dropdown.ngx-select_multiple.form-control {
+.has-error .select-multiple .ngx-select.ngx-select_multiple {
   color: #ff3939;
   border-color: #ff3939;
   background-color: #fff6f6;

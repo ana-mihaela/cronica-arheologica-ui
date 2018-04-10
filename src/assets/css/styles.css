@@ -1030,10 +1030,10 @@ body {
   color: #555; }
 
 ::selection {
-  background: rgba(255, 196, 178, 0.54); }
+  background: rgba(48, 132, 94, 0.2); }
 
 ::-moz-selection {
-  background: rgba(255, 196, 178, 0.54); }
+  background: rgba(48, 132, 94, 0.2); }
 
 a {
   background-color: transparent;

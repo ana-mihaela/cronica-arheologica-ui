@@ -5,8 +5,8 @@ import { I18nService } from '@app/support';
   selector: 'app-translate',
   template: `
     <div style="margin-bottom: 15px">
-      <button class="btn btn-sm btn-secondary" (click)="switchLanguage('ro-RO')">RO</button>
-      <button class="btn btn-sm btn-secondary" (click)="switchLanguage('en-US')">EN</button>
+      <button class="btn btn-xs btn-dark" (click)="switchLanguage('ro-RO')">RO</button>
+      <button class="btn btn-xs btn-dark" (click)="switchLanguage('en-US')">EN</button>
     </div>
   `
 })

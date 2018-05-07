@@ -5,7 +5,7 @@ import { Logger, I18nService } from '@app/support';
 import { environment } from '@env/environment';
 
 @Component({
-  selector: 'app',
+  selector: 'app-root',
   template: `
     <div lang="{{ language }}">
       <router-outlet></router-outlet>

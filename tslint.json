@@ -11,11 +11,13 @@
       "check-space"
     ],
     "curly": true,
+    "deprecation": {
+      "severity": "warn"
+    },
     "eofline": true,
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs",
       "rxjs/Rx"
     ],
     "import-spacing": true,
@@ -24,7 +26,6 @@
       "spaces"
     ],
     "interface-over-type-literal": true,
-    "jsdoc-format": true,
     "label-position": true,
     "max-line-length": [
       true,
@@ -43,7 +44,7 @@
       }
     ],
     "no-arg": true,
-    "no-bitwise": false,
+    "no-bitwise": true,
     "no-console": [
       true,
       "debug",
@@ -54,16 +55,12 @@
     ],
     "no-construct": true,
     "no-debugger": true,
-    "no-duplicate-variable": [
-      true,
-      "check-parameters"
-    ],
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
     "no-inferrable-types": [
-      false,
+      true,
       "ignore-params"
     ],
     "no-misused-new": true,
@@ -99,11 +96,6 @@
       true,
       "allow-null-check"
     ],
-    "typedef": [
-      true,
-      "parameter",
-      "property-declaration"
-    ],
     "typedef-whitespace": [
       true,
       {
@@ -114,7 +106,6 @@
         "variable-declaration": "nospace"
       }
     ],
-    "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
     "whitespace": [
@@ -125,6 +116,7 @@
       "check-separator",
       "check-type"
     ],
+    "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

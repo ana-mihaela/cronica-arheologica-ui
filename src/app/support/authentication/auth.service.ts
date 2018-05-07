@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { AuthState, StateService } from '../state/state.service';
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-import { of } from 'rxjs/observable/of';
+import { map, catchError } from 'rxjs/operators';
+import { of, throwError } from 'rxjs';
 
 const credentialsKey = 'credentials';
 const baseUrl = 'http://localhost:8080';
@@ -30,7 +28,7 @@ export class AuthService {
   /**
    * Authenticates the user.
    */
-  public login(context: LoginContext): Observable<true> {
+  public login(context: LoginContext): Observable<Boolean> {
 
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
 
@@ -39,8 +37,8 @@ export class AuthService {
       password: context.password
     });
 
-    return this.http.post(`${baseUrl}/auth`, data, { headers: headers })
-      .map((response: any) => {
+    return this.http.post(`${baseUrl}/auth`, data, { headers: headers }).pipe(
+      map((response: any) => {
         const token = response.token;
         const authenticated = !!token;
 
@@ -51,9 +49,10 @@ export class AuthService {
 
         this.state.authState = authenticated ? AuthState.LoggedIn : AuthState.LoggedOut;
         return authenticated;
-      }).catch((response: HttpErrorResponse) =>
-        Observable.throw(response.error.error || 'Server error')
-      );
+      }),
+      catchError((response: HttpErrorResponse) =>
+        throwError(response.error.error || 'Server error')
+      ));
   }
 
   /**

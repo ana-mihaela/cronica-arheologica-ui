@@ -8,7 +8,7 @@ import { ValidationService } from '@app/support';
 })
 export class SiteAddComponent implements OnInit {
 
-  isCompleted: boolean = false;
+  isCompleted = false;
   siteTypes: string[] = ['Tip 1', 'Tip 2', 'Tip 3', 'Tip 4'];
   siteCategories: string[] = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4'];
   sitePeriods: string[] = ['Perioada 1', 'Perioada 2', 'Perioada 3', 'Perioada 4', 'Perioada 5', 'Perioada 6', 'Perioada 7', 'Perioada 8'];

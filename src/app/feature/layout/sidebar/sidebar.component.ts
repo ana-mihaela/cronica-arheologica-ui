@@ -1,16 +1,17 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-ran-sidebar',
-  templateUrl: 'ran-sidebar.component.html'
+  selector: 'app-sidebar',
+  templateUrl: 'sidebar.component.html'
 })
-export class RanSidebarComponent {
+export class SidebarComponent {
 
   @Output()
   onSidebarToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input()
   sidebarOpen: boolean;
+  heritageMenuOpen = false;
 
   public sidebarToggle() {
     this.sidebarOpen = !this.sidebarOpen;

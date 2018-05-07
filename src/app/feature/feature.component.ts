@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'feature',
-  template: `
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: 'feature.component.html'
 })
-export class FeatureComponent implements OnInit {
+export class FeatureComponent {
 
-  public ngOnInit() {
-    console.log('Feature component');
+  sidebarOpen: boolean;
+
+  sidebarToggleHandler(event: boolean) {
+    this.sidebarOpen = event;
   }
 }

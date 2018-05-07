@@ -1,21 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Logger } from '@app/support';
-
-const log = new Logger('MainComponent');
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'main',
-  templateUrl: 'main.component.html'
+  template: `<router-outlet></router-outlet>`
 })
-export class MainComponent implements OnInit {
-
-  sidebarOpen: boolean;
-
-  public ngOnInit() {
-    log.debug('init');
-  }
-
-  sidebarToggleHandler(event: boolean) {
-    this.sidebarOpen = event;
-  }
+export class MainComponent {
 }

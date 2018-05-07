@@ -1,21 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Logger } from '@app/support';
-
-const log = new Logger('RanComponent');
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'administration',
-  templateUrl: 'ran.component.html'
+  template: `<router-outlet></router-outlet>`
 })
-export class RanComponent implements OnInit {
-
-  sidebarOpen: boolean;
-
-  public ngOnInit() {
-    log.debug('init');
-  }
-
-  sidebarToggleHandler(event: boolean) {
-    this.sidebarOpen = event;
-  }
+export class RanComponent {
 }

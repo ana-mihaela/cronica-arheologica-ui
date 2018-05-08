@@ -31,6 +31,14 @@
   "WIZARD_NEXT": "Înainte",
   "WIZARD_DONE": "Finalizare",
 
+  "USER_EMAIL": "Email",
+  "USER_PASSWORD": "Parola",
+  "USER_CONFIRM_PASSWORD": "Confirmare parola",
+  "USER_EMAIL_REQUIRED": "Email-ul este obligatoriu",
+  "USER_EMAIL_PATTERN": "Introduceti o adresa de email valida",
+  "USER_PASSWORD_REQUIRED": "Parola este obligatorie",
+  "USER_PASSWORD_MATCH": "Introduceti aceeasi parola",
+
   "SITE_RAN_CODE": "Cod RAN",
   "SITE_SIRUTA_CODE": "Cod SIRUTA",
   "SITE_UAT": "UAT",
@@ -62,7 +70,7 @@
   "SITE_CHRONOLOGY_HELP": "(conform listei integrate în baza de date care conține care conține lista aprobate prin Ordinul nr. 2562/4.10.2010 privind aprobarea Procedurii de acordare a autorizațiilor pentru cercetarea arheologică, anexele 11 și 12)",
 
   "SITE_CITY_REQUIRED": "Localitatea este obligatorie",
-  "SITE_COUNTY_REQUIRED": "Judetul este oblifatoriu",
+  "SITE_COUNTY_REQUIRED": "Judetul este obligatoriu",
   "SITE_UAT_REQUIRED": "UAT este obligatoriu",
   "SITE_SIRUTA_CODE_REQUIRED": "Codul SIRUTA este obligatoriu",
   "SITE_RAN_REQUIRED": "Codul RAN este obligatoriu",

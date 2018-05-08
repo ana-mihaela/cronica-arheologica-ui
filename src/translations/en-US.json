@@ -31,6 +31,14 @@
   "WIZARD_NEXT": "Next",
   "WIZARD_DONE": "Done",
 
+  "USER_EMAIL": "Email",
+  "USER_PASSWORD": "Password",
+  "USER_CONFIRM_PASSWORD": "Confirm password",
+  "USER_EMAIL_REQUIRED": "The email is required",
+  "USER_EMAIL_PATTERN": "Insert a valid email address",
+  "USER_PASSWORD_REQUIRED": "The password is required",
+  "USER_PASSWORD_MATCH": "Insert the same password",
+
   "SITE_RAN_CODE": "Ran Code",
   "SITE_SIRUTA_CODE": "SIRUTA Code",
   "SITE_UAT": "UAT",

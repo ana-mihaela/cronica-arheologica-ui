@@ -9,6 +9,8 @@ import { FormBase, PasswordValidation, ValidationService } from '@app/support';
 })
 export class RegisterComponent extends FormBase {
 
+  error = '';
+
   get form(): FormGroup {
     return this._form;
   }
@@ -25,7 +27,7 @@ export class RegisterComponent extends FormBase {
     }, PasswordValidation.MatchPassword);
   }
 
-  post() {
+  submit() {
     ValidationService.triggerValidation(this.form);
     if (this.form.valid) {
       console.log(this.form.value);

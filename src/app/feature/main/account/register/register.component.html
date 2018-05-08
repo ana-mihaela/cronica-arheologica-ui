@@ -1,59 +1,52 @@
 
-<div class="portlet">
-  <div class="portlet-title">
-    <div class="caption">
-      Register New User
-    </div>
-  </div>
-  <div class="portlet-body">
-    <div class="row">
-      <div class="col-sm-12">
-        <form novalidate [formGroup]="form">
+<div class="container login-container">
 
-          <ng-template #emailErrors>
-            <span *ngIf="fieldHasError('email', 'required')">{{ 'USER_EMAIL_REQUIRED' | translate }}</span>
-            <span *ngIf="fieldHasError('email', 'email')">{{ 'USER_EMAIL_PATTERN' | translate }}</span>
-          </ng-template>
-          <ng-template #passwordErrors>
-            <span *ngIf="fieldHasError('password', 'required')">{{ 'USER_PASSWORD_REQUIRED' | translate }}</span>
-          </ng-template>
-          <ng-template #confirmPasswordErrors>
-            <span *ngIf="fieldHasError('confirmPassword', 'matchPassword')">{{ 'USER_PASSWORD_MATCH' | translate }}</span>
-          </ng-template>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row main">
+        <div class="col-sm-12">
 
-          <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="card">
-                <div class="card-title">
-                  Register New User
-                </div>
-                <div class="card-body">
-                  <div class="form-group" [ngClass]="displayFieldCss('email')">
-                    <label for="email" class="control-label required">{{ 'USER_EMAIL' | translate }}</label>
-                    <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('email')" [tooltip]="emailErrors"></i>
-                    <input type="email" id="email" class="form-control" [placeholder]="'USER_EMAIL' | translate" formControlName="email">
-                  </div>
-                  <div class="form-group" [ngClass]="displayFieldCss('password')">
-                    <label for="password" class="control-label required">{{ 'USER_PASSWORD' | translate }}</label>
-                    <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('password')" [tooltip]="passwordErrors"></i>
-                    <input type="password" id="password" class="form-control" [placeholder]="'USER_PASSWORD' | translate" formControlName="password">
-                  </div>
-                  <div class="form-group" [ngClass]="displayFieldCss('confirmPassword')">
-                    <label for="confirmPassword" class="control-label required">{{ 'USER_CONFIRM_PASSWORD' | translate }}</label>
-                    <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('confirmPassword')" [tooltip]="confirmPasswordErrors"></i>
-                    <input type="password" id="confirmPassword" class="form-control" [placeholder]="'USER_CONFIRM_PASSWORD' | translate" formControlName="confirmPassword">
-                  </div>
-                  <div class="form-group">
-                    <button type="button" class="btn btn-dark" (click)="post()">Register</button>
-                  </div>
-                </div>
-              </div>
+          <form class="login-form" novalidate [formGroup]="form" (ngSubmit)="submit()">
+            <h3 class="form-title">Register</h3>
+
+            <ng-template #emailErrors>
+              <span *ngIf="fieldHasError('email', 'required')">{{ 'USER_EMAIL_REQUIRED' | translate }}</span>
+              <span *ngIf="fieldHasError('email', 'email')">{{ 'USER_EMAIL_PATTERN' | translate }}</span>
+            </ng-template>
+            <ng-template #passwordErrors>
+              <span *ngIf="fieldHasError('password', 'required')">{{ 'USER_PASSWORD_REQUIRED' | translate }}</span>
+            </ng-template>
+            <ng-template #confirmPasswordErrors>
+              <span *ngIf="fieldHasError('confirmPassword', 'matchPassword')">{{ 'USER_PASSWORD_MATCH' | translate }}</span>
+            </ng-template>
+
+            <alert type="danger" *ngIf="error" dismissible="true" (onClosed)="error = ''">{{ error }}</alert>
+
+            <div class="form-group" [ngClass]="displayFieldCss('email')">
+              <label for="email" class="control-label required">{{ 'USER_EMAIL' | translate }}</label>
+              <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('email')" [tooltip]="emailErrors"></i>
+              <input type="email" id="email" class="form-control" [placeholder]="'USER_EMAIL' | translate" formControlName="email">
             </div>
-          </div>
+            <div class="form-group" [ngClass]="displayFieldCss('password')">
+              <label for="password" class="control-label required">{{ 'USER_PASSWORD' | translate }}</label>
+              <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('password')" [tooltip]="passwordErrors"></i>
+              <input type="password" id="password" class="form-control" [placeholder]="'USER_PASSWORD' | translate" formControlName="password">
+            </div>
+            <div class="form-group" [ngClass]="displayFieldCss('confirmPassword')">
+              <label for="confirmPassword" class="control-label required">{{ 'USER_CONFIRM_PASSWORD' | translate }}</label>
+              <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('confirmPassword')" [tooltip]="confirmPasswordErrors"></i>
+              <input type="password" id="confirmPassword" class="form-control" [placeholder]="'USER_CONFIRM_PASSWORD' | translate" formControlName="confirmPassword">
+            </div>
 
-        </form>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-dark pull-right">
+                <i class="fa fa-mail-forward"></i> Register
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-
   </div>
+
 </div>

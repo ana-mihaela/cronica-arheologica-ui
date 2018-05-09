@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { AuthState, StateService } from '../state/state.service';
-
-import { map, catchError } from 'rxjs/operators';
-import { of, throwError } from 'rxjs';
-
-const credentialsKey = 'credentials';
-const baseUrl = 'http://localhost:8080';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 /**
  * Provides a base for authentication workflow.
@@ -15,92 +7,67 @@ const baseUrl = 'http://localhost:8080';
 @Injectable()
 export class AuthService {
 
-  private _credentials: Credentials | null;
+  CREDENTIALS_KEY = 'credentials';
 
-  constructor(private http: HttpClient,
-              private state: StateService) {
-    const savedCredentials = sessionStorage.getItem(credentialsKey) || localStorage.getItem(credentialsKey);
-    if (savedCredentials) {
-      this._credentials = JSON.parse(savedCredentials);
-    }
-  }
+  path = 'http://localhost:8000/users';
+  headers = new HttpHeaders({'Content-Type': 'application/json'});
+
+  constructor(private http: HttpClient) { }
 
   /**
    * Authenticates the user.
    */
-  public login(context: LoginContext): Observable<Boolean> {
-
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-
-    const data = JSON.stringify({
-      username: context.username,
-      password: context.password
+  public login(data: LoginData) {
+    this.http.post<any>(this.path + '/login', data, { headers: this.headers }).subscribe(res => {
+      this.saveCredentials({email: data.email, token: res.token});
     });
+  }
 
-    return this.http.post(`${baseUrl}/auth`, data, { headers: headers }).pipe(
-      map((response: any) => {
-        const token = response.token;
-        const authenticated = !!token;
-
-        if (authenticated) {
-          const credentials = {username: context.username, token: token};
-          this.setCredentials(credentials, context.remember);
-        }
-
-        this.state.authState = authenticated ? AuthState.LoggedIn : AuthState.LoggedOut;
-        return authenticated;
-      }),
-      catchError((response: HttpErrorResponse) =>
-        throwError(response.error.error || 'Server error')
-      ));
+  /**
+   * Registers the user.
+   */
+  public register(data: RegisterData) {
+    this.http.post<any>(this.path + '/register', data, { headers: this.headers }).subscribe(
+    res => {
+      console.log(res);
+      this.saveCredentials({ email: data.email, token: res.token }); },
+    err => { console.log(err); }
+    );
   }
 
   /**
    * Logs out the user and clear credentials.
    */
-  public logout(): Observable<boolean> {
-    this.setCredentials();
-    this.state.authState = AuthState.LoggedOut;
-    return of(true);
+  public logout() {
+    localStorage.removeItem(this.CREDENTIALS_KEY);
   }
 
   /**
    * Checks if the user is authenticated.
    */
   public isAuthenticated(): boolean {
-    return !!this.credentials;
+    return !!localStorage.getItem(this.CREDENTIALS_KEY);
   }
 
   /**
-   * Gets the user credentials.
+   * Saves the user credentials.
    */
-  get credentials(): Credentials | null {
-    return this._credentials;
-  }
-
-  /**
-   * Sets the user credentials.
-   */
-  private setCredentials(credentials?: Credentials, remember?: boolean) {
-    this._credentials = credentials || null;
-
-    if (credentials) {
-      const storage = remember ? localStorage : sessionStorage;
-      storage.setItem(credentialsKey, JSON.stringify(credentials));
-    } else {
-      sessionStorage.removeItem(credentialsKey);
-      localStorage.removeItem(credentialsKey);
-    }
+  private saveCredentials(credentials?: Credentials) {
+    localStorage.setItem(this.CREDENTIALS_KEY, JSON.stringify(credentials));
   }
 }
 
 export interface Credentials {
-  username: string;
+  email: string;
   token: string;
 }
 
-export interface LoginContext {
-  username: string;
+export interface LoginData {
+  email: string;
   password: string;
-  remember?: boolean;
+}
+
+export interface RegisterData {
+  email: string;
+  password: string;
 }

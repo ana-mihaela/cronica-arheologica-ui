@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
-import { FormBase, PasswordValidation, ValidationService } from '@app/support';
+import {AuthService, FormBase, PasswordValidation, ValidationService} from '@app/support';
 
 @Component({
   selector: 'register',
@@ -15,22 +15,27 @@ export class RegisterComponent extends FormBase {
     return this._form;
   }
 
-  constructor() {
+  constructor(private authService: AuthService) {
     super(null);
   }
 
   protected initForm(data: any): FormGroup {
     return new FormGroup({
       email: new FormControl('', [Validators.required, CustomValidators.email]),
-      password: new FormControl('', [Validators.required]),
+      password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('')
     }, PasswordValidation.MatchPassword);
   }
 
   submit() {
     ValidationService.triggerValidation(this.form);
+
     if (this.form.valid) {
-      console.log(this.form.value);
+      const data = {
+        email: this.form.value.email,
+        password: this.form.value.password
+      };
+      this.authService.register(data);
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AuthService } from '@app/support';
 
 @Component({
   selector: 'app-header',
@@ -7,18 +8,20 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class HeaderComponent {
 
   @Output()
-  onSidebarToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
+  sidebarToggled: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input()
   sidebarOpen: boolean;
-  heritageMenuOpen: boolean = false;
+  accountMenuOpen = false;
+
+  constructor(private authService: AuthService) { }
 
   public closeTopMenus() {
-    this.heritageMenuOpen = false;
+    this.accountMenuOpen = false;
   }
 
-  public sidebarToggle() {
+  public toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
-    this.onSidebarToggle.emit(this.sidebarOpen);
+    this.sidebarToggled.emit(this.sidebarOpen);
   }
 }

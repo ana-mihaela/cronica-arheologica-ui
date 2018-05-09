@@ -1,7 +1,7 @@
 <div class="page-container">
-  <app-header [sidebarOpen]="sidebarOpen" (onSidebarToggle)="sidebarToggleHandler($event)"></app-header>
+  <app-header [sidebarOpen]="sidebarOpen" (sidebarToggled)="sidebarToggleHandler($event)"></app-header>
 
   <router-outlet></router-outlet>
 
-  <app-sidebar [sidebarOpen]="sidebarOpen" (onSidebarToggle)="sidebarToggleHandler($event)"></app-sidebar>
+  <app-sidebar [sidebarOpen]="sidebarOpen" (sidebarToggled)="sidebarToggleHandler($event)"></app-sidebar>
 </div>

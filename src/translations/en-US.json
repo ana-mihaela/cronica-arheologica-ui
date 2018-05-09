@@ -31,6 +31,10 @@
   "WIZARD_NEXT": "Next",
   "WIZARD_DONE": "Done",
 
+  "MY_ACCOUNT": "My account",
+  "LOGIN": "Login",
+  "REGISTER": "Register",
+
   "USER_EMAIL": "Email",
   "USER_PASSWORD": "Password",
   "USER_CONFIRM_PASSWORD": "Confirm password",

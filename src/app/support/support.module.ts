@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { StateService } from './state/state.service';
 import { AuthService } from './authentication/auth.service';
@@ -9,7 +10,8 @@ import { LocaleService } from './i18n/locale.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class SupportModule {

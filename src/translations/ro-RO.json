@@ -31,6 +31,10 @@
   "WIZARD_NEXT": "Înainte",
   "WIZARD_DONE": "Finalizare",
 
+  "MY_ACCOUNT": "Contul meu",
+  "LOGIN": "Logare",
+  "REGISTER": "Inregistrare",
+
   "USER_EMAIL": "Email",
   "USER_PASSWORD": "Parola",
   "USER_CONFIRM_PASSWORD": "Confirmare parola",

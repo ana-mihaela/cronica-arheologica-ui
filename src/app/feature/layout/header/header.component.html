@@ -8,24 +8,17 @@
       <li><a href="#">{{ 'HOME' | translate }}</a></li>
       <li><a href="#">{{ 'NEWS' | translate }}</a></li>
       <li class="has-children">
-        <a href="javascript:void(0)" (click)="heritageMenuOpen = !heritageMenuOpen" (document:click)="closeTopMenus()" (click)="$event.stopPropagation()">
-          {{ 'HERITAGE' | translate }} <i class="fa fa-angle-down arrow-down"></i>
+        <a href="javascript:void(0)" (click)="accountMenuOpen = !accountMenuOpen" (document:click)="closeTopMenus()" (click)="$event.stopPropagation()">
+          {{ 'MY_ACCOUNT' | translate }} <i class="fa fa-angle-down arrow-down"></i>
         </a>
-        <div [collapse]="!heritageMenuOpen">
+        <div [collapse]="!accountMenuOpen">
           <ul class="sub-menu">
-            <li><a href="#">{{ 'ARCHEOLOGY' | translate }}</a></li>
-            <li><a href="#">{{ 'ART_ARCHITECTURE' | translate }}</a></li>
-            <li><a href="#">{{ 'FIXED_HERITAGE' | translate }}</a></li>
-            <li><a href="#">{{ 'UNFIXED_HERITAGE' | translate }}</a></li>
-            <li><a href="#">{{ 'ETHNOGRAPHY' | translate }}</a></li>
-            <li><a href="#">{{ 'HISTORY' | translate }}</a></li>
-            <li><a href="#">{{ 'MUSIC' | translate }}</a></li>
-            <li><a href="#">{{ 'NUMISMATICS' | translate }}</a></li>
-            <li><a href="#">{{ 'ACTING' | translate }}</a></li>
+            <li><a href="#">{{ 'LOGIN' | translate }}</a></li>
+            <li><a href="#">{{ 'REGISTER' | translate }}</a></li>
           </ul>
         </div>
       </li>
     </ul>
   </div>
-  <app-sidebar-open (click)="sidebarToggle()"></app-sidebar-open>
+  <app-sidebar-open (click)="toggleSidebar()"></app-sidebar-open>
 </div>

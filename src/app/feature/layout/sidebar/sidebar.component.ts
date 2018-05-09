@@ -7,14 +7,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class SidebarComponent {
 
   @Output()
-  onSidebarToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
+  sidebarToggled: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input()
   sidebarOpen: boolean;
   heritageMenuOpen = false;
 
-  public sidebarToggle() {
+  public toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
-    this.onSidebarToggle.emit(this.sidebarOpen);
+    this.sidebarToggled.emit(this.sidebarOpen);
   }
 }

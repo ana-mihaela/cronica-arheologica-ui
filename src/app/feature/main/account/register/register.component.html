@@ -7,7 +7,7 @@
         <div class="col-sm-12">
 
           <form class="login-form" novalidate [formGroup]="form" (ngSubmit)="submit()">
-            <h3 class="form-title">Register</h3>
+            <h3 class="form-title">{{ 'REGISTER' | translate }}</h3>
 
             <ng-template #emailErrors>
               <span *ngIf="fieldHasError('email', 'required')">{{ 'USER_EMAIL_REQUIRED' | translate }}</span>
@@ -40,7 +40,7 @@
 
             <div class="form-actions">
               <button type="submit" class="btn btn-dark pull-right">
-                <i class="fa fa-mail-forward"></i> Register
+                <i class="fa fa-mail-forward"></i> {{ 'REGISTER' | translate }}
               </button>
             </div>
           </form>

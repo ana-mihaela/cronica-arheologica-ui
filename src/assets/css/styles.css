@@ -784,17 +784,6 @@ i.info-icon {
 .alert {
   border-radius: 0;
   border: 0; }
-  .alert .close {
-    float: right;
-    font-weight: normal;
-    line-height: 1;
-    color: #fff;
-    text-shadow: none;
-    opacity: .5; }
-    .alert .close:hover, .alert .close:focus {
-      color: #fff;
-      text-decoration: none;
-      opacity: .75; }
 
 .alert-success {
   color: #fff;

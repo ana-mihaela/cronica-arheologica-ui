@@ -33,15 +33,15 @@
 
   "MY_ACCOUNT": "Contul meu",
   "LOGIN": "Logare",
-  "REGISTER": "Inregistrare",
+  "REGISTER": "Înregistrare",
 
   "USER_EMAIL": "Email",
-  "USER_PASSWORD": "Parola",
-  "USER_CONFIRM_PASSWORD": "Confirmare parola",
+  "USER_PASSWORD": "Parolă",
+  "USER_CONFIRM_PASSWORD": "Confirmare parolă",
   "USER_EMAIL_REQUIRED": "Email-ul este obligatoriu",
-  "USER_EMAIL_PATTERN": "Introduceti o adresa de email valida",
+  "USER_EMAIL_PATTERN": "Introduceți o adresa de email validă",
   "USER_PASSWORD_REQUIRED": "Parola este obligatorie",
-  "USER_PASSWORD_MATCH": "Introduceti aceeasi parola",
+  "USER_PASSWORD_MATCH": "Introduceți aceeași parolă",
 
   "SITE_RAN_CODE": "Cod RAN",
   "SITE_SIRUTA_CODE": "Cod SIRUTA",

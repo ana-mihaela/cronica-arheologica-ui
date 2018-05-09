@@ -1,22 +1,6 @@
 .alert {
   border-radius: 0;
   border: 0;
-
-  .close {
-    float: right;
-    font-weight: normal;
-    line-height: 1;
-    color: #fff;
-    text-shadow: none;
-    opacity: .5;
-
-    &:hover,
-    &:focus {
-      color: #fff;
-      text-decoration: none;
-      opacity: .75;
-    }
-  }
 }
 
 .alert-success {

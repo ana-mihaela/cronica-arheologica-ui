@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+
+import { map, catchError } from 'rxjs/operators';
+import { of, throwError } from 'rxjs';
 
 /**
  * Provides a base for authentication workflow.
@@ -26,13 +30,21 @@ export class AuthService {
   /**
    * Registers the user.
    */
-  public register(data: RegisterData) {
-    this.http.post<any>(this.path + '/register', data, { headers: this.headers }).subscribe(
-    res => {
-      console.log(res);
-      this.saveCredentials({ email: data.email, token: res.token }); },
-    err => { console.log(err); }
-    );
+  public register(data: RegisterData): Observable<Boolean> {
+    return this.http.post(this.path + '/register', data, { headers: this.headers }).pipe(
+      map((res: any) => {
+        const token = res.token;
+        const authenticated = !!token;
+
+        if (authenticated) {
+          const credentials = {email: data.email, token: token};
+          this.saveCredentials(credentials);
+        }
+        return authenticated;
+      }),
+      catchError((err: HttpErrorResponse) => {
+        return throwError(err.error.message || 'Server error'); }
+      ));
   }
 
   /**

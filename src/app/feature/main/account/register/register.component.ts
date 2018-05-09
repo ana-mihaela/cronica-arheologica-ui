@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
-import {AuthService, FormBase, PasswordValidation, ValidationService} from '@app/support';
+
+import { AuthService, FormBase,
+  PasswordValidation, ValidationService } from '@app/support';
 
 @Component({
   selector: 'register',
@@ -15,9 +18,8 @@ export class RegisterComponent extends FormBase {
     return this._form;
   }
 
-  constructor(private authService: AuthService) {
-    super(null);
-  }
+  constructor(private router: Router,
+              private authService: AuthService) { super(null); }
 
   protected initForm(data: any): FormGroup {
     return new FormGroup({
@@ -35,7 +37,11 @@ export class RegisterComponent extends FormBase {
         email: this.form.value.email,
         password: this.form.value.password
       };
-      this.authService.register(data);
+
+      this.authService.register(data).subscribe(
+        res => this.router.navigate(['/']),
+        err => this.error = err
+      );
     }
   }
 }

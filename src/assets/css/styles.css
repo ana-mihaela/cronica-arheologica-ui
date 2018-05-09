@@ -1400,7 +1400,11 @@ app:empty + .loading {
     margin-top: 100px; } }
 @media (max-width: 576px) {
   .login-container {
-    margin-top: 0px; } }
+    margin-top: 0; }
+
+  .main {
+    -webkit-box-shadow: none;
+    box-shadow: none; } }
 .promotion-area {
   overflow: hidden;
   margin-top: 30px;

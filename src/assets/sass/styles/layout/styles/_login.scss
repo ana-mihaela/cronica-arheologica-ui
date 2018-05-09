@@ -25,6 +25,10 @@
 @media (max-width: 576px) {
 
   .login-container {
-    margin-top: 0px;
+    margin-top: 0;
+  }
+
+  .main {
+    @include box-shadow(none);
   }
 }

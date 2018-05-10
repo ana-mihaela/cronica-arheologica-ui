@@ -39,7 +39,13 @@ export class RegisterComponent extends FormBase {
       };
 
       this.authService.register(data).subscribe(
-        res => this.router.navigate(['/']),
+        res => {
+          if (res.success === true) {
+            this.router.navigate(['/']);
+          } else {
+            this.error = res.message;
+          }
+        },
         err => this.error = err
       );
     }

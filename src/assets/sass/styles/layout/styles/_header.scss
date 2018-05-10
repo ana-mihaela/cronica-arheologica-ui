@@ -35,11 +35,6 @@
     color: #000;
   }
 
-  li.highlight > a {
-    background-color: #333;
-    color: #fff;
-  }
-
   li a:hover {
     color: #ccc;
   }
@@ -76,6 +71,7 @@
     display: block;
     font-size: 0.8rem;
     padding: 5px 20px;
+    cursor: pointer;
   }
 }
 

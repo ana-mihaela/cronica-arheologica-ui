@@ -14,7 +14,7 @@ export class HeaderComponent {
   sidebarOpen: boolean;
   accountMenuOpen = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(protected authService: AuthService) { }
 
   public closeTopMenus() {
     this.accountMenuOpen = false;

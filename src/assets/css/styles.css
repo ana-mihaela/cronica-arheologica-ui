@@ -1142,9 +1142,6 @@ app:empty + .loading {
     text-transform: uppercase;
     font-weight: 500;
     color: #000; }
-  .primary-menu li.highlight > a {
-    background-color: #333;
-    color: #fff; }
   .primary-menu li a:hover {
     color: #ccc; }
   .primary-menu .has-children .arrow-down {
@@ -1170,7 +1167,8 @@ app:empty + .loading {
   .primary-menu .has-children .sub-menu a {
     display: block;
     font-size: 0.8rem;
-    padding: 5px 20px; }
+    padding: 5px 20px;
+    cursor: pointer; }
 
 .main-logo {
   background-color: #fff;

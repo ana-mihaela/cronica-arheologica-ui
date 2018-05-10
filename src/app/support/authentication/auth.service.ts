@@ -21,30 +21,42 @@ export class AuthService {
   /**
    * Authenticates the user.
    */
-  public login(data: LoginData) {
-    this.http.post<any>(this.path + '/login', data, { headers: this.headers }).subscribe(res => {
-      this.saveCredentials({email: data.email, token: res.token});
-    });
+  public login(data: LoginData): Observable<any> {
+    return this.http.post(this.path + '/login', data, { headers: this.headers }).pipe(
+      map((res: any) => {
+        return this.processAuth(data.email, res);
+      }),
+      catchError((err: HttpErrorResponse) => {
+        return throwError(err.error.message || 'Server error'); }
+      ));
   }
 
   /**
    * Registers the user.
    */
-  public register(data: RegisterData): Observable<Boolean> {
+  public register(data: RegisterData): Observable<any> {
     return this.http.post(this.path + '/register', data, { headers: this.headers }).pipe(
       map((res: any) => {
-        const token = res.token;
-        const authenticated = !!token;
-
-        if (authenticated) {
-          const credentials = {email: data.email, token: token};
-          this.saveCredentials(credentials);
-        }
-        return authenticated;
+        return this.processAuth(data.email, res);
       }),
       catchError((err: HttpErrorResponse) => {
         return throwError(err.error.message || 'Server error'); }
       ));
+  }
+
+  public processAuth(email: string, res: any) {
+    const token = res.token;
+    const success = !!token;
+
+    if (success) {
+      const credentials = {email: email, token: token};
+      this.saveCredentials(credentials);
+    }
+
+    return {
+      message: res.message,
+      success: success
+    };
   }
 
   /**

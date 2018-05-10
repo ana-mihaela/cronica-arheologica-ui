@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {AuthService} from "@app/support";
 
 @Component({
   selector: 'app-sidebar',
@@ -12,6 +13,9 @@ export class SidebarComponent {
   @Input()
   sidebarOpen: boolean;
   heritageMenuOpen = false;
+  accountMenuOpen = false;
+
+  constructor(protected authService: AuthService) { }
 
   public toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;

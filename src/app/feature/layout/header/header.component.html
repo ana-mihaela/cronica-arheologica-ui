@@ -13,8 +13,9 @@
         </a>
         <div [collapse]="!accountMenuOpen">
           <ul class="sub-menu">
-            <li><a href="#">{{ 'LOGIN' | translate }}</a></li>
-            <li><a href="#">{{ 'REGISTER' | translate }}</a></li>
+            <li *ngIf="!authService.isAuthenticated()"><a routerLink="/account/login">{{ 'LOGIN' | translate }}</a></li>
+            <li *ngIf="!authService.isAuthenticated()"><a routerLink="/account/register">{{ 'REGISTER' | translate }}</a></li>
+            <li *ngIf="authService.isAuthenticated()"><a (click)="authService.logout()">{{ 'LOGOUT' | translate }}</a></li>
           </ul>
         </div>
       </li>

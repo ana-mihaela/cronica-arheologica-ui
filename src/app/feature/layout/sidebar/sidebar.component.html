@@ -21,6 +21,22 @@
       <li><a href="/"><i class="fa fa-home"></i><p>{{ 'HOME' | translate }}</p></a></li>
       <li><a href="/"><i class="fa fa-newspaper-o"></i><p>{{ 'NEWS' | translate }}</p></a></li>
       <li class="has-children">
+        <div (click)="accountMenuOpen = !accountMenuOpen">
+          <i class="fa fa-angle-down arrow-down" [class.rotated]="accountMenuOpen"></i>
+          <a href="javascript:void(0)">
+            <i class="fa fa-user"></i>
+            <p>{{ 'MY_ACCOUNT' | translate }}</p>
+          </a>
+        </div>
+        <div [collapse]="!accountMenuOpen">
+          <ul class="sub-menu">
+            <li *ngIf="!authService.isAuthenticated()"><a routerLink="/account/login">{{ 'LOGIN' | translate }}</a></li>
+            <li *ngIf="!authService.isAuthenticated()"><a routerLink="/account/register">{{ 'REGISTER' | translate }}</a></li>
+            <li *ngIf="authService.isAuthenticated()"><a (click)="authService.logout()">{{ 'LOGOUT' | translate }}</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="has-children">
         <div (click)="heritageMenuOpen = !heritageMenuOpen">
           <i class="fa fa-angle-down arrow-down" [class.rotated]="heritageMenuOpen"></i>
           <a href="javascript:void(0)">

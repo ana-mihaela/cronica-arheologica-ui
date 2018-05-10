@@ -59,6 +59,14 @@ export class AuthService {
     };
   }
 
+  get credentials(): Credentials | null {
+    const savedCredentials = localStorage.getItem(this.CREDENTIALS_KEY);
+    if (savedCredentials) {
+      return JSON.parse(savedCredentials);
+    }
+    return null;
+  }
+
   /**
    * Logs out the user and clear credentials.
    */

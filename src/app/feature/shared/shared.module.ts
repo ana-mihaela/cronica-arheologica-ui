@@ -1,18 +1,20 @@
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { AlertModule } from 'ngx-bootstrap/alert';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { CoreModule } from '@app/core';
 import { SupportModule } from '@app/support';
+
+import {
+  BsDropdownModule,
+  CollapseModule,
+  AlertModule,
+  BsDatepickerModule,
+  ProgressbarModule,
+  TooltipModule} from 'ngx-bootstrap';
 
 import {
   SocialComponent,

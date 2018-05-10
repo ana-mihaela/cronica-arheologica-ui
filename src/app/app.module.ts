@@ -2,21 +2,24 @@ import { NgModule } from '@angular/core';
 import { APP_BASE_HREF, PlatformLocation} from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { AlertModule } from 'ngx-bootstrap/alert';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { NgxSelectModule } from 'ngx-select-ex';
-import { CoreModule } from './core';
-import { SupportModule } from './support';
 
 import { ROUTES } from './app.routes';
-
+import { CoreModule } from './core';
+import { SupportModule } from './support';
 import { AppComponent } from './app.component';
 import { NoContentComponent } from './no-content';
+import { AuthInterceptorService } from '@app/support';
+
+import {
+  BsDropdownModule,
+  CollapseModule,
+  AlertModule,
+  BsDatepickerModule,
+  ProgressbarModule,
+  TooltipModule} from 'ngx-bootstrap';
 
 export function getBaseHref(platformLocation: PlatformLocation): string {
   return platformLocation.getBaseHrefFromDOM();
@@ -45,7 +48,8 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
     SupportModule.forRoot()
   ],
   providers: [
-    { provide: APP_BASE_HREF, useFactory: getBaseHref, deps: [PlatformLocation] }
+    { provide: APP_BASE_HREF, useFactory: getBaseHref, deps: [PlatformLocation] },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent]
 })

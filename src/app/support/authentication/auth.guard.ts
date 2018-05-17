@@ -10,15 +10,14 @@ const log = new Logger('AuthenticationGuard');
 export class AuthGuard implements CanActivate {
 
   constructor(private router: Router,
-              private authenticationService: AuthService) { }
+              private authService: AuthService) { }
 
   canActivate(): boolean {
-    if (this.authenticationService.isAuthenticated()) {
+    if (this.authService.isAuthenticated()) {
       return true;
     }
 
-    log.debug('Not authenticated, redirecting...');
-    this.router.navigate(['/login'], { replaceUrl: true });
+    this.router.navigate(['/login']);
     return false;
   }
 }

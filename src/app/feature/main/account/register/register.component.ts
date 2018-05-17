@@ -40,10 +40,10 @@ export class RegisterComponent extends FormBase {
 
       this.authService.register(data).subscribe(
         res => {
-          if (res.success === true) {
+          if (res === true) {
             this.router.navigate(['/']);
           } else {
-            this.error = res.message;
+            this.error = 'Authentication failed';
           }
         },
         err => this.error = err

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 import {AuthService, FormBase, ValidationService} from '@app/support';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'register',
@@ -34,10 +34,10 @@ export class LoginComponent extends FormBase {
 
       this.authService.login(data).subscribe(
         res => {
-          if (res.success === true) {
+          if (res === true) {
             this.router.navigate(['/']);
           } else {
-            this.error = res.message;
+            this.error = 'Authentication failed';
           }
         },
         err => this.error = err

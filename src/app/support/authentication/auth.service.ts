@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { map, catchError } from 'rxjs/operators';
-import { of, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 
 /**
  * Provides a base for authentication workflow.
@@ -11,18 +12,16 @@ import { of, throwError } from 'rxjs';
 @Injectable()
 export class AuthService {
 
-  CREDENTIALS_KEY = 'credentials';
-
+  TOKEN_KEY = 'token';
   path = 'http://localhost:8000/users';
-  headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   /**
    * Authenticates the user.
    */
   public login(data: LoginData): Observable<any> {
-    return this.http.post(this.path + '/login', data, { headers: this.headers }).pipe(
+    return this.http.post(this.path + '/login', data).pipe(
       map((res: any) => {
         return this.processAuth(data.email, res);
       }),
@@ -35,7 +34,7 @@ export class AuthService {
    * Registers the user.
    */
   public register(data: RegisterData): Observable<any> {
-    return this.http.post(this.path + '/register', data, { headers: this.headers }).pipe(
+    return this.http.post(this.path + '/register', data).pipe(
       map((res: any) => {
         return this.processAuth(data.email, res);
       }),
@@ -46,52 +45,39 @@ export class AuthService {
 
   public processAuth(email: string, res: any) {
     const token = res.token;
-    const success = !!token;
+    const authenticated = !!token;
 
-    if (success) {
-      const credentials = {email: email, token: token};
-      this.saveCredentials(credentials);
+    if (authenticated) {
+      this.saveToken(token);
     }
 
-    return {
-      message: res.message,
-      success: success
-    };
+    return authenticated;
   }
 
-  get credentials(): Credentials | null {
-    const savedCredentials = localStorage.getItem(this.CREDENTIALS_KEY);
-    if (savedCredentials) {
-      return JSON.parse(savedCredentials);
-    }
-    return null;
+  get token(): String {
+    return localStorage.getItem(this.TOKEN_KEY);
   }
 
   /**
-   * Logs out the user and clear credentials.
+   * Logs out the user and clear token.
    */
   public logout() {
-    localStorage.removeItem(this.CREDENTIALS_KEY);
+    localStorage.removeItem(this.TOKEN_KEY);
   }
 
   /**
    * Checks if the user is authenticated.
    */
   public isAuthenticated(): boolean {
-    return !!localStorage.getItem(this.CREDENTIALS_KEY);
+    return !!localStorage.getItem(this.TOKEN_KEY);
   }
 
   /**
-   * Saves the user credentials.
+   * Saves the token.
    */
-  private saveCredentials(credentials?: Credentials) {
-    localStorage.setItem(this.CREDENTIALS_KEY, JSON.stringify(credentials));
+  private saveToken(token: string) {
+    localStorage.setItem(this.TOKEN_KEY, token);
   }
-}
-
-export interface Credentials {
-  email: string;
-  token: string;
 }
 
 export interface LoginData {

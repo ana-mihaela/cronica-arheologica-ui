@@ -6,12 +6,15 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxSelectModule } from 'ngx-select-ex';
 
+import {
+  SupportModule,
+  AuthInterceptor,
+  ErrorInterceptor } from './support';
+
 import { ROUTES } from './app.routes';
 import { CoreModule } from './core';
-import { SupportModule } from './support';
 import { AppComponent } from './app.component';
 import { NoContentComponent } from './no-content';
-import { AuthInterceptorService } from '@app/support';
 
 import {
   BsDropdownModule,
@@ -49,7 +52,8 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
   ],
   providers: [
     { provide: APP_BASE_HREF, useFactory: getBaseHref, deps: [PlatformLocation] },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

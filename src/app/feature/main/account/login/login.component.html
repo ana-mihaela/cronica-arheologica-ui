@@ -9,9 +9,9 @@
           <form class="login-form" novalidate [formGroup]="form" (ngSubmit)="submit()">
             <h3 class="form-title">{{ 'LOGIN' | translate }}</h3>
 
-            <ng-template #emailErrors>
-              <span *ngIf="fieldHasError('email', 'required')">{{ 'USER_EMAIL_REQUIRED' | translate }}</span>
-              <span *ngIf="fieldHasError('email', 'email')">{{ 'USER_EMAIL_PATTERN' | translate }}</span>
+            <ng-template #usernameErrors>
+              <span *ngIf="fieldHasError('username', 'required')">{{ 'USER_EMAIL_REQUIRED' | translate }}</span>
+              <span *ngIf="fieldHasError('username', 'email')">{{ 'USER_EMAIL_PATTERN' | translate }}</span>
             </ng-template>
             <ng-template #passwordErrors>
               <span *ngIf="fieldHasError('password', 'required')">{{ 'USER_PASSWORD_REQUIRED' | translate }}</span>
@@ -19,10 +19,10 @@
 
             <alert type="danger" *ngIf="error" dismissible="true" (onClosed)="error = ''">{{ error }}</alert>
 
-            <div class="form-group" [ngClass]="displayFieldCss('email')">
-              <label for="email" class="control-label required">{{ 'USER_EMAIL' | translate }}</label>
-              <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('email')" [tooltip]="emailErrors"></i>
-              <input type="email" id="email" class="form-control" [placeholder]="'USER_EMAIL' | translate" formControlName="email">
+            <div class="form-group" [ngClass]="displayFieldCss('username')">
+              <label for="username" class="control-label required">{{ 'USER_EMAIL' | translate }}</label>
+              <i class="fa fa-warning error-icon" [hidden]="!isFieldNotValid('username')" [tooltip]="usernameErrors"></i>
+              <input type="email" id="username" class="form-control" [placeholder]="'USER_EMAIL' | translate" formControlName="username">
             </div>
             <div class="form-group" [ngClass]="displayFieldCss('password')">
               <label for="password" class="control-label required">{{ 'USER_PASSWORD' | translate }}</label>

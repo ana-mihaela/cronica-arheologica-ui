@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
-import { map, catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 /**
  * Provides a base for authentication workflow.
@@ -13,7 +12,7 @@ import { throwError } from 'rxjs';
 export class AuthService {
 
   TOKEN_KEY = 'token';
-  path = 'http://localhost:8000/users';
+  path = 'http://localhost:8080';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -21,13 +20,11 @@ export class AuthService {
    * Authenticates the user.
    */
   public login(data: LoginData): Observable<any> {
-    return this.http.post(this.path + '/login', data).pipe(
+    return this.http.post(this.path + '/auth', data).pipe(
       map((res: any) => {
-        return this.processAuth(data.email, res);
-      }),
-      catchError((err: HttpErrorResponse) => {
-        return throwError(err.error.message || 'Server error'); }
-      ));
+        return this.processAuth(res);
+      })
+    );
   }
 
   /**
@@ -36,14 +33,12 @@ export class AuthService {
   public register(data: RegisterData): Observable<any> {
     return this.http.post(this.path + '/register', data).pipe(
       map((res: any) => {
-        return this.processAuth(data.email, res);
-      }),
-      catchError((err: HttpErrorResponse) => {
-        return throwError(err.error.message || 'Server error'); }
-      ));
+        return this.processAuth(res);
+      })
+    );
   }
 
-  public processAuth(email: string, res: any) {
+  public processAuth(res: any) {
     const token = res.token;
     const authenticated = !!token;
 
@@ -63,6 +58,7 @@ export class AuthService {
    */
   public logout() {
     localStorage.removeItem(this.TOKEN_KEY);
+    this.router.navigate(['/account/login']);
   }
 
   /**
@@ -81,11 +77,11 @@ export class AuthService {
 }
 
 export interface LoginData {
-  email: string;
+  username: string;
   password: string;
 }
 
 export interface RegisterData {
-  email: string;
+  username: string;
   password: string;
 }

@@ -23,7 +23,7 @@ export class RegisterComponent extends FormBase {
 
   protected initForm(data: any): FormGroup {
     return new FormGroup({
-      email: new FormControl('', [Validators.required, CustomValidators.email]),
+      username: new FormControl('', [Validators.required, CustomValidators.email]),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('')
     }, PasswordValidation.MatchPassword);
@@ -34,7 +34,7 @@ export class RegisterComponent extends FormBase {
 
     if (this.form.valid) {
       const data = {
-        email: this.form.value.email,
+        username: this.form.value.username,
         password: this.form.value.password
       };
 
@@ -42,11 +42,8 @@ export class RegisterComponent extends FormBase {
         res => {
           if (res === true) {
             this.router.navigate(['/']);
-          } else {
-            this.error = 'Authentication failed';
           }
-        },
-        err => this.error = err
+        }
       );
     }
   }

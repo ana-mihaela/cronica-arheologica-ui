@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CustomValidators } from 'ng2-validation';
-import {AuthService, FormBase, ValidationService} from '@app/support';
-import {Router} from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService, FormBase, ValidationService } from '@app/support';
 
 @Component({
   selector: 'register',
@@ -21,7 +21,7 @@ export class LoginComponent extends FormBase {
 
   protected initForm(data: any): FormGroup {
     return new FormGroup({
-      email: new FormControl('', [Validators.required, CustomValidators.email]),
+      username: new FormControl('', [Validators.required, CustomValidators.email]),
       password: new FormControl('', Validators.required)
     });
   }
@@ -36,11 +36,8 @@ export class LoginComponent extends FormBase {
         res => {
           if (res === true) {
             this.router.navigate(['/']);
-          } else {
-            this.error = 'Authentication failed';
           }
-        },
-        err => this.error = err
+        }
       );
     }
   }

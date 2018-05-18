@@ -5,6 +5,7 @@ export { LocaleService } from './i18n/locale.service';
 export { AuthService } from './authentication/auth.service';
 export { AuthInterceptor } from './http/auth-interceptor';
 export { ErrorInterceptor } from './http/error-interceptor';
+export { ApiInterceptor } from './http/api-interceptor';
 export { ValidationService } from './validation/validation.service';
 export { PasswordValidation } from './validation/password-validation';
 export { FormBase } from './validation/form-base';

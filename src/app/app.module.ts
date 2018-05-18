@@ -9,7 +9,8 @@ import { NgxSelectModule } from 'ngx-select-ex';
 import {
   SupportModule,
   AuthInterceptor,
-  ErrorInterceptor } from './support';
+  ErrorInterceptor,
+  ApiInterceptor } from './support';
 
 import { ROUTES } from './app.routes';
 import { CoreModule } from './core';
@@ -53,7 +54,8 @@ export function getBaseHref(platformLocation: PlatformLocation): string {
   providers: [
     { provide: APP_BASE_HREF, useFactory: getBaseHref, deps: [PlatformLocation] },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
